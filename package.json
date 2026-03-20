@@ -1,0 +1,20 @@
+{
+  "name": "rumi-gemstone-provenance",
+  "version": "1.0.0",
+  "description": "Hedera HTS and HCS implementation for Peruvian gemstone tracking",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@hashgraph/sdk": "^2.80.0",
+    "dotenv": "^16.4.0",
+    "pinata": "^2.5.5",
+    "axios": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

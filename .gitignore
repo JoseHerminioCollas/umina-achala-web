@@ -1,0 +1,21 @@
+# Sensitive Credentials
+.env
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Yarn-specific
+.yarn/
+yarn-debug.log*
+yarn-error.log*
+yarn-integrity
+
+# Logs
+npm-debug.log*
+logs/
+*.log
+
+# OS Metadata
+.DS_Store
