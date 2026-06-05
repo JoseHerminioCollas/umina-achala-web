@@ -89,3 +89,6 @@ Ley Nº 32537: Specifically modifies DL 1293 (Formalization) and DL 1107 (Contro
 *   **Article 4 (Libre Comercialización):** Guarantees the right to free trade of mineral products.
 *   **Article 6 (Posesión de Minerales):** Governs the legal possession of minerals by retailers and artisans.
 *   **Article 263 (Comercialización Interna):** Regulates the purchase and sale of minerals for transformation or export.
+
+
+testnet token id : 0.0.8130672
