@@ -15,6 +15,9 @@ import dotenv from "dotenv";
 import { Client, PrivateKey, TokenMintTransaction } from "@hashgraph/sdk";
 import fs from "fs";
 import { create } from "ipfs-http-client";
+import { validateMetadata } from "./metadataValidator.js";
+import fs from "fs";
+
 // For Testnet
 dotenv.config({ path: ".env.testnet" });
 // For Mainnet
@@ -38,6 +41,12 @@ async function main() {
   // --- 2. Prepare HIP‑412 JSON metadata ---
   const metadata = JSON.parse(fs.readFileSync("src/example_1.json", "utf8"));
   metadata.timestamp = new Date().toISOString(); // add dynamic field
+  // Validate metadata JSON against HIP-412 schema ---
+  const { valid, errors } = validateMetadata(metadata);
+  if (!valid) {
+    console.error("❌ Metadata validation failed:", errors);
+    process.exit(1);
+  }
 
   // --- 3. Pin metadata JSON to IPFS ---
   const ipfs = create({ url: "https://ipfs.infura.io:5001" });
