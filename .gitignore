@@ -1,5 +1,7 @@
 # Sensitive Credentials
 .env
+.env.testnet
+.env.mainnet
 
 # Dependencies
 node_modules/
