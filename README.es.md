@@ -72,11 +72,21 @@ Achala será el **equivalente en joyería de Rumi**, representando creaciones ar
 Achala posicionará la joyería peruana como **activos culturales verificables globalmente**, combinando la transparencia de la blockchain con el patrimonio artesanal. Empoderará a los artesanos, protegerá la procedencia y abrirá nuevos mercados donde los compradores puedan confiar tanto en el origen de la piedra o mineral como en la artesanía del creador.
 
 ## 📚 Documentación
-- [Interfaz de Aplicación](user_interface.md) — Descripción detallada de la interfaz de la aplicación Rumi, incluyendo el mercado, el panel de cumplimiento y los atributos de corte de piedra.  
-- [Desarrollo](development.md)  
-- [Flujo de Usuario](user_flow.md)  
-- [Tipos de Piedra](stone_types.md)  
-- [Revisión](review.md)  
+
+- [Lista de verificación para compradores](docs/buyer_checklist.md) — Guía práctica para compradores, cubre pasos de cumplimiento y adquisición.  
+- [Cumplimiento](docs/compliance.md) — Normas de exportación, procedimientos aduaneros y referencias regulatorias.  
+- [Gobernanza](docs/governance.md) — Fases de gobernanza del proyecto, incluyendo propiedad de boutiques y supervisión.  
+- [Aviso legal](docs/legal_disclaimer.md) — Límites legales y notas de responsabilidad para Rumi.  
+- [Metadatos](docs/metadata.md) — Estructura y estándares de metadatos de especímenes en los tokens.  
+- [Generar token NFT](docs/mint-nft-token.md) — Proceso paso a paso para acuñar especímenes Rumi.  
+- [Crear token NFT](docs/create-nft-token.md) — Instrucciones para creación y despliegue de contratos.  
+- [Códigos HS de especímenes Rumi](docs/rumi_specimens_hs_codes.md) — Catálogo de gemas, minerales, piedras ornamentales y sus códigos HS.  
+- [Mitigación de riesgos](docs/risk-mitigation.md) — Estrategias de cumplimiento, prevención de fraude y gestión de riesgos de exportación.  
+- [Términos](docs/terms.md) — Condiciones de uso y participación en el ecosistema Rumi.  
+- [Interfaz de usuario](docs/user_interface.md) — Descripción detallada de la interfaz de la aplicación Rumi, mercado, panel de cumplimiento y atributos de corte de piedra.  
+- [Visión futura](docs/future-vision.md) — Hoja de ruta a largo plazo y conceptos de expansión.  
+- [Referencia](docs/reference.md) — Materiales de apoyo y fuentes de consulta.  
+
 
 **Referencias Relevantes:**  
 - Ley General de Minería (DS Nº 014-92-EM)   ([ Ley General de Minería](https://wimperu.org/publicaciones/texto-unico-ordenado-de-la-ley-general-de-mineria/)) — Ley General de Minería del Perú  

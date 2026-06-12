@@ -75,11 +75,19 @@ Achala will position Peruvian jewelry as **globally verifiable cultural assets**
 
 ## 📚 Documentation
 
-- [Application UI](user_interface.md) — Detailed description of the Rumi application interface, including marketplace, compliance dashboard, and stone cut attributes.  
-- [Development](development.md)  
-- [User Flow](user_flow.md)  
-- [Stone Types](stone_types.md)  
-- [review](review.md)  
+- [Buyer’s Checklist](docs/buyer_checklist.md) — Practical guide for buyers, covering compliance and purchase steps.  
+- [Compliance](docs/compliance.md) — Export rules, customs procedures, and regulatory references.  
+- [Governance](docs/governance.md) — Project governance phases, including boutique shop ownership and oversight.  
+- [Legal Disclaimer](docs/legal_disclaimer.md) — Legal boundaries and liability notes for Rumi.  
+- [Metadata](docs/metadata.md) — Structure and standards for specimen metadata in tokens.  
+- [Mint NFT Token](docs/mint-nft-token.md) — Step‑by‑step minting process for Rumi specimens.  
+- [Create NFT Token](docs/create-nft-token.md) — Contract creation and deployment instructions.  
+- [Rumi Specimens HS Codes](docs/rumi_specimens_hs_codes.md) — Catalog of gemstones, minerals, ornamental stones, and HS Codes.  
+- [Risk Mitigation](docs/risk-mitigation.md) — Strategies for compliance, fraud prevention, and export risk management.  
+- [Terms](docs/terms.md) — Terms of use and participation in the Rumi ecosystem.  
+- [User Interface](docs/user_interface.md) — Detailed description of the Rumi application interface, marketplace, compliance dashboard, and stone cut attributes.  
+- [Future Vision](docs/future-vision.md) — Long‑term roadmap and expansion concepts.  
+- [Reference](docs/reference.md) — Supporting references and background materials.  
 
 **Relevant References:**  
 - Ley General de Minería (DS Nº 014-92-EM)   ([ Ley General de Minería](https://wimperu.org/publicaciones/texto-unico-ordenado-de-la-ley-general-de-mineria/)) — Peru’s General Mining Law  
