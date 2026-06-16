@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="art/logo.svg" alt="Rumi Logo" width="120" />
+</p>
+
 # Rumi  
 **Automating compliance, illuminating provenance, recognizing artisans.**  
 
