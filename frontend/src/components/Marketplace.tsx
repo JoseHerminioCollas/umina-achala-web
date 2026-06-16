@@ -3,11 +3,6 @@ import React from 'react';
 import MarketplaceCard from './MarketplaceCard';
 import { Item } from '../App';
 
-interface Attribute {
-  trait_type: string;
-  value: string;
-}
-
 interface MarketplaceProps {
   items: Item[];
   setOpen: (item: Item) => void;
