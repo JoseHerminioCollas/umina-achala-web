@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 // import CollectionPage from "./pages/CollectionPage";
 // import AboutPage from "./pages/AboutPage";
@@ -21,23 +22,10 @@ function App(): JSX.Element {
           <Route path="/faqs" element={<FAQsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/mint" element={<MintPage />} />
+          <Route path="/admin" element={<MintPage />} />
           <Route path="/compliance" element={<CompliancePage />} /> */}
         </Routes>
-        <footer className="site-footer">
-          <div className="footer-links">
-            {/* You can replace these <a> with <button> + useNavigate if you prefer */}
-            <a href="/about">About</a>
-            <a href="/faqs">FAQs</a>
-            <a href="/privacy">Privacy & Cookies</a>
-            <a href="/contact">Contact</a>
-            <a href="/mint">Admin NFT</a>
-            <a href="/compliance">Compliance Dashboard</a>
-          </div>
-          <div className="footer-copy">
-            © 2026 Rumi Project. All rights reserved.
-          </div>
-        </footer>
+        <Footer />
       </main>
     </div>
   );
