@@ -1,0 +1,382 @@
+[
+  {
+    "name": "Chrysocolla",
+    "creator": "María López",
+    "description": "Peruvian Chrysocolla specimen",
+    "image": "chrysocolla.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-001",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "chrysocolla.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "María López" },
+      { "trait_type": "Stone Cut", "value": "Cabochon" }
+    ]
+  },
+  {
+    "name": "Obsidian",
+    "creator": "Juan Pérez",
+    "description": "Obsidian from Arequipa",
+    "image": "obsidian.png",
+    "type": "Stone",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-002",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "obsidian.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Juan Pérez" },
+      { "trait_type": "Stone Cut", "value": "Faceted" }
+    ]
+  },
+  {
+    "name": "Amazonite",
+    "creator": "Lucía Ramos",
+    "description": "Amazonite crystal from Cusco",
+    "image": "amazonite.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-003",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "amazonite.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Lucía Ramos" },
+      { "trait_type": "Stone Cut", "value": "Polished" }
+    ]
+  },
+  {
+    "name": "Quartz",
+    "creator": "Carlos Díaz",
+    "description": "Clear quartz specimen",
+    "image": "quartz.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-004",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "quartz.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Carlos Díaz" },
+      { "trait_type": "Stone Cut", "value": "Raw" }
+    ]
+  },
+  {
+    "name": "Malachite",
+    "creator": "Ana Torres",
+    "description": "Green malachite cabochon",
+    "image": "malachite.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-005",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "malachite.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Ana Torres" },
+      { "trait_type": "Stone Cut", "value": "Cabochon" }
+    ]
+  },
+  {
+    "name": "Lapis Lazuli",
+    "creator": "Diego Vargas",
+    "description": "Deep blue lapis lazuli",
+    "image": "lapis.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-006",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "lapis.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Diego Vargas" },
+      { "trait_type": "Stone Cut", "value": "Polished" }
+    ]
+  },
+  {
+    "name": "Fluorite",
+    "creator": "Sofía Medina",
+    "description": "Fluorite crystal cluster",
+    "image": "fluorite.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-007",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "fluorite.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Sofía Medina" },
+      { "trait_type": "Stone Cut", "value": "Raw" }
+    ]
+  },
+  {
+    "name": "Pyrite",
+    "creator": "Miguel Herrera",
+    "description": "Pyrite cube cluster",
+    "image": "pyrite.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-008",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "pyrite.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Miguel Herrera" },
+      { "trait_type": "Stone Cut", "value": "Raw" }
+    ]
+  },
+  {
+    "name": "Hematite",
+    "creator": "Valeria Cruz",
+    "description": "Metallic hematite specimen",
+    "image": "hematite.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-009",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "hematite.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Valeria Cruz" },
+      { "trait_type": "Stone Cut", "value": "Polished" }
+    ]
+  },
+  {
+    "name": "Turquoise",
+    "creator": "Pedro Salazar",
+    "description": "Turquoise cabochon",
+    "image": "turquoise.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-010",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "turquoise.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Pedro Salazar" },
+      { "trait_type": "Stone Cut", "value": "Cabochon" }
+    ]
+  },
+  {
+    "name": "Jade",
+    "creator": "Camila Rojas",
+    "description": "Green jade polished stone",
+    "image": "jade.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-011",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "jade.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Camila Rojas" },
+      { "trait_type": "Stone Cut", "value": "Polished" }
+    ]
+  },
+  {
+    "name": "Sapphire",
+    "creator": "Elena Castillo",
+    "description": "Blue sapphire gemstone",
+    "image": "sapphire.png",
+    "type": "Gemstone",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-013",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "sapphire.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Elena Castillo" },
+      { "trait_type": "Stone Cut", "value": "Faceted" }
+    ]
+  },
+  {
+    "name": "Emerald",
+    "creator": "Luis Fernández",
+    "description": "Green emerald cabochon",
+    "image": "emerald.png",
+    "type": "Gemstone",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-014",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "emerald.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Luis Fernández" },
+      { "trait_type": "Stone Cut", "value": "Cabochon" }
+    ]
+  },
+  {
+    "name": "Topaz",
+    "creator": "Gabriela Ruiz",
+    "description": "Golden topaz polished stone",
+    "image": "topaz.png",
+    "type": "Gemstone",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-015",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "topaz.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Gabriela Ruiz" },
+      { "trait_type": "Stone Cut", "value": "Polished" }
+    ]
+  },
+  {
+    "name": "Amethyst",
+    "creator": "Ricardo Gómez",
+    "description": "Purple amethyst crystal cluster",
+    "image": "amethyst.png",
+    "type": "Gemstone",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-016",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "amethyst.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Ricardo Gómez" },
+      { "trait_type": "Stone Cut", "value": "Raw" }
+    ]
+  },
+  {
+    "name": "Garnet",
+    "creator": "Isabel Ortega",
+    "description": "Red garnet faceted stone",
+    "image": "garnet.png",
+    "type": "Gemstone",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-017",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "garnet.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Isabel Ortega" },
+      { "trait_type": "Stone Cut", "value": "Faceted" }
+    ]
+  },
+  {
+    "name": "Onyx",
+    "creator": "Fernando Morales",
+    "description": "Black onyx polished cabochon",
+    "image": "onyx.png",
+    "type": "Stone",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-018",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "onyx.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Fernando Morales" },
+      { "trait_type": "Stone Cut", "value": "Cabochon" }
+    ]
+  },
+  {
+    "name": "Calcite",
+    "creator": "Patricia Vega",
+    "description": "White calcite crystal",
+    "image": "calcite.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-019",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "calcite.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Patricia Vega" },
+      { "trait_type": "Stone Cut", "value": "Raw" }
+    ]
+  },
+  {
+    "name": "Rhodonite",
+    "creator": "Jorge Castillo",
+    "description": "Pink rhodonite polished stone",
+    "image": "rhodonite.png",
+    "type": "Mineral",
+    "format": "NFT",
+    "metadata_version": "1.0",
+    "properties": {
+      "stone_id": "RUMI-020",
+      "hs_code": "7103",
+      "jurisdiction": "Peru",
+      "hcs_compliance_topic": "Export"
+    },
+    "files": [{ "uri": "rhodonite.png", "type": "image/png" }],
+    "attributes": [
+      { "trait_type": "Artisan", "value": "Jorge Castillo" },
+      { "trait_type": "Stone Cut", "value": "Polished" }
+    ]
+  }
+]
