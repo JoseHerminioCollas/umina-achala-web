@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-// import CollectionPage from "./pages/CollectionPage";
+import Marketplace from "./components/Marketplace";
 // import AboutPage from "./pages/AboutPage";
 // import FAQsPage from "./pages/FAQsPage";
 // import PrivacyPage from "./pages/PrivacyPage";
@@ -17,7 +17,7 @@ function App(): JSX.Element {
       <main className="container">
         <Routes>
           <Route path="/" element={<Hero />} />
-          {/* <Route path="/collection" element={<CollectionPage />} /> */}
+          <Route path="/marketplace" element={<Marketplace />} />
           {/* <Route path="/about" element={<AboutPage />} />
           <Route path="/faqs" element={<FAQsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
