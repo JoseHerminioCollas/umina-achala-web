@@ -13,6 +13,8 @@ export interface Rumi {
     jurisdiction: string;
     hcs_compliance_topic: string;
     compliance_proof_hcs: string;
+    mining_concession: string;
+    vendor_ruc: string;
   };
   files: { uri: string; type: string }[];
   attributes: { trait_type: string; value: string }[];
