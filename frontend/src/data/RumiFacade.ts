@@ -14,8 +14,6 @@ export class RumiFacade {
     return new RumiFacade(rumis as Rumi[]);
   }
 
-  // Later you could add: static async fromAPI()
-
   getAll(): Rumi[] {
     return this.rumisData;
   }
