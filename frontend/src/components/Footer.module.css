@@ -24,6 +24,12 @@
   color: #000;
 }
 
+.active {
+  color: #000;
+  font-weight: bold;
+  pointer-events: none; /* disables click when already active */
+}
+
 .footerCopy {
   font-size: 0.8rem;
   color: #999;
