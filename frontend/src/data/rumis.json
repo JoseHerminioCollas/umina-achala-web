@@ -1,382 +1,2102 @@
 [
   {
-    "name": "Chrysocolla",
-    "creator": "María López",
-    "description": "Peruvian Chrysocolla specimen",
-    "image": "chrysocolla.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #001 - Amethyst",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Amethyst from Peru.",
+    "image": "ipfs://QmAmethystThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-001",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-AM-01",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Amethyst-1",
+      "reinfo_id": "PERU-MIN-100001",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-1",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-201",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8801",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "chrysocolla.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmAmethystFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "María López" },
-      { "trait_type": "Stone Cut", "value": "Cabochon" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Amethyst"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "11 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-11"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Emerald Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 1"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Bezel Setting"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Amethyst-1"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Obsidian",
-    "creator": "Juan Pérez",
-    "description": "Obsidian from Arequipa",
-    "image": "obsidian.png",
-    "type": "Stone",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #002 - Quartz",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Quartz from Peru.",
+    "image": "ipfs://QmQuartzThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-002",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-QU-02",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Quartz-2",
+      "reinfo_id": "PERU-MIN-100002",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-2",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-202",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8802",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "obsidian.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmQuartzFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Juan Pérez" },
-      { "trait_type": "Stone Cut", "value": "Faceted" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Quartz"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "12 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-12"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Pear Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 2"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Pavé"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Quartz-2"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Amazonite",
-    "creator": "Lucía Ramos",
-    "description": "Amazonite crystal from Cusco",
-    "image": "amazonite.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #003 - Chrysocolla",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Chrysocolla from Peru.",
+    "image": "ipfs://QmChrysocollaThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-003",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-CH-03",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Chrysocolla-3",
+      "reinfo_id": "PERU-MIN-100003",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-3",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-203",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8803",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "amazonite.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmChrysocollaFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Lucía Ramos" },
-      { "trait_type": "Stone Cut", "value": "Polished" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Chrysocolla"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "13 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-13"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Emerald Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 3"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Prong Setting"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Chrysocolla-3"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Quartz",
-    "creator": "Carlos Díaz",
-    "description": "Clear quartz specimen",
-    "image": "quartz.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #004 - Obsidian",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Obsidian from Peru.",
+    "image": "ipfs://QmObsidianThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-004",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-OB-04",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Obsidian-4",
+      "reinfo_id": "PERU-MIN-100004",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-4",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-204",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8804",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "quartz.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmObsidianFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Carlos Díaz" },
-      { "trait_type": "Stone Cut", "value": "Raw" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Obsidian"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "14 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-14"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Brilliant Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 4"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Bezel Setting"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Obsidian-4"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Malachite",
-    "creator": "Ana Torres",
-    "description": "Green malachite cabochon",
-    "image": "malachite.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #005 - Jade",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Jade from Peru.",
+    "image": "ipfs://QmJadeThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-005",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-JA-05",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Jade-5",
+      "reinfo_id": "PERU-MIN-100005",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-5",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-205",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8805",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "malachite.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmJadeFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Ana Torres" },
-      { "trait_type": "Stone Cut", "value": "Cabochon" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Jade"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "15 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-15"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Pear Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 5"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Wire Wrapping"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Jade-5"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Lapis Lazuli",
-    "creator": "Diego Vargas",
-    "description": "Deep blue lapis lazuli",
-    "image": "lapis.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #006 - Tourmaline",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Tourmaline from Peru.",
+    "image": "ipfs://QmTourmalineThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-006",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-TO-06",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Tourmaline-6",
+      "reinfo_id": "PERU-MIN-100006",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-6",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-206",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8806",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "lapis.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmTourmalineFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Diego Vargas" },
-      { "trait_type": "Stone Cut", "value": "Polished" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Tourmaline"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "16 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-16"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Step Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 6"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Pavé"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Tourmaline-6"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Fluorite",
-    "creator": "Sofía Medina",
-    "description": "Fluorite crystal cluster",
-    "image": "fluorite.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #007 - Lapis Lazuli",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Lapis Lazuli from Peru.",
+    "image": "ipfs://QmLapisLazuliThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-007",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-LA-07",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Lapis Lazuli-7",
+      "reinfo_id": "PERU-MIN-100007",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-7",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-207",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8807",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "fluorite.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmLapisLazuliFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Sofía Medina" },
-      { "trait_type": "Stone Cut", "value": "Raw" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Lapis Lazuli"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "17 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-17"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Oval Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 7"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Wire Wrapping"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Lapis Lazuli-7"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Pyrite",
-    "creator": "Miguel Herrera",
-    "description": "Pyrite cube cluster",
-    "image": "pyrite.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #008 - Malachite",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Malachite from Peru.",
+    "image": "ipfs://QmMalachiteThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-008",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-MA-08",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Malachite-8",
+      "reinfo_id": "PERU-MIN-100008",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-8",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-208",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8808",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "pyrite.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmMalachiteFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Miguel Herrera" },
-      { "trait_type": "Stone Cut", "value": "Raw" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Malachite"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "18 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-18"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Oval Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 8"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Prong Setting"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Malachite-8"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Hematite",
-    "creator": "Valeria Cruz",
-    "description": "Metallic hematite specimen",
-    "image": "hematite.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #009 - Ruby",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Ruby from Peru.",
+    "image": "ipfs://QmRubyThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-009",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-RU-09",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Ruby-9",
+      "reinfo_id": "PERU-MIN-100009",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-9",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-209",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8809",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "hematite.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmRubyFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Valeria Cruz" },
-      { "trait_type": "Stone Cut", "value": "Polished" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Ruby"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "19 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-19"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Faceted"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 9"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Prong Setting"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Ruby-9"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Turquoise",
-    "creator": "Pedro Salazar",
-    "description": "Turquoise cabochon",
-    "image": "turquoise.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #010 - Sapphire",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Sapphire from Peru.",
+    "image": "ipfs://QmSapphireThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-010",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-SA-10",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Sapphire-10",
+      "reinfo_id": "PERU-MIN-100010",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-10",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-210",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8810",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "turquoise.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmSapphireFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Pedro Salazar" },
-      { "trait_type": "Stone Cut", "value": "Cabochon" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Sapphire"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "20 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-20"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Oval Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 10"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Channel Setting"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Sapphire-10"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Jade",
-    "creator": "Camila Rojas",
-    "description": "Green jade polished stone",
-    "image": "jade.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #011 - Amethyst",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Amethyst from Peru.",
+    "image": "ipfs://QmAmethystThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-011",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-AM-11",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Amethyst-11",
+      "reinfo_id": "PERU-MIN-100011",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-11",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-211",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8811",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "jade.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmAmethystFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Camila Rojas" },
-      { "trait_type": "Stone Cut", "value": "Polished" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Amethyst"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "21 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-21"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Cabochon"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 11"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Channel Setting"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Amethyst-11"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Sapphire",
-    "creator": "Elena Castillo",
-    "description": "Blue sapphire gemstone",
-    "image": "sapphire.png",
-    "type": "Gemstone",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #012 - Quartz",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Quartz from Peru.",
+    "image": "ipfs://QmQuartzThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-013",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-QU-12",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Quartz-12",
+      "reinfo_id": "PERU-MIN-100012",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-12",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-212",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8812",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "sapphire.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmQuartzFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Elena Castillo" },
-      { "trait_type": "Stone Cut", "value": "Faceted" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Quartz"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "22 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-22"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Princess Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 12"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Filigree"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Quartz-12"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Emerald",
-    "creator": "Luis Fernández",
-    "description": "Green emerald cabochon",
-    "image": "emerald.png",
-    "type": "Gemstone",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #013 - Chrysocolla",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Chrysocolla from Peru.",
+    "image": "ipfs://QmChrysocollaThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-014",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-CH-13",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Chrysocolla-13",
+      "reinfo_id": "PERU-MIN-100013",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-13",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-213",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8813",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "emerald.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmChrysocollaFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Luis Fernández" },
-      { "trait_type": "Stone Cut", "value": "Cabochon" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Chrysocolla"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "23 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-23"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Cushion Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 13"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Engraving"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Chrysocolla-13"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Topaz",
-    "creator": "Gabriela Ruiz",
-    "description": "Golden topaz polished stone",
-    "image": "topaz.png",
-    "type": "Gemstone",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #014 - Obsidian",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Obsidian from Peru.",
+    "image": "ipfs://QmObsidianThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-015",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-OB-14",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Obsidian-14",
+      "reinfo_id": "PERU-MIN-100014",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-14",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-214",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8814",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "topaz.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmObsidianFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Gabriela Ruiz" },
-      { "trait_type": "Stone Cut", "value": "Polished" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Obsidian"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "24 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-24"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Emerald Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 14"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Bezel Setting"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Obsidian-14"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Amethyst",
-    "creator": "Ricardo Gómez",
-    "description": "Purple amethyst crystal cluster",
-    "image": "amethyst.png",
-    "type": "Gemstone",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #015 - Jade",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Jade from Peru.",
+    "image": "ipfs://QmJadeThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-016",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-JA-15",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Jade-15",
+      "reinfo_id": "PERU-MIN-100015",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-15",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-215",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8815",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "amethyst.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmJadeFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Ricardo Gómez" },
-      { "trait_type": "Stone Cut", "value": "Raw" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Jade"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "25 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-25"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Emerald Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 15"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Pavé"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Jade-15"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Garnet",
-    "creator": "Isabel Ortega",
-    "description": "Red garnet faceted stone",
-    "image": "garnet.png",
-    "type": "Gemstone",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #016 - Tourmaline",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Tourmaline from Peru.",
+    "image": "ipfs://QmTourmalineThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-017",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-TO-16",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Tourmaline-16",
+      "reinfo_id": "PERU-MIN-100016",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-16",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-216",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8816",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "garnet.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmTourmalineFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Isabel Ortega" },
-      { "trait_type": "Stone Cut", "value": "Faceted" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Tourmaline"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "26 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-26"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Rose Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 16"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Inlay"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Tourmaline-16"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Onyx",
-    "creator": "Fernando Morales",
-    "description": "Black onyx polished cabochon",
-    "image": "onyx.png",
-    "type": "Stone",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #017 - Lapis Lazuli",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Lapis Lazuli from Peru.",
+    "image": "ipfs://QmLapisLazuliThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-018",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-LA-17",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Lapis Lazuli-17",
+      "reinfo_id": "PERU-MIN-100017",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-17",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-217",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8817",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "onyx.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmLapisLazuliFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Fernando Morales" },
-      { "trait_type": "Stone Cut", "value": "Cabochon" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Lapis Lazuli"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "27 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-27"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Step Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 17"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Prong Setting"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Lapis Lazuli-17"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Calcite",
-    "creator": "Patricia Vega",
-    "description": "White calcite crystal",
-    "image": "calcite.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #018 - Malachite",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Malachite from Peru.",
+    "image": "ipfs://QmMalachiteThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-019",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-MA-18",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Malachite-18",
+      "reinfo_id": "PERU-MIN-100018",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-18",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-218",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8818",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "calcite.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmMalachiteFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Patricia Vega" },
-      { "trait_type": "Stone Cut", "value": "Raw" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Malachite"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "28 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-28"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Faceted"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 18"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Inlay"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Malachite-18"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   },
   {
-    "name": "Rhodonite",
-    "creator": "Jorge Castillo",
-    "description": "Pink rhodonite polished stone",
-    "image": "rhodonite.png",
-    "type": "Mineral",
-    "format": "NFT",
-    "metadata_version": "1.0",
+    "name": "Rumi Stone #019 - Ruby",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Ruby from Peru.",
+    "image": "ipfs://QmRubyThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-020",
-      "hs_code": "7103",
+      "stone_id": "RUMI-2026-RU-19",
+      "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
-      "hcs_compliance_topic": "Export"
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Ruby-19",
+      "reinfo_id": "PERU-MIN-100019",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-19",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-219",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8819",
+      "hcs_compliance_topic": "0.0.987654"
     },
-    "files": [{ "uri": "rhodonite.png", "type": "image/png" }],
+    "files": [
+      {
+        "uri": "ipfs://QmRubyFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
     "attributes": [
-      { "trait_type": "Artisan", "value": "Jorge Castillo" },
-      { "trait_type": "Stone Cut", "value": "Polished" }
+      {
+        "trait_type": "Stone Type",
+        "value": "Ruby"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "29 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-29"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Step Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 19"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Engraving"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Ruby-19"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
+    ]
+  },
+  {
+    "name": "Rumi Stone #020 - Sapphire",
+    "creator": "Rumi Project",
+    "description": "Certified Mine-to-Market Sapphire from Peru.",
+    "image": "ipfs://QmSapphireThumbHash",
+    "type": "image/jpg",
+    "format": "HIP412@2.0.0",
+    "metadata_version": "1.0.0",
+    "properties": {
+      "stone_id": "RUMI-2026-SA-20",
+      "hs_code": "7103.99.00.00",
+      "jurisdiction": "Peru",
+      "legal_uri": "https://rumi.earth",
+      "vendor_ruc": "20999887766",
+      "artisan_rna": "RNA-112233",
+      "mining_concession": "Peru-Sapphire-20",
+      "reinfo_id": "PERU-MIN-100020",
+      "reinfo_status": "Vigente",
+      "cod_reference": "VUCE-ORIGIN-2026-20",
+      "standard_compliance": "DS Nº 014-92-EM",
+      "compliance_proof_hcs": "0.0.987654",
+      "audit_log_uri": "hcs://0.0.987654",
+      "last_regulatory_check": "2026-05-10T12:00:00Z",
+      "vuce_xml_hash": "sha256-abc123def456...",
+      "sunafil_payroll_verified": true,
+      "census_status": "Finalized",
+      "sinceramiento_timestamp": "2026-05-20T09:45:00Z",
+      "export_status": {
+        "is_exported": false,
+        "export_timestamp": null,
+        "export_permit_id": "VUCE-2026-EXP-220",
+        "current_location": "Peru - Pending Export"
+      },
+      "store_receipt_hash": "sha256-abc123def456...",
+      "sinceramiento_status": "Verified (Georeferenced)",
+      "inei_census_id": "INEI-2026-MAPE-8820",
+      "hcs_compliance_topic": "0.0.987654"
+    },
+    "files": [
+      {
+        "uri": "ipfs://QmSapphireFullResHash",
+        "type": "image/jpg",
+        "is_default_file": true,
+        "metadata": {
+          "description": "High-Resolution Master Image",
+          "resolution": "4000x3000",
+          "scan_method": "Macro Photography"
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "trait_type": "Stone Type",
+        "value": "Sapphire"
+      },
+      {
+        "trait_type": "HS Code",
+        "value": "7103.99.00.00"
+      },
+      {
+        "trait_type": "Weight",
+        "value": "30 carats"
+      },
+      {
+        "trait_type": "Grading",
+        "value": "Collector Grade"
+      },
+      {
+        "trait_type": "Date Mined",
+        "value": "2026-03-30"
+      },
+      {
+        "trait_type": "Stone Cut",
+        "value": "Emerald Cut"
+      },
+      {
+        "trait_type": "Artisan",
+        "value": "Artisan 20"
+      },
+      {
+        "trait_type": "Artisan Technique",
+        "value": "Wire Wrapping"
+      },
+      {
+        "trait_type": "Track",
+        "value": "Track A: Mine-to-Market"
+      },
+      {
+        "trait_type": "Mining Concession",
+        "value": "Peru-Sapphire-20"
+      },
+      {
+        "trait_type": "Legal Status",
+        "value": "Certified Origin & Artisan Transformation"
+      },
+      {
+        "trait_type": "Verification Level",
+        "value": "Full 2026 Compliance"
+      },
+      {
+        "trait_type": "Current Location",
+        "value": "Peru"
+      }
     ]
   }
 ]
