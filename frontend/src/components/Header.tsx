@@ -1,6 +1,7 @@
 import React from "react";
 
 const Header = () => {
+
   return (
     <header className="site-header">
       <div className="brand">
@@ -19,9 +20,13 @@ const Header = () => {
         </div>
       </div>
       <nav className="quick-actions">
-         <button className="browse-btn">Browse Collection</button>
-         <button className="browse-btn">About</button>
-       </nav>
+        <a href="/collection" className="browse-btn">
+          Browse Collection
+        </a>
+        <a href="/about" className="browse-btn">
+          About
+        </a>
+      </nav>
     </header>
   );
 };

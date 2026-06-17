@@ -1,10 +1,10 @@
 // src/components/StoneModal.tsx
 import React from 'react';
-import { Item } from '../types/stone';
+import { Rumi } from '../types/rumi';
 
 interface StoneModalProps {
-  open: Item | null;
-  setOpen: (item: Item | null) => void;
+  open: Rumi | null;
+  setOpen: (item: Rumi  | null) => void;
 }
 
 const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {

@@ -1,11 +1,11 @@
 // src/components/Marketplace.tsx
 import React from 'react';
 import MarketplaceCard from './MarketplaceCard';
-import { Item } from '../types/stone';
+import { Rumi } from '../types/rumi';
 
 interface MarketplaceProps {
-  items: Item[];
-  setOpen: (item: Item) => void;
+  items: Rumi[];
+  setOpen: (item: Rumi) => void;
 }
 
 const Marketplace: React.FC<MarketplaceProps> = ({ items, setOpen }) => (

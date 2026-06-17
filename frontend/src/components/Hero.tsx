@@ -1,49 +1,57 @@
 // src/components/Hero.tsx
-import React from "react";
-import { Item } from "../types/stone";
+import React, { useState } from "react";
+import { Rumi } from "../types/rumi";
+import { RumiFacade } from "../data/RumiFacade";
+import StoneModal from "./StoneModal";
 
-interface HeroProps {
-  items: Item[];
-  setOpen: React.Dispatch<React.SetStateAction<Item | null>>;
-}
+const Hero = () => {
+  // Local state for modal
+  const [open, setOpen] = useState<Rumi | null>(null);
 
-const Hero = ({ items, setOpen }: HeroProps) => {
-  // Take the first 3 items as featured Rumis
-  const featured = items.slice(0, 3);
+  // Hero fetches its own featured Rumis via the facade
+  const featured = RumiFacade.fromJSON().getFeatured(3);
 
   return (
     <section className="hero">
       <div className="hero-description">
         <p>
-          Discover artisan‑crafted stones with verified provenance and
+          Discover artisan‑crafted minerals with verified provenance and
           transparent compliance.
         </p>
       </div>
+
       <div className="hero-grid">
-        {featured.map((stone, idx) => (
-          <div key={idx} className="hero-card">
+        {featured.map((rumi) => (
+          <div key={rumi.properties.stone_id} className="hero-card">
             <div className="hero-image">🪨</div>
             <div className="hero-info">
-              <h3>{stone?.name || "Featured stone"}</h3>
+              <h3>{rumi.name}</h3>
               <p>
-                Origin: {stone?.properties.mining_concession || "—"} · Artisan:{" "}
-                {stone?.attributes.find((a) => a.trait_type === "Artisan")
-                  ?.value || "—"}{" "}
+                Origin: {rumi.properties.jurisdiction} · Artisan:{" "}
+                {rumi.attributes.find((a) => a.trait_type === "Artisan")?.value}
                 · Cut:{" "}
-                {stone?.attributes.find((a) => a.trait_type === "Stone Cut")
-                  ?.value || "—"}
+                {
+                  rumi.attributes.find((a) => a.trait_type === "Stone Cut")
+                    ?.value
+                }
               </p>
               <div className="hero-actions">
-                <button onClick={() => setOpen(stone)}>View Stone</button>
+                <button onClick={() => setOpen(rumi)}>View Rumi</button>
                 <button>Buy with RUMI</button>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <div className="hero-cta">
-        <button className="browse-btn">Browse Collection</button>
-      </div>
+
+      {/* Shared StoneModal, controlled locally */}
+      <StoneModal open={open} setOpen={setOpen} />
+
+      <section className="hero-cta">
+        <a href="/collection" className="browse-btn">
+          Browse Collection
+        </a>
+      </section>
     </section>
   );
 };

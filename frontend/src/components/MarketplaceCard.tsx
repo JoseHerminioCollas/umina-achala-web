@@ -1,10 +1,10 @@
 // src/components/MarketplaceCard.tsx
 import React from 'react';
-import { Item } from '../types/stone';
+import { Rumi } from '../types/rumi';
 
 interface MarketplaceCardProps {
-  item: Item;
-  onClick: (item: Item) => void;
+  item: Rumi;
+  onClick: (item: Rumi) => void;
 }
 
 const MarketplaceCard: React.FC<MarketplaceCardProps> = ({ item, onClick }) => {

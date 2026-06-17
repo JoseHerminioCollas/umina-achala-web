@@ -1,5 +1,5 @@
 // src/utils/filterItems.ts
-import { Item } from "../types/stone";
+import { Rumi } from "../types/rumi";
 
 export type FiltersState = {
   types: string[];
@@ -13,7 +13,7 @@ export type FiltersState = {
 };
 
 
-export function filterItems(items: Item[], filters: FiltersState): Item[] {
+export function filterItems(items: Rumi[], filters: FiltersState): Rumi[] {
   return items.filter((i) => {
     if (
       filters.type &&
