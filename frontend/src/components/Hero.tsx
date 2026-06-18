@@ -48,8 +48,8 @@ const Hero = () => {
       <StoneModal open={open} setOpen={setOpen} />
 
       <section className="hero-cta">
-        <a href="/collection" className="browse-btn">
-          Browse Collection
+        <a href="/marketplace" className="browse-btn">
+          Browse Marketplace
         </a>
       </section>
     </section>
