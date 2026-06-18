@@ -8,16 +8,17 @@ interface MarketplaceCardProps {
 }
 
 const MarketplaceCard: React.FC<MarketplaceCardProps> = ({ item, onClick }) => {
-  const artisan = item.attributes.find((a) => a.trait_type === "Artisan")?.value;
   const cut = item.attributes.find((a) => a.trait_type === "Stone Cut")?.value;
+  const type = item.attributes.find((a) => a.trait_type === "Stone Type")?.value;
+  const mountedBy = item.attributes.find((a) => a.trait_type === "Mounted By")?.value;
 
   return (
     <div className="card" onClick={() => onClick(item)}>
       <div className="thumb">🪨</div>
       <div className="meta">
-        <strong>{item.properties.stone_id}</strong>
-        <div>{artisan}</div>
+        <strong>{type}</strong>
         <div className="badge">{cut}</div>
+        {mountedBy && <p className="mounted-by">Mounted by: {mountedBy}</p>}
       </div>
     </div>
   );

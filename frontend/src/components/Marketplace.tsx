@@ -20,23 +20,22 @@ const Marketplace: React.FC = () => {
       new Set(
         data.map(
           (i) =>
-            i.attributes.find((a) => a.trait_type === "Stone Type")?.value || ""
-        )
-      )
+            i.attributes.find((a) => a.trait_type === "Stone Type")?.value ||
+            "",
+        ),
+      ),
     ),
-    region: "",
-    regions: Array.from(new Set(data.map((i) => i.properties.mining_concession || ""))),
     cut: "",
     cuts: Array.from(
       new Set(
         data.map(
           (i) =>
-            i.attributes.find((a) => a.trait_type === "Stone Cut")?.value || ""
-        )
-      )
+            i.attributes.find((a) => a.trait_type === "Stone Cut")?.value ||
+            "No Cut",
+        ),
+      ),
     ),
     mounted: "",
-    q: "",
   });
 
   // Paging state
@@ -48,39 +47,48 @@ const Marketplace: React.FC = () => {
     if (
       filters.type &&
       !i.attributes.some(
-        (a) => a.trait_type === "Stone Type" && a.value === filters.type
+        (a) => a.trait_type === "Stone Type" && a.value === filters.type,
       )
     )
       return false;
-    if (filters.region && i.properties.mining_concession !== filters.region)
-      return false;
-    if (
-      filters.cut &&
-      !i.attributes.some(
-        (a) => a.trait_type === "Stone Cut" && a.value === filters.cut
-      )
-    )
-      return false;
+
+    if (filters.cut) {
+      if (filters.cut === "No Cut") {
+        // Match stones with no cut value
+        const hasCut = i.attributes.some(
+          (a) =>
+            a.trait_type === "Stone Cut" && a.value && a.value.trim() !== "",
+        );
+        if (hasCut) return false;
+      } else {
+        // Match stones with the selected cut
+        if (
+          !i.attributes.some(
+            (a) => a.trait_type === "Stone Cut" && a.value === filters.cut,
+          )
+        )
+          return false;
+      }
+    }
+
     if (
       filters.mounted === "true" &&
-      !i.attributes.some((a) => a.trait_type === "Artisan")
+      !i.attributes.some(
+        (a) =>
+          a.trait_type === "Mounted By" && a.value && a.value.trim() !== "",
+      )
     )
       return false;
+
     if (
       filters.mounted === "false" &&
-      i.attributes.some((a) => a.trait_type === "Artisan")
+      i.attributes.some(
+        (a) =>
+          a.trait_type === "Mounted By" && a.value && a.value.trim() !== "",
+      )
     )
       return false;
-    if (filters.q) {
-      const hay = (
-        i.properties.stone_id +
-        " " +
-        (i.attributes.find((a) => a.trait_type === "Artisan")?.value || "") +
-        " " +
-        (i.properties.vendor_ruc || "")
-      ).toLowerCase();
-      if (!hay.includes(filters.q.toLowerCase())) return false;
-    }
+
     return true;
   });
 
@@ -115,17 +123,22 @@ const Marketplace: React.FC = () => {
                 Previous
               </button>
               <div className={styles.pageNumbers}>
-                {Array.from({ length: totalPages }, (_, idx) => idx + 1).map((num) => (
-                  <button
-                    key={num}
-                    className={num === page ? styles.activePage : ""}
-                    onClick={() => setPage(num)}
-                  >
-                    {num}
-                  </button>
-                ))}
+                {Array.from({ length: totalPages }, (_, idx) => idx + 1).map(
+                  (num) => (
+                    <button
+                      key={num}
+                      className={num === page ? styles.activePage : ""}
+                      onClick={() => setPage(num)}
+                    >
+                      {num}
+                    </button>
+                  ),
+                )}
               </div>
-              <button disabled={page === totalPages} onClick={() => setPage(page + 1)}>
+              <button
+                disabled={page === totalPages}
+                onClick={() => setPage(page + 1)}
+              >
                 Next
               </button>
             </div>

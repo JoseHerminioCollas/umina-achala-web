@@ -1,5 +1,5 @@
 // src/components/Filters.tsx
-import React from 'react';
+import React from "react";
 
 interface FiltersProps {
   filters: {
@@ -18,48 +18,44 @@ interface FiltersProps {
 const Filters: React.FC<FiltersProps> = ({ filters, setFilters }) => (
   <section className="filters">
     <label>
-      Type:{' '}
+      Type:{" "}
       <select
         value={filters.type}
         onChange={(e) => setFilters({ ...filters, type: e.target.value })}
       >
         <option value="">All</option>
         {filters.types.map((t) => (
-          <option key={t} value={t}>{t}</option>
+          <option key={t} value={t}>
+            {t}
+          </option>
         ))}
       </select>
     </label>
-
     <label>
-      Cut:{' '}
+      Cut:{" "}
       <select
         value={filters.cut}
         onChange={(e) => setFilters({ ...filters, cut: e.target.value })}
       >
         <option value="">All</option>
         {filters.cuts.map((c) => (
-          <option key={c} value={c}>{c}</option>
+          <option key={c} value={c}>
+            {c}
+          </option>
         ))}
       </select>
     </label>
-
     <label>
-      Mounted:{' '}
+      Mounted:{" "}
       <select
         value={filters.mounted}
         onChange={(e) => setFilters({ ...filters, mounted: e.target.value })}
       >
-        <option value="">Any</option>
+        <option value="">All</option>
         <option value="true">Mounted</option>
         <option value="false">Unmounted</option>
       </select>
     </label>
-
-    <input
-      placeholder="Search by stone id, artisan or miner"
-      value={filters.q}
-      onChange={(e) => setFilters({ ...filters, q: e.target.value })}
-    />
   </section>
 );
 
