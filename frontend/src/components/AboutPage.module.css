@@ -1,0 +1,48 @@
+.aboutPage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.logoWrapper {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 120px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.section h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.section ul,
+.section ol {
+  margin-left: 1.5rem;
+}

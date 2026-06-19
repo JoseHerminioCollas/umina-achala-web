@@ -4,8 +4,8 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Marketplace from "./components/Marketplace";
 import styles from "./App.module.css";
-// import AboutPage from "./pages/AboutPage";
-// import FAQsPage from "./pages/FAQsPage";
+import AboutPage from "./components/AboutPage";
+import FAQPage from "./components/FAQPage";
 // import PrivacyPage from "./pages/PrivacyPage";
 // import ContactPage from "./pages/ContactPage";
 // import MintPage from "./pages/MintPage";
@@ -19,9 +19,9 @@ function App(): JSX.Element {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/marketplace" element={<Marketplace />} />
-          {/* <Route path="/about" element={<AboutPage />} />
-          <Route path="/faqs" element={<FAQsPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/about" element={<AboutPage />} />
+           <Route path="/faqs" element={<FAQPage />} />
+          {/* <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/admin" element={<MintPage />} />
           <Route path="/compliance" element={<CompliancePage />} /> */}
