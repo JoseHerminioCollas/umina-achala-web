@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Marketplace from "./components/Marketplace";
+import styles from "./App.module.css";
 // import AboutPage from "./pages/AboutPage";
 // import FAQsPage from "./pages/FAQsPage";
 // import PrivacyPage from "./pages/PrivacyPage";
@@ -14,7 +15,7 @@ function App(): JSX.Element {
   return (
     <div>
       <Header />
-      <main className="container">
+      <main className={styles.container}>
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/marketplace" element={<Marketplace />} />

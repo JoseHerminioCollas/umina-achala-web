@@ -1,0 +1,103 @@
+.hero {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.heroDescription {
+  max-width: 600px;
+  margin: 1rem auto;
+  font-size: 1.1rem;
+  color: #444;
+  text-align: center;
+}
+
+.hero h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.heroCard {
+  background: #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 11px 12px 8px rgba(0, 0, 0, 0.5);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.heroCard:hover {
+  background: #fff;
+  box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.25);
+}
+
+.heroImage {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heroInfo h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.heroInfo p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.heroActions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.heroActions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #444; /* dark gray */
+  color: #fff;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.heroActions button:hover {
+  background: #000; /* black on hover */
+}
+
+.browseBtn {
+  background: #444;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.browseBtn:hover {
+  background: #666;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.heroCta {
+  margin-top: 2rem;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    flex-direction: column;
+  }
+  .heroImage {
+    width: 100%;
+    height: 100px;
+  }
+}

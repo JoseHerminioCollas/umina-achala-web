@@ -1,0 +1,39 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 8, 8, 0.45);
+}
+
+.modalContent {
+  background: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  max-width: 760px;
+  width: 96%;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.thumb {
+  height: 260px;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Rumi } from "../types/rumi";
 import { RumiFacade } from "../data/RumiFacade";
 import StoneModal from "./StoneModal";
+import styles from "./Hero.module.css";
 
 const Hero = () => {
   // Local state for modal
@@ -12,19 +13,19 @@ const Hero = () => {
   const featured = RumiFacade.fromJSON().getFeatured(3);
 
   return (
-    <section className="hero">
-      <div className="hero-description">
+    <section className={styles.hero}>
+      <div className={styles.heroDescription}>
         <p>
           Discover artisan‑crafted minerals with verified provenance and
           transparent compliance.
         </p>
       </div>
 
-      <div className="hero-grid">
+      <div className={styles.heroGrid}>
         {featured.map((rumi) => (
-          <div key={rumi.properties.stone_id} className="hero-card">
-            <div className="hero-image">🪨</div>
-            <div className="hero-info">
+          <div key={rumi.properties.stone_id} className={styles.heroCard}>
+            <div className={styles.heroImage}>🪨</div>
+            <div className={styles.heroInfo}>
               <h3>{rumi.name}</h3>
               <p>
                 Origin: {rumi.properties.jurisdiction} · Artisan:{" "}
@@ -35,7 +36,7 @@ const Hero = () => {
                     ?.value
                 }
               </p>
-              <div className="hero-actions">
+              <div className={styles.heroActions}>
                 <button onClick={() => setOpen(rumi)}>View Rumi</button>
                 <button>Buy with RUMI</button>
               </div>
@@ -47,8 +48,8 @@ const Hero = () => {
       {/* Shared StoneModal, controlled locally */}
       <StoneModal open={open} setOpen={setOpen} />
 
-      <section className="hero-cta">
-        <a href="/marketplace" className="browse-btn">
+      <section className={styles.heroCta}>
+        <a href="/marketplace" className={styles.browseBtn}>
           Browse Marketplace
         </a>
       </section>

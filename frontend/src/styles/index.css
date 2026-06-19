@@ -1,0 +1,23 @@
+:root {
+  --bg: #eee7e1;
+  --muted: #535353;
+  --accent: #000000;
+  --stone: #bfb8b0;
+  --card: #ffffff;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  margin: 0;
+  background: var(--bg);
+  color: #222;
+}
