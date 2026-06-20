@@ -13,45 +13,64 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {
 
   return (
     <div className={styles.modal} onClick={() => setOpen(null)}>
-      <div
-        className={styles.modalContent}
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <button className={styles.close} onClick={() => setOpen(null)}>
           ×
         </button>
 
-        <h2>
-          {open.properties.stone_id} — {open.name}
-        </h2>
+        <div className={styles.modalBody}>
+          <div className={styles.thumb}>🪨</div>
+          <div>
+            <h2>
+              {
+                open.attributes.find((a) => a.trait_type === "Stone Type")
+                  ?.value
+              }
+            </h2>
+            <div className={styles.attributeList}>
+              <dl>
+                {open.attributes
+                  .filter(
+                    (attr) =>
+                      attr.trait_type !== "HS Code" &&
+                      attr.value !== "" &&
+                      attr.trait_type !== "Stone Type",
+                  )
+                  .map((attr) => (
+                    <div className={styles.traitType} key={attr.trait_type}>
+                      <dt>{attr.trait_type}</dt>
+                      <dd>{attr.value}</dd>
+                    </div>
+                  ))}
+              </dl>
+            </div>
+            <div className={styles.hashscanLinks}>
+              {/* Minted token link (only if tokenId + serialNumber exist) */}
+              {open.tokenId && open.serialNumber && (
+                <p>
+                  <a
+                    href={`https://hashscan.io/mainnet/token/${open.tokenId}/nft/${open.serialNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Minted Token on HashScan
+                  </a>
+                </p>
+              )}
 
-        <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-          <div style={{ flex: 1, minWidth: 240 }}>
-            <div className={styles.thumb}>🪨</div>
-          </div>
-
-          <div style={{ flex: 1, minWidth: 260 }}>
-            <h3>Metadata</h3>
-            <pre
-              style={{
-                whiteSpace: "pre-wrap",
-                maxHeight: 240,
-                overflow: "auto",
-              }}
-            >
-              {JSON.stringify(open.properties, null, 2)}
-            </pre>
-
-            <p>
-              <strong>Compliance HCS:</strong>{" "}
-              {open.properties.hcs_compliance_topic ||
-                open.properties.compliance_proof_hcs ||
-                "—"}
-            </p>
-
-            <p>
-              <a href="#">Download Compliance Certificate (PDF)</a>
-            </p>
+              {/* Compliance HCS link (from hcs_compliance_topic) */}
+              {open.properties.hcs_compliance_topic && (
+                <p>
+                  <a
+                    href={`https://hashscan.io/mainnet/topic/${open.properties.hcs_compliance_topic}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Compliance HCS Topic
+                  </a>
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>

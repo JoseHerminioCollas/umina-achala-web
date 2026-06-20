@@ -15,7 +15,11 @@
   width: 96%;
   position: relative;
 }
-
+.modalBody {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
 .hidden {
   display: none;
 }
@@ -31,9 +35,69 @@
 }
 
 .thumb {
+  flex: 1;
+  min-width: 240px;
   height: 260px;
   font-size: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.attributeList {
+  padding: 0;
+  margin: 0;
+  white-space: pre-wrap;
+  max-height: 260px;
+  overflow: auto;
+  flex: 1;
+  min-width: 260px;
+}
+.traitType {
+  margin-bottom: 0.25em;
+}
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+dt,
+dd {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+dt {
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+dd::after {
+  content: "";
+}
+
+.hashscanLinks {
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+.hashscanLinks p {
+  margin: 0.5em 0;
+  text-align: right;
+}
+
+.hashscanLinks a {
+  display: inline-block;
+  padding: 8px 14px;
+  background-color: #007bff; /* primary blue */
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.hashscanLinks a:hover {
+  background-color: #0056b3; /* darker blue on hover */
 }
