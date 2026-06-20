@@ -1,28 +1,27 @@
 <p align="center">
-  <img src="art/logo.svg" alt="Rumi Logo" width="120" />
+  <img src="art/logo.svg" alt="Umiña Achala Logo" width="120" />
 </p>
 
-# Rumi  
-**Automating compliance, illuminating provenance, recognizing artisans.**  
+# Umiña Achala  
+**Stones and jewelry from Peru — immutable records, authentic origins.**
 
 [Versión en Español](README.es.md)
 
-Tokenized gems, semi‑precious stones and minerals of Peru — Provenance, Compliance, and Artisan Recognition on Hedera.
+Tokenized gems, semi‑precious stones, minerals, and jewelry of Peru — Provenance, Compliance, and Artisan Recognition on Hedera.
 
-The word **“Rumi”** is Quechua (the language of the Inca Empire) for *stone*.  
-Rumi represents the tokenization of stones and minerals from Peru, blending cultural heritage with modern technology.
+In Quechua, **Umiña** means a single precious stone, while **Achala** means jewelry crafted from many stones.  
+Together, *Umiña Achala* symbolizes the union of raw mineral provenance and artisan creation — recorded immutably, shared transparently, and trusted globally.
 
 ## ⚖️ Compliance
-Establishing stones and minerals as **Real World Assets (RWAs)** ensures their provenance information is immutable and verifiable.  
+Establishing stones, minerals, and jewelry as **Real World Assets (RWAs)** ensures their provenance information is immutable and verifiable.  
 
-Peruvian law requires that the origin of any stone or mineral be legally sourced and documented. By placing stones and minerals on the blockchain, Rumi ensures compliance with this requirement. Each tokenized stone or mineral establishes its uniqueness and source, giving buyers confidence in how and where the stone or mineral was sourced.  
+Peruvian law requires that the origin of any stone or mineral be legally sourced and documented. By placing them on the blockchain, Umiña Achala ensures compliance with this requirement. Each tokenized asset establishes its uniqueness and source, giving buyers confidence in how and where it was sourced.
 
 ## 💻 Online Platform
+An online marketplace displaying Umiña Achala stones and jewelry improves visibility and increases the potential for sales. Buyers can connect their digital wallets to the platform and purchase NFTs directly using supported cryptocurrencies. Each transaction is recorded on Hedera, ensuring compliance, provenance, and transparent routing of payments to artisans and treasury accounts.
 
-An online platform displaying Rumi stones and minerals improves visibility and increases the potential for sales. Buyers can connect their digital wallets to the platform and purchase Rumi NFTs directly, using supported cryptocurrencies. Each transaction is recorded on Hedera, ensuring compliance, provenance, and transparent routing of payments to artisans and treasury accounts.
-
-## ✨ Mounted Stones & Stone Cuts
-Rumi also recognizes the artistry of how stones and minerals are presented. Many gems are mounted in handcrafted settings and cut in specific ways that add cultural and artistic value. Rumi NFTs capture these details by embedding mount and cut information directly into metadata.
+## ✨ Mounted Stones & Artisan Cuts
+Umiña Achala recognizes the artistry of how stones and minerals are presented. Many gems are mounted in handcrafted settings and cut in specific ways that add cultural and artistic value. NFTs capture these details by embedding mount and cut information directly into metadata.
 
 - **Mount Type:** Silver bezel, gold prong, textile wrap, etc.  
 - **Artisan Recognition:** Name or ID of the craftsman.  
@@ -31,68 +30,71 @@ Rumi also recognizes the artistry of how stones and minerals are presented. Many
 - **Certification:** Optional fair trade or sustainability certifications.  
 - **Visual Proof:** Images or 3D scans of the mounted and cut stones and minerals.  
 
-This ensures buyers appreciate both the stones or minerals’ provenance and the artistry of their mount and cut.
+This ensures buyers appreciate both the provenance and the artistry of each piece.
 
 ## ♻️ Lifecycle
-1. **Minting**: Rumi NFT minted.
-   - **NFT Minting**: A single Rumi stone or mineral NFT is created using Hedera Token Service (HTS).
-   - **Metadata Anchoring**: The NFT embeds provenance details (Concession ID, REINFO, Vendor RUC) tied directly to the stone or mineral.
+1. **Minting**: Umiña Achala NFT minted.  
+   - **NFT Minting**: A single stone, mineral, or jewelry NFT is created using Hedera Token Service (HTS).  
+   - **Metadata Anchoring**: The NFT embeds provenance details (Concession ID, REINFO, Vendor RUC) tied directly to the asset.  
 
-     - **Concession ID (INGEMMET)**: Unique identifier of the mining concession where the stone or mineral was legally extracted. Establishes the origin and legality of extraction under Peruvian law.  
-     - **REINFO ID**: Registration number in the national registry of formalized artisanal miners. Confirms that the mine and miner are recognized and compliant with formalization requirements.  
-     - **Vendor RUC (SUNAT)**: Tax ID of the company or store selling the stone or mineral. Provides commercial legitimacy by linking the seller to Peru’s tax authority.  
+     - **Concession ID (INGEMMET)**: Unique identifier of the mining concession where the stone or mineral was legally extracted.  
+     - **REINFO ID**: Registration number in the national registry of formalized artisanal miners.  
+     - **Vendor RUC (SUNAT)**: Tax ID of the company or store selling the stone or mineral.  
 
-   - **Consensus Notarization**: The minting event is notarized on Hedera Consensus Service (HCS), establishing immutable proof of origin.  
-   - **Compliance Foundation**: This minting record forms the verifiable digital identity of the stone or mineral, enabling traceability across later lifecycle events.  
+   - **Consensus Notarization**: The minting event is notarized on Hedera Consensus Service (HCS).  
+   - **Compliance Foundation**: This minting record forms the verifiable digital identity of the asset.  
 
-2. **Mounting, Cutting Event**: Artisan RNA and mount type recorded, Hedera Consensus Service (HCS) notarization created.  
-3. **Sales Event**: Royalties routed to artisan and treasury accounts. Hedera Consensus Service (HCS) notarization created.  
-4. **Export Event**: The stone or mineral NFT is linked to its VUCE COD and HS Code, with compliance proof securely anchored through Hedera Consensus Service (HCS) notarization.
+2. **Mounting / Cutting Event**: Artisan RNA and mount type recorded, notarized on HCS.  
+3. **Sales Event**: Royalties routed to artisan and treasury accounts, notarized on HCS.  
+4. **Export Event**: NFT linked to VUCE COD and HS Code, compliance proof anchored on HCS.
+
+## 🔀 Differentiation & Synergy
+
+- **Umiña = Stone or mineral (single provenance unit, raw or mounted).**  
+  Each Umiña NFT represents one legally sourced stone or mineral, immutably recorded with its concession ID, REINFO miner registration, and vendor RUC.  
+  Umiña can be a raw specimen or a mounted stone — the atomic unit of provenance that captures compliance and authenticity, even when artistry is already applied.
+
+- **Achala = Jewelry (composite artisanal product).**  
+  Each Achala NFT references multiple Umiña IDs, preserving the full provenance trail of every constituent stone.  
+
+## 🤝 Why Two Tokens?
+
+- **Clarity of scope:** Umiña covers both raw minerals and mounted stones as single provenance units. Achala covers composite jewelry made from multiple Umiña stones.  
+- **Compliance integrity:** Peruvian law distinguishes raw minerals from finished jewelry. Two tokens ensure each category meets its own regulatory requirements.  
+- **Artisan recognition:** Umiña highlights miners, concessions, and even individual mounts; Achala highlights artisans who combine stones into jewelry. Together, they ensure all contributors are recognized.  
+- **Market flexibility:** Buyers may want a single provenance stone (raw or mounted Umiña) or a finished jewelry piece (Achala). Two tokens allow both markets to coexist and interlink.
+
+## 🔗 Working Together
+
+- **Umiña feeds Achala:** Every Achala NFT references one or more Umiña NFTs, ensuring jewelry inherits the compliance and provenance of its stones — whether raw or mounted.  
+- **Achala amplifies Umiña:** By embedding Umiña stones into jewelry, Achala adds cultural storytelling and artisan value, expanding the market reach.  
+- **Unified ecosystem:** Together, Umiña and Achala form a dual‑token system where provenance and artistry are inseparable — immutable records for stones (raw or mounted), authentic origins for jewelry.
 
 ## 🌟 Future Vision
 
-## Rumi Coin
-
-Rumi Coin (RUMI) will evolve into the native currency of the ecosystem.  
-- Used to buy and sell Rumi NFTs.  
-- Rewards miners/artisans for tokenizing stones and minerals.  
-- Enables fractional ownership of high‑value gems.  
+### Umiña Achala Coin (UMA)
+UMA will evolve into the native currency of the ecosystem.  
+- Used to buy and sell Umiña Achala NFTs.  
+- Rewards miners and artisans for tokenizing stones and jewelry.  
+- Enables fractional ownership of high‑value pieces.  
 - Paired with USDC in liquidity pools to establish real cash value.  
 
-## Achala
-
-### Concept
-Achala will be the **jewelry counterpart to Rumi**, representing composite artisanal creations that combine multiple stones and minerals into culturally significant pieces. While Rumi certifies the provenance of individual stone or mineral, Achala elevates them into **artisanal jewelry**, blending heritage, craftsmanship, and compliance.
-
-### Core Principles
-- **Artisan-Centric**: Every Achala NFT requires a valid `artisan_rna`, ensuring recognition of the artisan’s role and compliance with Peruvian law.  
-- **Composite Provenance**: Achala NFTs reference multiple Rumi stone IDs, preserving the full provenance trail of each constituent stone or mineral.  
-- **Cultural Storytelling**: Metadata captures mount type, artisan techniques, and artistic narratives, anchoring jewelry in Peru’s cultural identity.  
-- **Compliance Anchoring**: Export events, HS Codes, and VUCE CODs are logged in Hedera Consensus Service, ensuring customs-ready transparency.  
-
-### Differentiation
-- **Rumi** = Stone or mineral (single provenance unit).  
-- **Achala** = Jewelry (composite artisanal products).  
-
-### Vision
-Achala will position Peruvian jewelry as **globally verifiable cultural assets**, combining blockchain transparency with artisanal heritage. It will empower artisans, protect provenance, and create new markets where buyers can trust both the stone or mineral’s origin and the artisan’s craft.
-
 ## 📚 Documentation
-- [Mining Export Documentation](rumi-documents/mining-export.md) Guide to exporting mining data, covering workflow steps, compliance notes, and integration details.
-- [Buyer’s Checklist](rumi-documents/buyer_checklist.md) — Practical guide for buyers, covering compliance and purchase steps.  
-- [Compliance](rumi-documents/compliance.md) — Export rules, customs procedures, and regulatory references.  
-- [Governance](rumi-documents/governance.md) — Project governance phases, including boutique shop ownership and oversight.  
-- [Legal Disclaimer](rumi-documents/legal_disclaimer.md) — Legal boundaries and liability notes for Rumi.  
-- [Metadata](rumi-documents/metadata.md) — Structure and standards for specimen metadata in tokens.  
-- [Mint NFT Token](rumi-documents/mint-nft-token.md) — Step‑by‑step minting process for Rumi specimens.  
-- [Create NFT Token](rumi-documents/create-nft-token.md) — Contract creation and deployment instructions.  
-- [Rumi Specimens HS Codes](rumi-documents/rumi_specimens_hs_codes.md) — Catalog of gemstones, minerals, ornamental stones, and HS Codes.  
-- [Risk Mitigation](rumi-documents/risk-mitigation.md) — Strategies for compliance, fraud prevention, and export risk management.  
-- [Terms](rumi-documents/terms.md) — Terms of use and participation in the Rumi ecosystem.  
-- [User Interface](rumi-documents/user_interface.md) — Detailed description of the Rumi application interface, marketplace, compliance dashboard, and stone cut attributes.  
-- [Future Vision](rumi-documents/future-vision.md) — Long‑term roadmap and expansion concepts.  
-- [Reference](rumi-documents/reference.md) — Supporting references and background materials.  
+- [Mining Export Documentation](rumi-documents/mining-export.md) — Workflow steps, compliance notes, and integration details.  
+- [Buyer’s Checklist](rumi-documents/buyer_checklist.md) — Practical guide for buyers.  
+- [Compliance](rumi-documents/compliance.md) — Export rules and regulatory references.  
+- [Governance](rumi-documents/governance.md) — Oversight and boutique ownership.  
+- [Legal Disclaimer](rumi-documents/legal_disclaimer.md) — Liability notes.  
+- [Metadata](rumi-documents/metadata.md) — Token metadata standards.  
+- [Mint NFT Token](rumi-documents/mint-nft-token.md) — Step‑by‑step minting process.  
+- [Create NFT Token](rumi-documents/create-nft-token.md) — Contract creation instructions.  
+- [Specimens HS Codes](rumi-documents/rumi_specimens_hs_codes.md) — Gemstone and mineral catalog.  
+- [Risk Mitigation](rumi-documents/risk-mitigation.md) — Compliance and fraud prevention.  
+- [Terms](rumi-documents/terms.md) — Participation terms.  
+- [User Interface](rumi-documents/user_interface.md) — Marketplace and dashboard overview.  
+- [Future Vision](rumi-documents/future-vision.md) — Long‑term roadmap.  
+- [Reference](rumi-documents/reference.md) — Supporting materials.  
 
 **Relevant References:**  
-- Ley General de Minería (DS Nº 014-92-EM)   ([ Ley General de Minería](https://wimperu.org/publicaciones/texto-unico-ordenado-de-la-ley-general-de-mineria/)) — Peru’s General Mining Law  
-- [Exportemos Portal (PROMPERÚ)](https://www.exportemos.pe) — Official portal for Peruvian exports  
+- Ley General de Minería (DS Nº 014-92-EM) — Peru’s General Mining Law  
+- [Exportemos Portal (PROMPERÚ)](https://www.exportemos.pe) — Official portal for Peruvian exports
