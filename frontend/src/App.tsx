@@ -9,7 +9,7 @@ import FAQ from "./components/FAQ";
 import Privacy from "./components/Privacy";
 import Contact from "./components/Contact";
 import AdminNFT from "./components/AdminNFT";
-// import CompliancePage from "./pages/CompliancePage";
+import ComplianceDashboard from "./components/ComplianceDashboard";
 
 function App(): JSX.Element {
   return (
@@ -24,7 +24,7 @@ function App(): JSX.Element {
           <Route path="/privacy" element={<Privacy />} />
            <Route path="/contact" element={<Contact />} />
            <Route path="/admin" element={<AdminNFT />} />
-          {/*<Route path="/compliance" element={<CompliancePage />} /> */}
+          <Route path="/compliance" element={<ComplianceDashboard />} />
         </Routes>
         <Footer />
       </main>
