@@ -1,8 +1,8 @@
 /* Contact.module.css */
 .contact {
-  padding: 0.5rem 2rem;
+  padding: 2rem;
   width: 80%;
-  background: #999;
+  background: #aaa;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -55,5 +55,6 @@
 }
 
 .button:hover {
-  background: var(--accent-hover);
+  color: #000;
+  background: #fff;
 }
