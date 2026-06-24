@@ -40,7 +40,18 @@
     "wallet": "🔐 Integración de Billetera",
     "walletItems": ["Los usuarios conectan <strong>carteras compatibles con Hedera</strong> para autenticarse y realizar transacciones.", "Las billeteras permiten la adquisición segura de <strong>Umiña (NFTs de piedras)</strong> y <strong>Achala (NFTs de joyería)</strong>."],
     "provenance": "📜 Explorador de Procedencia",
-    "provenanceItems": ["Cada NFT incluye <strong>metadatos</strong>: ID de concesión, ID REINFO, RNA del artesano y RUC del vendedor.", "Los compradores pueden rastrear el <strong>origen de las piedras</strong> y la <strong>artesanía de la joyería</strong>.", "Los registros de procedencia son inmutables y verificables en cadena."]
+    "provenanceItems": ["Cada NFT incluye <strong>metadatos</strong>: ID de concesión, ID REINFO, RNA del artesano y RUC del vendedor.", "Los compradores pueden rastrear el <strong>origen de las piedras</strong> y la <strong>artesanía de la joyería</strong>.", "Los registros de procedencia son inmutables y verificables en cadena."],
+    "marketplace": "🛒 Características del Mercado",
+    "marketplaceItems": ["<strong>Listados NFT</strong>: Piedras (Umiña) y joyería (Achala) se muestran con datos de cumplimiento.", "<strong>Creaciones Compuestas</strong>: Anillos, colgantes y adornos tejidos se exhiben con reconocimiento al artesano."],
+    "complianceDashboard": "📊 Panel de Cumplimiento",
+    "complianceDashboardItems": ["Muestra IDs vinculados (INGEMMET, SUNAT, RNA).", "Proporciona <strong>preparación para exportación</strong> con integración VUCE COD y HS Code.", "Garantiza que cada transacción cumpla con los estándares regulatorios."],
+    "community": "🌐 Acceso Comunitario",
+    "communityItems": ["Los coleccionistas exploran la artesanía cultural mientras apoyan a los artesanos.", "Los artesanos obtienen visibilidad y reconocimiento a través de perfiles verificados.", "Revisores de cumplimiento y compradores interactúan en un ecosistema transparente."],
+    "artistry": "✨ Artesanía",
+    "artistryDesc": "Umiña Achala enfatiza la artesanía compuesta, combinando piedras con técnicas tradicionales y modernas.",
+    "artistryItems": ["Tipo de Montaje: Bisel de plata, garra de oro, envoltura textil", "Reconocimiento del Artesano: Nombre o ID del artesano", "Técnica: Filigrana, incrustación, tallado, tejido", "Creaciones Compuestas: Anillos, colgantes, pulseras, adornos tejidos"],
+    "lifecycle": "♻️ Ciclo de Vida",
+    "lifecycleItems": ["Acuñación: Creación de NFT con metadatos de procedencia", "Montaje/Corte: RNA del artesano notariado", "Ventas: Regalías dirigidas al artesano y al tesoro", "Exportación: Vinculado a VUCE COD y HS Code", "Transformación de Joyas: Piedras elevadas a piezas Achala"]
   },
   "faq": {
     "title": "Preguntas Frecuentes",
@@ -64,7 +75,8 @@
     "name": "Nombre",
     "email": "Correo",
     "message": "Mensaje",
-    "send": "Enviar"
+    "send": "Enviar",
+    "alert": "El formulario de contacto es solo una demostración."
   },
   "marketplace": {
     "noResults": "Ninguna piedra coincide con tus filtros. Intenta ajustar tu búsqueda."
@@ -108,7 +120,8 @@
     "title": "Acceso Admin NFT",
     "username": "Usuario",
     "password": "Contraseña",
-    "logIn": "Iniciar Sesión"
+    "logIn": "Iniciar Sesión",
+    "alert": "El inicio de sesión de administrador es solo una demostración."
   },
   "modal": {
     "viewHashscan": "Ver Token Acuñado en HashScan",

@@ -29,7 +29,7 @@ const AboutPage = () => {
         <h2>{t("about.compliance")}</h2>
         <p dangerouslySetInnerHTML={{ __html: t("about.complianceDesc") }} />
         <ul>
-          {t("about.complianceItems", { returnObjects: true }).map((item, i) => (
+          {(t("about.complianceItems", { returnObjects: true }) as string[]  ).map((item, i) => (
             <li key={i}>{item}</li>
           ))}
         </ul>
@@ -43,7 +43,7 @@ const AboutPage = () => {
         <div className={styles.subSection}>
           <h3>{t("about.wallet")}</h3>
           <ul>
-            {t("about.walletItems", { returnObjects: true }).map((item, i) => (
+            {(t("about.walletItems", { returnObjects: true }) as string[]).map((item, i) => (
               <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
             ))}
           </ul>
@@ -52,80 +52,56 @@ const AboutPage = () => {
         <div className={styles.subSection}>
           <h3>{t("about.provenance")}</h3>
           <ul>
-            {t("about.provenanceItems", { returnObjects: true }).map((item, i) => (
+            {(t("about.provenanceItems", { returnObjects: true }) as string[]).map((item, i) => (
               <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
             ))}
           </ul>
         </div>
 
         <div className={styles.subSection}>
-          <h3>🛒 Marketplace Features</h3>
+          <h3>{t("about.marketplace")}</h3>
           <ul>
-            <li>
-              <strong>NFT Listings</strong>: Stones (Umina) and jewelry (Achala)
-              are displayed with compliance data.
-            </li>
-            <li>
-              <strong>Composite Creations</strong>: Rings, pendants, and woven
-              adornments are showcased with artisan recognition.
-            </li>
+            {(t("about.marketplaceItems", { returnObjects: true }) as string[]).map((item, i) => (
+              <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
+            ))}
           </ul>
         </div>
 
         <div className={styles.subSection}>
-          <h3>📊 Compliance Dashboard</h3>
+          <h3>{t("about.complianceDashboard")}</h3>
           <ul>
-            <li>Displays linked IDs (INGEMMET, SUNAT, RNA).</li>
-            <li>
-              Provides <strong>export readiness</strong> with VUCE COD and HS
-              Code integration.
-            </li>
-            <li>Ensures every transaction meets regulatory standards.</li>
+            {(t("about.complianceDashboardItems", { returnObjects: true }) as string[]).map((item, i) => (
+              <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
+            ))}
           </ul>
         </div>
 
         <div className={styles.subSection}>
-          <h3>🌐 Community Access</h3>
+          <h3>{t("about.community")}</h3>
           <ul>
-            <li>
-              Collectors explore cultural artistry while supporting artisans.
-            </li>
-            <li>
-              Artisans gain visibility and recognition through verified
-              profiles.
-            </li>
-            <li>
-              Compliance reviewers and buyers interact in a transparent
-              ecosystem.
-            </li>
+            {(t("about.communityItems", { returnObjects: true }) as string[]).map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
           </ul>
         </div>
       </section>
 
       <section className={styles.section}>
-        <h2>✨ Artistry</h2>
-        <p>
-          Umina Achala emphasizes composite craftsmanship, blending stones with
-          traditional and modern techniques.
-        </p>
+        <h2>{t("about.artistry")}</h2>
+        <p>{t("about.artistryDesc")}</p>
         <ul>
-          <li>Mount Type: Silver bezel, gold prong, textile wrap</li>
-          <li>Artisan Recognition: Craftsman name or ID</li>
-          <li>Technique: Filigree, inlay, carving, weaving</li>
-          <li>
-            Composite Creations: Rings, pendants, bracelets, woven adornments
-          </li>
+          {(t("about.artistryItems", { returnObjects: true }) as string[]).map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
         </ul>
       </section>
 
       <section className={styles.section}>
-        <h2>♻️ Lifecycle</h2>
+        <h2>{t("about.lifecycle")}</h2>
         <ol>
-          <li>Minting: NFT creation with provenance metadata</li>
-          <li>Mounting/Cutting: Artisan RNA notarized</li>
-          <li>Sales: Royalties routed to artisan and treasury</li>
-          <li>Export: Linked to VUCE COD and HS Code</li>
-          <li>Jewelry Transformation: Stones elevated into Achala pieces</li>
+          {(t("about.lifecycleItems", { returnObjects: true }) as string[]).map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
         </ol>
       </section>
     </div>

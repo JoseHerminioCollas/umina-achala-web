@@ -1,6 +1,7 @@
 // src/components/Filters.tsx
 import React from "react";
 import styles from "./Filters.module.css";
+import { useTranslation } from "react-i18next";
 
 interface FiltersProps {
   filters: {
@@ -13,16 +14,18 @@ interface FiltersProps {
   setFilters: (filters: any) => void;
 }
 
-const Filters: React.FC<FiltersProps> = ({ filters, setFilters }) => (
-  <section className={styles.filters}>
-    <label className={styles.label}>
-      Type:
-      <select
-        className={styles.select}
-        value={filters.type}
-        onChange={(e) => setFilters({ ...filters, type: e.target.value })}
-      >
-        <option value="">All</option>
+const Filters: React.FC<FiltersProps> = ({ filters, setFilters }) => {
+  const { t } = useTranslation();
+  return (
+    <section className={styles.filters}>
+      <label className={styles.label}>
+        {t("filters.type")}
+        <select
+          className={styles.select}
+          value={filters.type}
+          onChange={(e) => setFilters({ ...filters, type: e.target.value })}
+        >
+          <option value="">{t("filters.all")}</option>
         {filters.types.map((t) => (
           <option key={t} value={t}>
             {t}
@@ -32,13 +35,13 @@ const Filters: React.FC<FiltersProps> = ({ filters, setFilters }) => (
     </label>
 
     <label className={styles.label}>
-      Cut:
+      {t("filters.cut")}
       <select
         className={styles.select}
         value={filters.cut}
         onChange={(e) => setFilters({ ...filters, cut: e.target.value })}
       >
-        <option value="">All</option>
+        <option value="">{t("filters.all")}</option>
         {filters.cuts.map((c) => (
           <option key={c} value={c}>
             {c}
@@ -48,18 +51,18 @@ const Filters: React.FC<FiltersProps> = ({ filters, setFilters }) => (
     </label>
 
     <label className={styles.label}>
-      Mounted:
+      {t("filters.mounted")}
       <select
         className={styles.select}
         value={filters.mounted}
         onChange={(e) => setFilters({ ...filters, mounted: e.target.value })}
       >
-        <option value="">All</option>
-        <option value="true">Mounted</option>
-        <option value="false">Unmounted</option>
+        <option value="">{t("filters.all")}</option>
+        <option value="true">{t("filters.mounted_yes")}</option>
+        <option value="false">{t("filters.mounted_no")}</option>
       </select>
     </label>
   </section>
-);
-
+  );
+};
 export default Filters;

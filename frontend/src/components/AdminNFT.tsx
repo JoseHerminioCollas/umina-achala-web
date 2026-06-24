@@ -14,7 +14,7 @@ const AdminNFT: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // TODO: integrate with backend auth (AWS Cognito, API Gateway + Lambda, etc.)
-    alert("Admin login is for demonstration only.");
+    alert(t("admin.alert"));
     console.log("Admin login submitted:", formData);
   };
 

@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // TODO: integrate with backend or email service (e.g., Formspree, Netlify Forms, custom API)
-    alert("Contact form is for demonstration only.");
+    alert(t("contact.alert"));
     console.log("Form submitted:", formData);
   };
 

@@ -40,7 +40,18 @@
     "wallet": "🔐 Wallet Integration",
     "walletItems": ["Users connect <strong>Hedera-compatible wallets</strong> to authenticate and transact.", "Wallets enable secure acquisition of <strong>Umina (stone NFTs)</strong> and <strong>Achala (jewelry NFTs)</strong>."],
     "provenance": "📜 Provenance Explorer",
-    "provenanceItems": ["Each NFT includes <strong>metadata</strong>: concession ID, REINFO ID, artisan RNA, and vendor RUC.", "Buyers can trace the <strong>origin of stones</strong> and the <strong>artisanship of jewelry</strong>.", "Provenance records are immutable and verifiable on-chain."]
+    "provenanceItems": ["Each NFT includes <strong>metadata</strong>: concession ID, REINFO ID, artisan RNA, and vendor RUC.", "Buyers can trace the <strong>origin of stones</strong> and the <strong>artisanship of jewelry</strong>.", "Provenance records are immutable and verifiable on-chain."],
+    "marketplace": "🛒 Marketplace Features",
+    "marketplaceItems": ["<strong>NFT Listings</strong>: Stones (Umina) and jewelry (Achala) are displayed with compliance data.", "<strong>Composite Creations</strong>: Rings, pendants, and woven adornments are showcased with artisan recognition."],
+    "complianceDashboard": "📊 Compliance Dashboard",
+    "complianceDashboardItems": ["Displays linked IDs (INGEMMET, SUNAT, RNA).", "Provides <strong>export readiness</strong> with VUCE COD and HS Code integration.", "Ensures every transaction meets regulatory standards."],
+    "community": "🌐 Community Access",
+    "communityItems": ["Collectors explore cultural artistry while supporting artisans.", "Artisans gain visibility and recognition through verified profiles.", "Compliance reviewers and buyers interact in a transparent ecosystem."],
+    "artistry": "✨ Artistry",
+    "artistryDesc": "Umina Achala emphasizes composite craftsmanship, blending stones with traditional and modern techniques.",
+    "artistryItems": ["Mount Type: Silver bezel, gold prong, textile wrap", "Artisan Recognition: Craftsman name or ID", "Technique: Filigree, inlay, carving, weaving", "Composite Creations: Rings, pendants, bracelets, woven adornments"],
+    "lifecycle": "♻️ Lifecycle",
+    "lifecycleItems": ["Minting: NFT creation with provenance metadata", "Mounting/Cutting: Artisan RNA notarized", "Sales: Royalties routed to artisan and treasury", "Export: Linked to VUCE COD and HS Code", "Jewelry Transformation: Stones elevated into Achala pieces"]
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -64,7 +75,8 @@
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "send": "Send"
+    "send": "Send",
+    "alert": "Contact form is for demonstration only."
   },
   "marketplace": {
     "noResults": "No stones match your filters. Try adjusting your search."
@@ -108,7 +120,8 @@
     "title": "Administer NFT Login",
     "username": "Username",
     "password": "Password",
-    "logIn": "Log In"
+    "logIn": "Log In",
+    "alert": "Admin login is for demonstration only."
   },
   "modal": {
     "viewHashscan": "View Minted Token on HashScan",

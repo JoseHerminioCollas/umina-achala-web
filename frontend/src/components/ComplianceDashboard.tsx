@@ -120,7 +120,7 @@ const ComplianceDashboard: React.FC = () => {
       <section className={styles.timeline}>
         <h2>{t("compliance.auditTrail")}</h2>
         <ul>
-          {t("compliance.auditItems", { returnObjects: true }).map((item, i) => (
+          {(t("compliance.auditItems", { returnObjects: true }) as string[]).map((item, i) => (
             <li key={i}>{item}</li>
           ))}
         </ul>
