@@ -8,6 +8,7 @@ import { RumiFacade } from "../data/RumiFacade";
 import styles from "./Marketplace.module.css";
 import Pager from "./Pager";
 import { useTranslation } from "react-i18next";
+import { filterItems } from "../utils/filterItems";
 
 const Marketplace: React.FC = () => {
   const { t } = useTranslation();
@@ -38,54 +39,8 @@ const Marketplace: React.FC = () => {
   });
   const [page, setPage] = useState(1);
   const perPage = 6;
-  const filtered = data.filter((i) => {
-    if (
-      filters.type &&
-      !i.attributes.some(
-        (a) => a.trait_type === "Stone Type" && a.value === filters.type,
-      )
-    )
-      return false;
 
-    if (filters.cut) {
-      if (filters.cut === "No Cut") {
-        // Match stones with no cut value
-        const hasCut = i.attributes.some(
-          (a) =>
-            a.trait_type === "Stone Cut" && a.value && a.value.trim() !== "",
-        );
-        if (hasCut) return false;
-      } else {
-        // Match stones with the selected cut
-        if (
-          !i.attributes.some(
-            (a) => a.trait_type === "Stone Cut" && a.value === filters.cut,
-          )
-        )
-          return false;
-      }
-    }
-
-    if (
-      filters.mounted === "true" &&
-      !i.attributes.some(
-        (a) =>
-          a.trait_type === "Mounted By" && a.value && a.value.trim() !== "",
-      )
-    )
-      return false;
-
-    if (
-      filters.mounted === "false" &&
-      i.attributes.some(
-        (a) =>
-          a.trait_type === "Mounted By" && a.value && a.value.trim() !== "",
-      )
-    )
-      return false;
-
-    return true;
-  });
+  const filtered = filterItems(data, filters);
   const totalPages = Math.ceil(filtered.length / perPage);
   const pagedItems = filtered.slice((page - 1) * perPage, page * perPage);
 
