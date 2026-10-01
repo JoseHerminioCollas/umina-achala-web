@@ -1,5 +1,5 @@
 {
-  "title": "Rumi Stone HIP-412 Metadata",
+  "title": "Umiña Stone HIP-412 Metadata",
   "type": "object",
   "required": ["name", "creator", "description", "image", "format", "metadata_version", "properties", "files", "attributes"],
   "properties": {

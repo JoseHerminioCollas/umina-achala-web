@@ -1,6 +1,6 @@
 /**
- * @file createRumiToken.js
- * @description Creates the Rumi NFT Class on Hedera,
+ * @file createUminaToken.js
+ * @description Creates the Umiña NFT Class on Hedera,
  * defining it as a non-fungible token with custom royalty fees and role keys.
  * testnet and mainnet configurations are included.
  * Use .env.testnet or .env.mainnet to set environment variables for the respective network.
@@ -22,7 +22,7 @@ dotenv.config({ path: ".env.testnet" });
 // dotenv.config({ path: ".env.mainnet" });
 
 async function main() {
-  console.log("🚀 Creating Rumi NFT Class...");
+  console.log("🚀 Creating Umiña NFT Class...");
 
   // --- 1. Initialize Client ---
   // For Testnet
@@ -50,8 +50,8 @@ async function main() {
 
   // --- 3. Define Token Parameters ---
   const transaction = new TokenCreateTransaction()
-    .setTokenName("Rumi")
-    .setTokenSymbol("RUMI")
+    .setTokenName("Umiña")
+    .setTokenSymbol("UMINA")
     .setTokenType(TokenType.NonFungibleUnique)
     // Roles
     .setTreasuryAccountId(treasuryAccountId)
@@ -75,7 +75,7 @@ async function main() {
     .setDecimals(0)
 
     // Provenance memo
-    .setTokenMemo("Rumi: Authentic Peruvian Stones and Minerals")
+    .setTokenMemo("Umiña Achala: Authentic Peruvian Stones and Minerals")
     .freezeWith(client);
 
   // --- 4. Sign & Execute ---
@@ -84,9 +84,9 @@ async function main() {
     const response = await signTx.execute(client);
     const receipt = await response.getReceipt(client);
     console.log("-----------------------------------");
-    console.log(`✅ Success! Rumi Token ID: ${receipt.tokenId}`);
+    console.log(`✅ Success! Umiña Token ID: ${receipt.tokenId}`);
     console.log("-----------------------------------");
-    console.log("SAVE THIS ID IN YOUR .env FILE AS: RUMI_TOKEN_ID");
+    console.log("SAVE THIS ID IN YOUR .env FILE AS: UMINA_TOKEN_ID");
   } catch (err) {
     console.error("❌ Token creation failed:", err, { operatorId, treasuryAccountId });
   }

@@ -1,11 +1,11 @@
-# Rumi Application UI
+# Umiña Achala Application UI
 
-The Rumi application blends compliance transparency with cultural storytelling. Its interface highlights provenance, artisan craftsmanship, and gemological details such as stone cuts.
+The Umiña Achala application blends compliance transparency with cultural storytelling. Its interface highlights provenance, artisan craftsmanship, and gemological details such as stone cuts.
 
 ## 🖥️ Main UI Components
 
 ### 1. Landing Page
-- **Header:** Project name Rumi with tagline “Automating compliance, illuminating provenance.”
+- **Header:** Project name Umiña Achala with tagline “Automating compliance, illuminating provenance.”
 - **Hero Section:** Featured stone image with provenance details (origin, artisan, cut, certification).
 - **Quick Actions:**
   - Browse Stones
@@ -29,7 +29,7 @@ The Rumi application blends compliance transparency with cultural storytelling. 
   - Origin region + mine
   - Artisan name (if mounted)
   - Cut type displayed prominently
-  - Price in RUMI + USDC equivalent
+  - Price in UMA + USDC equivalent
   - Verified Exporter badge (if linked to SUNAT/VUCE)
   - Optional price history chart
 
@@ -41,7 +41,7 @@ The Rumi application blends compliance transparency with cultural storytelling. 
   - Cut: Brilliant, Cabochon, Emerald, etc.
   - Mount details: artisan, technique, certification
   - Compliance: law reference, customs clearance status
-- **Buy Button:** Pay in RUMI (with USDC conversion shown).
+- **Buy Button:** Pay in UMA (with USDC conversion shown).
 - **Provenance Timeline:** Animated visual flow showing extraction → cutting → certification → mounting → tokenization.
 - **Additional Features:**
   - QR code linking to Hedera audit trail
@@ -60,10 +60,10 @@ The Rumi application blends compliance transparency with cultural storytelling. 
 - **Visuals:** Timeline or audit trail showing each compliance step, including cutting and mounting.
 
 ### 5. Wallet & Transactions
-- **Wallet Integration:** Show RUMI balance, USDC balance, PEN/USD equivalents, and recent swaps.
+- **Wallet Integration:** Show UMA balance, USDC balance, PEN/USD equivalents, and recent swaps.
 - **Transaction History:** Purchases, sales, swaps, compliance logs.
 - **Compliance Receipts:** Downloadable proof of each purchase/export.
-- **Liquidity Pool Access:** Simple interface to swap RUMI ↔ USDC.
+- **Liquidity Pool Access:** Simple interface to swap UMA ↔ USDC.
 - **Future Expansion:** Staking/rewards tab for artisans/miners.
 
 ## 🎨 Design Style
@@ -72,7 +72,7 @@ The Rumi application blends compliance transparency with cultural storytelling. 
 - **Icons:**
   - 🪨 Stone icon for provenance
   - ✂️ Cut icon for stone cut
-  - 🪙 Coin icon for RUMI
+  - 🪙 Coin icon for UMA
   - 📜 Scroll icon for compliance
 - **Dual Themes:**
   - Compliance Mode: minimalist, regulator‑friendly
@@ -83,5 +83,5 @@ The Rumi application blends compliance transparency with cultural storytelling. 
 2. Filters for Amethyst, Cusco, Brilliant Cut, Mounted.
 3. Selects a stone → sees metadata including cut + artisan details.
 4. QR code + compliance certificate available for verification.
-5. Clicks Buy with RUMI → wallet pops up with USDC conversion.
+5. Clicks Buy with UMA → wallet pops up with USDC conversion.
 6. Transaction completes → buyer sees compliance receipt + NFT in wallet.

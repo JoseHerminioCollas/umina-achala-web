@@ -1,7 +1,7 @@
 # Governance & Security
 
 ## Boutique Shop Phase
-Rumi begins as a boutique shop owned and operated by the project founder.  
+Umiña Achala begins as a boutique shop owned and operated by the project founder.  
 - The boutique acts as the sole buyer and seller of stones.  
 - Provenance records originate at the boutique level, ensuring consistency.  
 - Governance is simplified: all operational keys are held by the founder, secured in a vault.  

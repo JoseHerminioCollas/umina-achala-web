@@ -1,6 +1,6 @@
-# Rumi Specimens Catalog
+# Umiña Specimens Catalog
 
-This file consolidates gemstones, minerals, ornamental stones, and their HS Codes for the Rumi project. It serves as both a compliance reference and a cultural catalog.
+This file consolidates gemstones, minerals, ornamental stones, and their HS Codes for the Umiña Achala project. It serves as both a compliance reference and a cultural catalog.
 
 ## ℹ️ What are HS Codes?
 
@@ -10,14 +10,14 @@ HS Codes (Harmonized System Codes) are internationally standardized numerical id
 - **Purpose**: They allow customs authorities to determine tariffs, track trade statistics, and enforce import/export restrictions.
 - **Compliance**: Exporters and importers must declare the correct HS Code for each item to avoid fines, delays, or seizure of goods.
 
-## 📑 HS Codes in the Rumi Project
+## 📑 HS Codes in the Umiña Achala Project
 
-In the Rumi project, HS Codes are used to:
+In the Umiña Achala project, HS Codes are used to:
 
 - **Authenticate provenance**: Each gemstone, mineral, or ornamental stone is mapped to its official HS Code, ensuring it is recognized under Peruvian and international trade law.
-- **Automate export documentation**: By embedding HS Codes into metadata, Rumi tokens can generate customs-ready paperwork (e.g., VUCE forms, export declarations).
+- **Automate export documentation**: By embedding HS Codes into metadata, Umiña tokens can generate customs-ready paperwork (e.g., VUCE forms, export declarations).
 - **Enable compliance checks**: HS Codes act as a bridge between cultural cataloging and legal compliance, making sure stones are not misclassified or exported illegally.
-- **Support tokenization**: When a Rumi specimen is minted as a digital token, its HS Code is paired with provenance identifiers (Concession ID, REINFO ID, Vendor RUC). This creates a verifiable link between the physical stone and its digital representation.
+- **Support tokenization**: When an Umiña specimen is minted as a digital token, its HS Code is paired with provenance identifiers (Concession ID, REINFO ID, Vendor RUC). This creates a verifiable link between the physical stone and its digital representation.
 
 ---
 
@@ -27,7 +27,7 @@ In the Rumi project, HS Codes are used to:
 - **Gold** → HS Code `7108.12.00.00` (“Gold, Non-monetary, Unwrought”)  
 - **Copper** → HS Code `2603.00.00.00` (“Copper Ores and Concentrates”)  
 
-These codes ensure that when a Rumi token is traded or exported
+These codes ensure that when an Umiña token is traded or exported
 ## Gemstones & Minerals of Peru
 
 ### 💍 Precious Stones
@@ -66,7 +66,7 @@ These codes ensure that when a Rumi token is traded or exported
 | Pyrite         |                |                |
 
 
-## 📦 HS Codes for Rumi Project
+## 📦 HS Codes for the Umiña Achala Project
 
 ### 💍 Precious Stones
 
@@ -110,7 +110,7 @@ These codes ensure that when a Rumi token is traded or exported
 
 ```json
 {
-  "project": "Rumi",
+  "project": "Umiña Achala",
   "version": "1.0.6",
   "base_chapter": "71",
   "specimens": {

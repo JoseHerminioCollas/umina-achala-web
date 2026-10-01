@@ -1,14 +1,14 @@
 [
   {
-    "name": "Rumi Stone #001 - amethyst",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #001 - amethyst",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market amethyst, cut by Elena Castillo, unmounted specimen.",
     "image": "/images/amethyst/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-AM-01",
+      "stone_id": "UMINA-2026-AM-01",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -128,15 +128,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #002 - quartz",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #002 - quartz",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market quartz, cut by Carlos Sánchez and mounted by Ana Torres.",
     "image": "/images/quartz/mounted/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-QU-02",
+      "stone_id": "UMINA-2026-QU-02",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -256,15 +256,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #003 - chrysocolla",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #003 - chrysocolla",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market chrysocolla, cut by Patricia Rojas, unmounted specimen.",
     "image": "/images/chrysocolla/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-CH-03",
+      "stone_id": "UMINA-2026-CH-03",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -384,15 +384,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #004 - obsidian",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #004 - obsidian",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market obsidian, cut by María López, unmounted specimen.",
     "image": "/images/obsidian/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-OB-04",
+      "stone_id": "UMINA-2026-OB-04",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -512,15 +512,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #005 - jade",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #005 - jade",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market jade, cut by Patricia Rojas, unmounted specimen.",
     "image": "/images/jade/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-JA-05",
+      "stone_id": "UMINA-2026-JA-05",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -640,15 +640,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #006 - tourmaline",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #006 - tourmaline",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market tourmaline, cut by Carlos Sánchez and mounted by Carmen Díaz.",
     "image": "/images/tourmaline/mounted/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-TO-06",
+      "stone_id": "UMINA-2026-TO-06",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -768,15 +768,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #007 - lapis_lazuli",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #007 - lapis_lazuli",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market lapis_lazuli, cut by Elena Castillo, unmounted specimen.",
     "image": "/images/lapis_lazuli/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-LA-07",
+      "stone_id": "UMINA-2026-LA-07",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -896,15 +896,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #008 - malachite",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #008 - malachite",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market malachite, cut by Miguel Herrera, unmounted specimen.",
     "image": "/images/malachite/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-MA-08",
+      "stone_id": "UMINA-2026-MA-08",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -1024,15 +1024,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #009 - ruby",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #009 - ruby",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market ruby, cut by Carmen Díaz, unmounted specimen.",
     "image": "/images/ruby/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-RU-09",
+      "stone_id": "UMINA-2026-RU-09",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -1152,15 +1152,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #010 - sapphire",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #010 - sapphire",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market sapphire, uncut specimen.",
     "image": "/images/sapphire/mounted/uncut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-SA-10",
+      "stone_id": "UMINA-2026-SA-10",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -1280,15 +1280,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #011 - amethyst",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #011 - amethyst",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market amethyst, uncut specimen.",
     "image": "/images/amethyst/uncut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-AM-11",
+      "stone_id": "UMINA-2026-AM-11",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -1408,15 +1408,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #012 - quartz",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #012 - quartz",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market quartz, cut by Miguel Herrera and mounted by José Ramírez.",
     "image": "/images/quartz/mounted/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-QU-12",
+      "stone_id": "UMINA-2026-QU-12",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -1536,15 +1536,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #013 - chrysocolla",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #013 - chrysocolla",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market chrysocolla, uncut specimen.",
     "image": "/images/chrysocolla/mounted/uncut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-CH-13",
+      "stone_id": "UMINA-2026-CH-13",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -1664,15 +1664,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #014 - obsidian",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #014 - obsidian",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market obsidian, cut by María López and mounted by Elena Castillo.",
     "image": "/images/obsidian/mounted/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-OB-14",
+      "stone_id": "UMINA-2026-OB-14",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -1792,15 +1792,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #015 - jade",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #015 - jade",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market jade, cut by José Ramírez and mounted by María López.",
     "image": "/images/jade/mounted/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-JA-15",
+      "stone_id": "UMINA-2026-JA-15",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -1920,15 +1920,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #016 - tourmaline",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #016 - tourmaline",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market tourmaline, cut by Luis Fernández, unmounted specimen.",
     "image": "/images/tourmaline/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-TO-16",
+      "stone_id": "UMINA-2026-TO-16",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -2048,15 +2048,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #017 - lapis_lazuli",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #017 - lapis_lazuli",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market lapis_lazuli, cut by María López, unmounted specimen.",
     "image": "/images/lapis_lazuli/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-LA-17",
+      "stone_id": "UMINA-2026-LA-17",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -2176,15 +2176,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #018 - malachite",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #018 - malachite",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market malachite, cut by Luis Fernández, unmounted specimen.",
     "image": "/images/malachite/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-MA-18",
+      "stone_id": "UMINA-2026-MA-18",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -2304,15 +2304,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #019 - ruby",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #019 - ruby",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market ruby, cut by Miguel Herrera, unmounted specimen.",
     "image": "/images/ruby/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-RU-19",
+      "stone_id": "UMINA-2026-RU-19",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -2432,15 +2432,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #020 - sapphire",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #020 - sapphire",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market sapphire, cut by Elena Castillo, unmounted specimen.",
     "image": "/images/sapphire/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-SA-20",
+      "stone_id": "UMINA-2026-SA-20",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -2560,15 +2560,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #021 - amethyst",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #021 - amethyst",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market amethyst, cut by Carmen Díaz, unmounted specimen.",
     "image": "/images/amethyst/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-AM-21",
+      "stone_id": "UMINA-2026-AM-21",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -2688,15 +2688,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #022 - quartz",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #022 - quartz",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market quartz, cut by Patricia Rojas, unmounted specimen.",
     "image": "/images/quartz/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-QU-22",
+      "stone_id": "UMINA-2026-QU-22",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -2816,15 +2816,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #023 - chrysocolla",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #023 - chrysocolla",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market chrysocolla, cut by José Ramírez and mounted by Miguel Herrera.",
     "image": "/images/chrysocolla/mounted/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-CH-23",
+      "stone_id": "UMINA-2026-CH-23",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -2944,15 +2944,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #024 - obsidian",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #024 - obsidian",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market obsidian, cut by María López and mounted by Luis Fernández.",
     "image": "/images/obsidian/mounted/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-OB-24",
+      "stone_id": "UMINA-2026-OB-24",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -3072,15 +3072,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #025 - jade",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #025 - jade",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market jade, uncut specimen.",
     "image": "/images/jade/uncut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-JA-25",
+      "stone_id": "UMINA-2026-JA-25",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -3200,15 +3200,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #026 - tourmaline",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #026 - tourmaline",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market tourmaline, cut by Carmen Díaz, unmounted specimen.",
     "image": "/images/tourmaline/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-TO-26",
+      "stone_id": "UMINA-2026-TO-26",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -3328,15 +3328,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #027 - lapis_lazuli",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #027 - lapis_lazuli",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market lapis_lazuli, cut by Carmen Díaz, unmounted specimen.",
     "image": "/images/lapis_lazuli/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-LA-27",
+      "stone_id": "UMINA-2026-LA-27",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -3456,15 +3456,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #028 - malachite",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #028 - malachite",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market malachite, uncut specimen.",
     "image": "/images/malachite/uncut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-MA-28",
+      "stone_id": "UMINA-2026-MA-28",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -3584,15 +3584,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #029 - ruby",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #029 - ruby",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market ruby, uncut specimen.",
     "image": "/images/ruby/mounted/uncut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-RU-29",
+      "stone_id": "UMINA-2026-RU-29",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",
@@ -3712,15 +3712,15 @@
     ]
   },
   {
-    "name": "Rumi Stone #030 - sapphire",
-    "creator": "Rumi Project",
+    "name": "Umiña Stone #030 - sapphire",
+    "creator": "Umiña Achala",
     "description": "Certified Mine-to-Market sapphire, uncut specimen.",
     "image": "/images/sapphire/uncut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
     "metadata_version": "1.0.0",
     "properties": {
-      "stone_id": "RUMI-2026-SA-30",
+      "stone_id": "UMINA-2026-SA-30",
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://rumi.earth",

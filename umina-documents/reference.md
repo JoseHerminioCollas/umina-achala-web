@@ -1,6 +1,6 @@
-# Rumi: Regulatory and Technical Reference Directory (2026 Updated)
+# Umiña Achala: Regulatory and Technical Reference Directory (2026 Updated)
 
-This directory contains the essential links and statutory references for the Rumi project to maintain legal compliance with Peruvian law and technical alignment with the Hedera ecosystem.
+This directory contains the essential links and statutory references for the Umiña Achala project to maintain legal compliance with Peruvian law and technical alignment with the Hedera ecosystem.
 
 ## 1. Peruvian Regulatory & Export Authorities
 *   **[SUNAT](https://www.sunat.gob.pe):** (Superintendencia Nacional de Aduanas y de Administración Tributaria). The authority for tax and customs.

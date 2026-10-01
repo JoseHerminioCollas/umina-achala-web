@@ -1,13 +1,13 @@
 {
-  "name": "Rumi Stone #003 - Chrysocolla",
-  "creator": "Rumi Project",
+  "name": "Umiña Stone #003 - Chrysocolla",
+  "creator": "Umiña Achala",
   "description": "Certified Mine-to-Market Chrysocolla. Extracted from Arequipa Region with verified ethical provenance and full regulatory compliance.",
   "image": "ipfs://QmChrysocollaThumbnailHash",
   "type": "image/jpg",
   "format": "HIP412@2.0.0",
   "metadata_version": "1.0.0",
   "properties": {
-    "stone_id": "RUMI-2026-CH-03",
+    "stone_id": "UMINA-2026-CH-03",
     "hs_code": "7103.99.00.00",
     "jurisdiction": "Peru",
     "legal_uri": "https://rumi.earth",

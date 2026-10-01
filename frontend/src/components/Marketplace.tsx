@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Card from "./Card";
 import Filters from "./Filters";
 import StoneModal from "./StoneModal";
-import { Rumi } from "../types/rumi";
-import { RumiFacade } from "../data/RumiFacade";
+import { Umina } from "../types/umina";
+import { UminaFacade } from "../data/UminaFacade";
 import styles from "./Marketplace.module.css";
 import Pager from "./Pager";
 import { useTranslation } from "react-i18next";
@@ -12,8 +12,8 @@ import { filterItems } from "../utils/filterItems";
 
 const Marketplace: React.FC = () => {
   const { t } = useTranslation();
-  const [open, setOpen] = useState<Rumi | null>(null);
-  const data = RumiFacade.fromJSON().getAll();
+  const [open, setOpen] = useState<Umina | null>(null);
+  const data = UminaFacade.fromJSON().getAll();
   const [filters, setFilters] = useState({
     type: "",
     types: Array.from(

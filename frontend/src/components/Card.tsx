@@ -1,12 +1,12 @@
 // src/components/Card.tsx
 import React from "react";
-import { Rumi } from "../types/rumi";
+import { Umina } from "../types/umina";
 import styles from "./Card.module.css";
 import { useTranslation } from "react-i18next";
 
 interface CardProps {
-  item: Rumi;
-  onClick: (item: Rumi) => void;
+  item: Umina;
+  onClick: (item: Umina) => void;
 }
 
 const Card: React.FC<CardProps> = ({ item, onClick }) => {

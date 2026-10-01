@@ -20,7 +20,7 @@ jest.mock("@hashgraph/sdk", () => ({
 
 jest.mock("ipfs-http-client"); // Jest will auto‑load __mocks__/ipfs-http-client.js
 
-describe("mintRumiNFT.js workflow", () => {
+describe("mintUminaNFT.js workflow", () => {
   test("validates metadata JSON against schema", () => {
     const metadata = JSON.parse(fs.readFileSync("./json/example.json", "utf8"));
     const { valid, errors } = validateMetadata(metadata);

@@ -1,9 +1,9 @@
 /**
- * Importable validator for HIP-412 Rumi metadata
+ * Importable validator for HIP-412 Umiña metadata
  */
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
-import schema from "../schema/hip412-rumi-schema.json" with { type: "json" };
+import schema from "../schema/hip412-umina-schema.json" with { type: "json" };
 
 const ajv = new Ajv({ allErrors: true, allowUnionTypes: true });
 addFormats(ajv);

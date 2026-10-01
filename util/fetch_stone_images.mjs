@@ -1,8 +1,8 @@
 /**
- * Rumi Stone Image Fetcher (Node.js)
+ * Umiña Stone Image Fetcher (Node.js)
  * ====================================
  * Fetches real images from Unsplash and saves them into the exact folder
- * structure expected by the Rumi `images` JS object.
+ * structure expected by the Umiña `images` JS object.
  *
  * Requirements:
  *   Node 18+ (fetch is built-in)

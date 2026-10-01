@@ -1,4 +1,4 @@
-<h1>🪙 Rumi Frontend Transition Guide</h1>
+<h1>🪙 Umiña Achala Frontend Transition Guide</h1>
 
 <h2><a href="ca://s?q=Mint_NFTs_on_Hedera_testnet">Mint NFTs on CLI</a></h2>
 <ul>
@@ -22,7 +22,7 @@
   "tokenId": "0.0.123456",
   "serial": 1,
   "cid": "bafybeigdyr...",
-  "name": "Rumi Stone #1",
+  "name": "Umiña Stone #1",
   "owner": "0.0.7890",
   "status": "active",
   "events": [

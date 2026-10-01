@@ -98,20 +98,20 @@ UMA evolucionará como la moneda nativa del ecosistema.
 ---
 
 ## 📚 Documentación
-- [Documentación de Exportación Minera](rumi-documents/mining-export.md) — Flujo de trabajo, notas de cumplimiento e integración.  
-- [Lista de Verificación para Compradores](rumi-documents/buyer_checklist.md) — Guía práctica para compradores.  
-- [Cumplimiento](rumi-documents/compliance.md) — Normas de exportación y referencias regulatorias.  
-- [Gobernanza](rumi-documents/governance.md) — Supervisión y propiedad de boutiques.  
-- [Aviso Legal](rumi-documents/legal_disclaimer.md) — Notas de responsabilidad.  
-- [Metadatos](rumi-documents/metadata.md) — Estándares de metadatos de tokens.  
-- [Emisión de NFT](rumi-documents/mint-nft-token.md) — Proceso paso a paso.  
-- [Creación de Contrato NFT](rumi-documents/create-nft-token.md) — Instrucciones de despliegue.  
-- [Códigos HS de Especímenes](rumi-documents/rumi_specimens_hs_codes.md) — Catálogo de gemas y minerales.  
-- [Mitigación de Riesgos](rumi-documents/risk-mitigation.md) — Prevención de fraude y riesgos de exportación.  
-- [Términos](rumi-documents/terms.md) — Condiciones de participación.  
-- [Interfaz de Usuario](rumi-documents/user_interface.md) — Descripción del mercado y panel de cumplimiento.  
-- [Visión Futura](rumi-documents/future-vision.md) — Hoja de ruta a largo plazo.  
-- [Referencias](rumi-documents/reference.md) — Materiales de apoyo.  
+- [Documentación de Exportación Minera](umina-documents/mining-export.md) — Flujo de trabajo, notas de cumplimiento e integración.  
+- [Lista de Verificación para Compradores](umina-documents/buyer_checklist.md) — Guía práctica para compradores.  
+- [Cumplimiento](umina-documents/compliance.md) — Normas de exportación y referencias regulatorias.  
+- [Gobernanza](umina-documents/governance.md) — Supervisión y propiedad de boutiques.  
+- [Aviso Legal](umina-documents/legal_disclaimer.md) — Notas de responsabilidad.  
+- [Metadatos](umina-documents/metadata.md) — Estándares de metadatos de tokens.  
+- [Emisión de NFT](umina-documents/mint-nft-token.md) — Proceso paso a paso.  
+- [Creación de Contrato NFT](umina-documents/create-nft-token.md) — Instrucciones de despliegue.  
+- [Códigos HS de Especímenes](umina-documents/umina_specimens_hs_codes.md) — Catálogo de gemas y minerales.  
+- [Mitigación de Riesgos](umina-documents/risk-mitigation.md) — Prevención de fraude y riesgos de exportación.  
+- [Términos](umina-documents/terms.md) — Condiciones de participación.  
+- [Interfaz de Usuario](umina-documents/user_interface.md) — Descripción del mercado y panel de cumplimiento.  
+- [Visión Futura](umina-documents/future-vision.md) — Hoja de ruta a largo plazo.  
+- [Referencias](umina-documents/reference.md) — Materiales de apoyo.  
 
 **Referencias Relevantes:**  
 - Ley General de Minería (DS Nº 014-92-EM) — Ley General de Minería del Perú  

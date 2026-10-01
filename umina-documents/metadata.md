@@ -1,6 +1,6 @@
-# 📊 Rumi Metadata Standard (HIP-412)
+# 📊 Umiña Metadata Standard (HIP-412)
 
-This document defines the JSON metadata schema for Rumi NFTs, ensuring compliance with the [Hedera HIP-412 standard](https://hips.hedera.com) and Peruvian trade regulations (Ley Nº 32537, 2026).
+This document defines the JSON metadata schema for Umiña NFTs, ensuring compliance with the [Hedera HIP-412 standard](https://hips.hedera.com) and Peruvian trade regulations (Ley Nº 32537, 2026).
 
 ---
 
@@ -8,7 +8,7 @@ This document defines the JSON metadata schema for Rumi NFTs, ensuring complianc
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `name` | String | Public identifier (e.g., "Rumi Stone #003 - Chrysocolla"). |
+| `name` | String | Public identifier (e.g., "Umiña Stone #003 - Chrysocolla"). |
 | `creator` | String | Project or mining/artisanal entity. |
 | `description` | String | Narrative of provenance, geology, and compliance. |
 | `image` | URI | Immutable IPFS link to the primary visual asset. |
@@ -25,7 +25,7 @@ This document defines the JSON metadata schema for Rumi NFTs, ensuring complianc
 
 The `properties` object contains compliance‑critical fields:
 
-- **`stone_id`** → Unique identifier (`RUMI-2026-CH-03`).  
+- **`stone_id`** → Unique identifier (`UMINA-2026-CH-03`).  
 - **`hs_code`** → Harmonized System Code (`7103.99.00.00`).  
 - **`jurisdiction`** → Country of origin (`Peru`).  
 - **`legal_uri`** → Project legal reference (`https://rumi.earth`).  
@@ -79,8 +79,8 @@ The `attributes` array uses `trait_type` and `value` pairs:
 
 ```json
 {
-  "name": "Rumi Stone #003 - Chrysocolla",
-  "creator": "Rumi Project",
+  "name": "Umiña Stone #003 - Chrysocolla",
+  "creator": "Umiña Achala",
   "description": "Certified Mine-to-Market Chrysocolla. Extracted from Arequipa Region with verified ethical provenance and full regulatory compliance.",
   "image": "ipfs://QmChrysocollaThumbnailHash",
   "type": "image/jpg",

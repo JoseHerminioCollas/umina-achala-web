@@ -1,4 +1,4 @@
-# 🛒 Rumi Buyer’s Checklist (Peru)
+# 🛒 Umiña Achala Buyer’s Checklist (Peru)
 
 ## Step 1: Provenance Verification
 - [ ] **Concession ID (INGEMMET)** → Ask the store for the mining concession number and cross‑check in the INGEMMET registry: https://www.ingemmet.gob.pe
@@ -22,7 +22,7 @@
 - **Peruvian Minerals & Jewelry S.A.C.**
   - Focus: Semi‑precious stones (chrysocolla, pyrite, cabochons, spheres, jewelry).
   - Provides: Export documentation, HS Codes, RUC, provenance data.
-  - Value: Suitable for Rumi artisanal certification.
+  - Value: Suitable for Umiña Achala artisanal certification.
 
 - **Inka Minerals Peru**
   - Focus: Wholesale minerals (chrysocolla, pyrite, galena, bolivianite).

@@ -1,6 +1,6 @@
 # Risk & Mitigation
 
-Rumi’s deployment on Hedera introduces both technical and regulatory risks. This section outlines anticipated issues and the strategies to mitigate them.
+Umiña Achala’s deployment on Hedera introduces both technical and regulatory risks. This section outlines anticipated issues and the strategies to mitigate them.
 
 ## Technical Risks
 - **Key Compromise:** Private keys for Admin, Supply, Metadata, and Fee Schedule could be exposed.

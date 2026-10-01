@@ -1,9 +1,9 @@
 /**
- * @file mintRumiNFT.js
- * @description Script to mint a Rumi NFT with compliance proof anchored in HCS and metadata pinned to IPFS.
+ * @file mintUminaNFT.js
+ * @description Script to mint an Umiña NFT with compliance proof anchored in HCS and metadata pinned to IPFS.
  *
  * Run from the command line:
- * node mintRumiNFT.js
+ * node mintUminaNFT.js
  *
  * ## Output
  * - IPFS CID of pinned metadata
@@ -93,15 +93,15 @@ async function main() {
     const ipfsUri = `ipfs://${cid.toString()}`;
     console.log(`✅ Metadata pinned to IPFS: ${ipfsUri}`);
 
-    // --- 5. Mint NFT under existing Rumi Token ID ---
-    const rumiTokenId = process.env.RUMI_TOKEN_ID;
+    // --- 5. Mint NFT under existing Umiña Token ID ---
+    const uminaTokenId = process.env.UMINA_TOKEN_ID;
     const mintTx = new TokenMintTransaction()
-      .setTokenId(rumiTokenId)
+      .setTokenId(uminaTokenId)
       .setMetadata([Buffer.from(ipfsUri)]);
 
     const mintResponse = await mintTx.execute(client);
     const mintReceipt = await mintResponse.getReceipt(client);
-    console.log(`✅ Minted Rumi NFT serials: ${mintReceipt.serials}`);
+    console.log(`✅ Minted Umiña NFT serials: ${mintReceipt.serials}`);
 
     // --- 6. Provenance logging ---
     console.table({

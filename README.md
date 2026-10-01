@@ -80,20 +80,20 @@ UMA will evolve into the native currency of the ecosystem.
 - Paired with USDC in liquidity pools to establish real cash value.  
 
 ## 📚 Documentation
-- [Mining Export Documentation](rumi-documents/mining-export.md) — Workflow steps, compliance notes, and integration details.  
-- [Buyer’s Checklist](rumi-documents/buyer_checklist.md) — Practical guide for buyers.  
-- [Compliance](rumi-documents/compliance.md) — Export rules and regulatory references.  
-- [Governance](rumi-documents/governance.md) — Oversight and boutique ownership.  
-- [Legal Disclaimer](rumi-documents/legal_disclaimer.md) — Liability notes.  
-- [Metadata](rumi-documents/metadata.md) — Token metadata standards.  
-- [Mint NFT Token](rumi-documents/mint-nft-token.md) — Step‑by‑step minting process.  
-- [Create NFT Token](rumi-documents/create-nft-token.md) — Contract creation instructions.  
-- [Specimens HS Codes](rumi-documents/rumi_specimens_hs_codes.md) — Gemstone and mineral catalog.  
-- [Risk Mitigation](rumi-documents/risk-mitigation.md) — Compliance and fraud prevention.  
-- [Terms](rumi-documents/terms.md) — Participation terms.  
-- [User Interface](rumi-documents/user_interface.md) — Marketplace and dashboard overview.  
-- [Future Vision](rumi-documents/future-vision.md) — Long‑term roadmap.  
-- [Reference](rumi-documents/reference.md) — Supporting materials.  
+- [Mining Export Documentation](umina-documents/mining-export.md) — Workflow steps, compliance notes, and integration details.  
+- [Buyer’s Checklist](umina-documents/buyer_checklist.md) — Practical guide for buyers.  
+- [Compliance](umina-documents/compliance.md) — Export rules and regulatory references.  
+- [Governance](umina-documents/governance.md) — Oversight and boutique ownership.  
+- [Legal Disclaimer](umina-documents/legal_disclaimer.md) — Liability notes.  
+- [Metadata](umina-documents/metadata.md) — Token metadata standards.  
+- [Mint NFT Token](umina-documents/mint-nft-token.md) — Step‑by‑step minting process.  
+- [Create NFT Token](umina-documents/create-nft-token.md) — Contract creation instructions.  
+- [Specimens HS Codes](umina-documents/umina_specimens_hs_codes.md) — Gemstone and mineral catalog.  
+- [Risk Mitigation](umina-documents/risk-mitigation.md) — Compliance and fraud prevention.  
+- [Terms](umina-documents/terms.md) — Participation terms.  
+- [User Interface](umina-documents/user_interface.md) — Marketplace and dashboard overview.  
+- [Future Vision](umina-documents/future-vision.md) — Long‑term roadmap.  
+- [Reference](umina-documents/reference.md) — Supporting materials.  
 
 **Relevant References:**  
 - Ley General de Minería (DS Nº 014-92-EM) — Peru’s General Mining Law  

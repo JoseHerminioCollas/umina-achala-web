@@ -1,4 +1,4 @@
-// generate-rumis.js
+// generate-uminas.js
 import fs from "fs";
 import path from "path";
 
@@ -55,17 +55,17 @@ function pickImage(type, isCut, mounted) {
   }
 }
 
-function makeRumi(index, type) {
-  const rumi = JSON.parse(JSON.stringify(example));
+function makeUmina(index, type) {
+  const umina = JSON.parse(JSON.stringify(example));
 
-  const id = `RUMI-2026-${type.substring(0,2).toUpperCase()}-${String(index).padStart(2,"0")}`;
+  const id = `UMINA-2026-${type.substring(0,2).toUpperCase()}-${String(index).padStart(2,"0")}`;
 
   const isCut = Math.random() < 0.8;
   const cutArtisan = isCut ? randomArtisan() : { id: "", name: "" };
   const mounted = Math.random() < 0.5;
   const mountArtisan = mounted ? randomArtisan() : { id: "", name: "" };
 
-  const name = `Rumi Stone #${String(index).padStart(3,"0")} - ${type}`;
+  const name = `Umiña Stone #${String(index).padStart(3,"0")} - ${type}`;
   const description = isCut
     ? mounted
       ? `Certified Mine-to-Market ${type}, cut by ${cutArtisan.name} and mounted by ${mountArtisan.name}.`
@@ -74,16 +74,16 @@ function makeRumi(index, type) {
 
   // ✅ Use public folder image reference
   const imagePath = pickImage(type, isCut, mounted);
-  rumi.name = name;
-  rumi.description = description;
-  rumi.image = `/${imagePath}`; // served from /public/images/... in Vite
+  umina.name = name;
+  umina.description = description;
+  umina.image = `/${imagePath}`; // served from /public/images/... in Vite
 
-  rumi.properties.stone_id = id;
-  rumi.properties.mining_concession = `Peru-${type}-${index}`;
-  rumi.properties.cut_by_id = cutArtisan.id;
-  rumi.properties.mounted_by_id = mountArtisan.id;
+  umina.properties.stone_id = id;
+  umina.properties.mining_concession = `Peru-${type}-${index}`;
+  umina.properties.cut_by_id = cutArtisan.id;
+  umina.properties.mounted_by_id = mountArtisan.id;
 
-  rumi.attributes = rumi.attributes.map(attr => {
+  umina.attributes = umina.attributes.map(attr => {
     switch (attr.trait_type) {
       case "Stone Type":
         return { ...attr, value: type };
@@ -104,15 +104,15 @@ function makeRumi(index, type) {
     }
   });
 
-  return rumi;
+  return umina;
 }
 
 const quantity = parseInt(process.argv[2], 10) || 10;
 
-const rumis = Array.from({ length: quantity }, (_, idx) => {
+const uminas = Array.from({ length: quantity }, (_, idx) => {
   const type = stoneTypes[idx % stoneTypes.length];
-  return makeRumi(idx+1, type);
+  return makeUmina(idx+1, type);
 });
 
-fs.writeFileSync("rumis.json", JSON.stringify(rumis, null, 2));
-console.log(`Generated rumis.json with ${rumis.length} stones`);
+fs.writeFileSync("uminas.json", JSON.stringify(uminas, null, 2));
+console.log(`Generated uminas.json with ${uminas.length} stones`);

@@ -1,4 +1,4 @@
-# 🌍 Why Rumi Exists
+# 🌍 Why Umiña Achala Exists
 
 Mining in South America has always been a source of immense wealth — but also of exploitation, undocumented extraction, and ecological damage.  
 In Peru, countless stones and minerals have been traded informally, bypassing provenance checks and export laws. This creates risks of:
@@ -8,7 +8,7 @@ In Peru, countless stones and minerals have been traded informally, bypassing pr
 - **Environmental harm** from informal mining operations outside compliance frameworks.  
 - **Provenance gaps** where specimens circulate without locality labels or documentation, leaving museums and collectors with unlabeled stones.  
 
-Rumi exists to **anchor provenance and compliance** on the blockchain, ensuring stones and minerals are legally sourced, properly documented, and transparently traded.
+Umiña Achala exists to **anchor provenance and compliance** on the blockchain, ensuring stones and minerals are legally sourced, properly documented, and transparently traded.
 
 ---
 
@@ -26,7 +26,7 @@ Exporting stones and minerals requires navigating multiple layers of compliance:
 - **Cultural heritage restrictions** — certain stones/artifacts cannot be exported at all.  
 
 This provenance verification is essential. Without it, stones risk being rejected at customs or flagged as illegal exports.  
-Rumi integrates these requirements by linking stones directly to **concession records, REINFO status, and export codes**, automating compliance and making provenance immutable.
+Umiña Achala integrates these requirements by linking stones directly to **concession records, REINFO status, and export codes**, automating compliance and making provenance immutable.
 
 ---
 
@@ -48,7 +48,7 @@ Rumi integrates these requirements by linking stones directly to **concession re
 - Growth of **mineral collecting** among scientists and aristocrats fueled demand for South American specimens.  
 - Museums and universities catalogued stones with emphasis on **provenance and locality labels**.  
 - Mineralogical societies created exchange networks, linking South America to global science.  
-- Many specimens circulated without documentation, reinforcing the need for modern provenance systems like Rumi.
+- Many specimens circulated without documentation, reinforcing the need for modern provenance systems like Umiña Achala.
 
 ## 20th Century
 - **[Copper mining](ca://s?q=Chile_copper_mining_history)** in Chile became dominant, later nationalized.  
@@ -64,7 +64,7 @@ Rumi integrates these requirements by linking stones directly to **concession re
 
 # 📊 Significance of Peru’s Mining Laws
 
-| **Aspect** | **Impact** | **Rumi Integration** |
+| **Aspect** | **Impact** | **Umiña Achala Integration** |
 |------------|------------|-----------------------|
 | **Legal Provenance** | Ensures minerals are traceable to formal concessions. | Stones linked to INGEMMET concession IDs. |
 | **Revenue Protection** | Guarantees tax collection and state oversight. | RUC and SUNAT data embedded in blockchain records. |
@@ -75,4 +75,4 @@ Rumi integrates these requirements by linking stones directly to **concession re
 ---
 
 Mining in South America reflects a long history of **wealth extraction and social struggle**, while Peru’s laws today aim to balance **economic growth, compliance, and heritage protection**.  
-Rumi builds on this foundation by making provenance **immutable and verifiable**, ensuring stones are not just traded — but trusted.
+Umiña Achala builds on this foundation by making provenance **immutable and verifiable**, ensuring stones are not just traded — but trusted.

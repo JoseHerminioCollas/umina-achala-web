@@ -1,12 +1,12 @@
 // src/components/StoneModal.tsx
 import React, { useEffect } from "react";
-import { Rumi } from "../types/rumi";
+import { Umina } from "../types/umina";
 import styles from "./StoneModal.module.css";
 import { useTranslation } from "react-i18next";
 
 interface StoneModalProps {
-  open: Rumi | null;
-  setOpen: (item: Rumi | null) => void;
+  open: Umina | null;
+  setOpen: (item: Umina | null) => void;
 }
 
 const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {

@@ -1,5 +1,5 @@
-// src/types/rumi.ts
-export interface Rumi {
+// src/types/umina.ts
+export interface Umina {
   name: string;
   creator: string;
   description: string;

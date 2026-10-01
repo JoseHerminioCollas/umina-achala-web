@@ -1,8 +1,8 @@
-# Rumi: Create NFT Token
+# Umiña Achala: Create NFT Token
 
 ## Table of Contents
 
-- [Rumi: Create NFT Token](#rumi-create-nft-token)
+- [Umiña Achala: Create NFT Token](#umiña-achala-create-nft-token)
   - [Table of Contents](#table-of-contents)
   - [Purpose](#purpose)
   - [Token Parameters](#token-parameters)
@@ -15,11 +15,11 @@
   - [Testnet Reference](#testnet-reference)
 
 
-This document defines the **token creation process** for the Rumi project, establishing the foundation for minting NFTs that represent Peruvian stones and minerals. It uses the **Hedera Token Service (HTS)** and integrates compliance safeguards through the **Hedera Consensus Service (HCS)**.
+This document defines the **token creation process** for the Umiña Achala project, establishing the foundation for minting NFTs that represent Peruvian stones and minerals. It uses the **Hedera Token Service (HTS)** and integrates compliance safeguards through the **Hedera Consensus Service (HCS)**.
 
 ## Purpose
 
-The Rumi token acts as the parent collection for all individual stones. Each NFT minted under this token represents a unique stone or mineral, anchored to regulatory and provenance data.
+The Umiña token acts as the parent collection for all individual stones. Each NFT minted under this token represents a unique stone or mineral, anchored to regulatory and provenance data.
 
 ## Token Parameters
 
@@ -89,7 +89,7 @@ The token lifecycle relies on several key roles defined at creation. Each role g
 
 ### Metadata Policy (Immutability)
 
-In the Rumi compliance model, metadata is treated as the immutable **birth certificate** of each NFT.
+In the Umiña Achala compliance model, metadata is treated as the immutable **birth certificate** of each NFT.
 
 - **Frozen at Mint**  
   Metadata is set once during minting and never updated afterward. This ensures the NFT’s origin and compliance proofs remain permanent.
@@ -123,14 +123,14 @@ In practice, this policy ensures that the economic value of each NFT continues t
 
 ## Token Creation (Hedera Token Service)
 
-Execute a token creation transaction to establish the Rumi collection.
+Execute a token creation transaction to establish the Umiña collection.
 
 **Example (JavaScript SDK):**
 ```javascript
 
 const transaction = new TokenCreateTransaction()
-    .setTokenName("Rumi")
-    .setTokenSymbol("RUMI")
+    .setTokenName("Umiña")
+    .setTokenSymbol("UMINA")
     .setTokenType(TokenType.NonFungibleUnique)
     .setTreasuryAccountId(treasuryAccountId)
     .setAdminKey(adminKey)
@@ -153,10 +153,10 @@ const transaction = new TokenCreateTransaction()
 
 ## Provenance Registry (HCS)
 
-Along with the token creation, a Master Hedera Consensus Service (HCS) topic is established to serve as the registry for all Rumi NFTs. This registry ensures that compliance and provenance data remain immutable and auditable throughout the lifecycle of each stone.
+Along with the token creation, a Master Hedera Consensus Service (HCS) topic is established to serve as the registry for all Umiña NFTs. This registry ensures that compliance and provenance data remain immutable and auditable throughout the lifecycle of each stone.
 
 - **Topic ID**  
-  A single HCS topic is created at the same time as the token and used to record lifecycle events for all NFTs in the Rumi collection.
+  A single HCS topic is created at the same time as the token and used to record lifecycle events for all NFTs in the Umiña collection.
 
 - **Message Format**  
   Each message captures the lifecycle event of a stone and includes:  
@@ -173,7 +173,7 @@ Along with the token creation, a Master Hedera Consensus Service (HCS) topic is 
 
 // Mint event: metadata birth certificate
 const mintMessage = {
-    stone_id: "RUMI-000124",
+    stone_id: "UMINA-000124",
     event_type: "mint",
     timestamp: new Date().toISOString(),
     actor_id: "0.0.123456",
@@ -185,7 +185,7 @@ const mintMessage = {
 
 // Export event: regulatory clearance
 const exportMessage = {
-    stone_id: "RUMI-000124",
+    stone_id: "UMINA-000124",
     event_type: "export",
     timestamp: new Date().toISOString(),
     actor_id: "0.0.456789",
@@ -215,7 +215,7 @@ This structure guarantees:
 
 ## Lifecycle Overview
 
-The Rumi NFT lifecycle is designed to ensure compliance, provenance, and community benefit at every stage:
+The Umiña NFT lifecycle is designed to ensure compliance, provenance, and community benefit at every stage:
 
 1. **Token Creation**  
    The parent collection is established using the Hedera Token Service (HTS). Governance roles, royalty policy, and security keys are defined at this stage.
@@ -240,4 +240,4 @@ The Rumi NFT lifecycle is designed to ensure compliance, provenance, and communi
 
 ---
 
-This document establishes the **foundation** of the Rumi NFT lifecycle. Next, see [NFT Minting](ca://s?q=Suggested_nft-minting.md) for the process of creating individual stone NFTs.
+This document establishes the **foundation** of the Umiña NFT lifecycle. Next, see [NFT Minting](ca://s?q=Suggested_nft-minting.md) for the process of creating individual stone NFTs.

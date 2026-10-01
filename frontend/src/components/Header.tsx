@@ -19,7 +19,7 @@ const Header = () => {
         <div className={styles.brandRow}>
           <img
             src={`${import.meta.env.BASE_URL}logo.svg`}
-            alt="Rumi Logo"
+            alt="Umiña Achala Logo"
             className={styles.logo}
           />
           <div className={styles.brandText}>

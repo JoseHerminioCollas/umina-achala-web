@@ -1,7 +1,7 @@
 // src/components/Hero.tsx
 import React, { useState } from "react";
-import { Rumi } from "../types/rumi";
-import { RumiFacade } from "../data/RumiFacade";
+import { Umina } from "../types/umina";
+import { UminaFacade } from "../data/UminaFacade";
 import Card from "./Card";
 import StoneModal from "./StoneModal";
 import styles from "./Hero.module.css";
@@ -9,8 +9,8 @@ import { useTranslation } from "react-i18next";
 
 const Hero = () => {
   const { t } = useTranslation();
-  const [open, setOpen] = useState<Rumi | null>(null);
-  const featured = RumiFacade.fromJSON().getFeatured(3);
+  const [open, setOpen] = useState<Umina | null>(null);
+  const featured = UminaFacade.fromJSON().getFeatured(3);
 
   return (
     <>
@@ -20,10 +20,10 @@ const Hero = () => {
           <p dangerouslySetInnerHTML={{ __html: t("hero.desc2") }} />
         </div>
         <div className={styles.heroGrid}>
-          {featured.map((rumi) => (
+          {featured.map((umina) => (
             <Card
-              key={rumi.properties.stone_id}
-              item={rumi}
+              key={umina.properties.stone_id}
+              item={umina}
               onClick={setOpen}
             />
           ))}

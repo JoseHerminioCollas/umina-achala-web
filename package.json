@@ -1,5 +1,5 @@
 {
-  "name": "rumi-gemstone-provenance",
+  "name": "umina-gemstone-provenance",
   "version": "1.0.0",
   "description": "Hedera HTS and HCS implementation for Peruvian gemstone tracking",
   "main": "src/index.js",
