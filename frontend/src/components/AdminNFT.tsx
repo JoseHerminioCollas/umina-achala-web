@@ -15,7 +15,6 @@ const AdminNFT: React.FC = () => {
     e.preventDefault();
     // TODO: integrate with backend auth (AWS Cognito, API Gateway + Lambda, etc.)
     alert(t("admin.alert"));
-    console.log("Admin login submitted:", formData);
   };
 
   return (
