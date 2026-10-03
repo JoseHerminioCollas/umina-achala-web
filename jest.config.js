@@ -1,14 +1,13 @@
 export default {
   preset: "ts-jest/presets/default-esm", // ESM + TS
-  testEnvironment: "node",
-  extensionsToTreatAsEsm: [".ts"],
-  globals: {
-    "ts-jest": {
-      useESM: true,
-    },
+  testEnvironment: "node", // component tests opt in with `@jest-environment jsdom`
+  extensionsToTreatAsEsm: [".ts", ".tsx"],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  moduleNameMapper: {
+    "\\.css$": "identity-obj-proxy",
   },
-  testEnvironment: "node",
   transform: {
-    "^.+\\.jsx?$": "babel-jest"
-  }
+    "^.+\\.tsx?$": ["ts-jest", { useESM: true }],
+    "^.+\\.jsx?$": "babel-jest",
+  },
 };
