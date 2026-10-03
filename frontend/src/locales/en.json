@@ -128,7 +128,8 @@
   },
   "modal": {
     "viewHashscan": "View Minted Token on HashScan",
-    "viewCompliance": "View Compliance HCS Topic"
+    "viewCompliance": "View Compliance HCS Topic",
+    "complianceUnavailable": "There is no compliance page to show yet because the site is not finished. This is a demonstration only."
   },
   "compliance": {
     "title": "Compliance Dashboard (Regulator View)",

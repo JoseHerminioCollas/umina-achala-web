@@ -77,6 +77,11 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {
                     href={`https://hashscan.io/mainnet/topic/${open.properties.hcs_compliance_topic}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => {
+                      // The compliance page does not exist yet: explain, don't navigate.
+                      e.preventDefault();
+                      window.alert(t("modal.complianceUnavailable"));
+                    }}
                   >
                     {t("modal.viewCompliance")}
                   </a>

@@ -128,7 +128,8 @@
   },
   "modal": {
     "viewHashscan": "Ver Token Acuñado en HashScan",
-    "viewCompliance": "Ver Tema HCS de Cumplimiento"
+    "viewCompliance": "Ver Tema HCS de Cumplimiento",
+    "complianceUnavailable": "Todavía no hay una página de cumplimiento para mostrar porque el sitio no está terminado. Esto es solo una demostración."
   },
   "compliance": {
     "title": "Panel de Cumplimiento (Vista de Regulador)",
