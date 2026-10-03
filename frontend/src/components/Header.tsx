@@ -27,6 +27,7 @@ const Header = () => {
             <p className={styles.tagline}>
               <b>{t("site.tagline")}</b>
             </p>
+            <p className={styles.demoNotice}>{t("demo.notice")}</p>
           </div>
         </div>
       </div>

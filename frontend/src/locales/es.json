@@ -3,6 +3,9 @@
     "title": "Umiña Achala",
     "tagline": "Piedras y joyería desde Perú"
   },
+  "demo": {
+    "notice": "Página web solo con fines de demostración, próximamente"
+  },
   "nav": {
     "home": "Inicio",
     "marketplace": "Mercado",

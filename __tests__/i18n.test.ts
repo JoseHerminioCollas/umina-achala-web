@@ -42,3 +42,17 @@ describe("translations", () => {
     expect(JSON.stringify(es)).not.toMatch(/rumi/i);
   });
 });
+
+describe("demo notice (#84)", () => {
+  it("has the English message", () => {
+    expect(en.demo.notice).toBe(
+      "Web page for demonstration purposes only, launching soon",
+    );
+  });
+
+  it("has the Spanish message", () => {
+    expect(es.demo.notice).toBe(
+      "Página web solo con fines de demostración, próximamente",
+    );
+  });
+});

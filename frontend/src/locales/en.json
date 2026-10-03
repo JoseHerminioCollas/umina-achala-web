@@ -3,6 +3,9 @@
     "title": "Umiña Achala",
     "tagline": "Stones and jewelry from Peru"
   },
+  "demo": {
+    "notice": "Web page for demonstration purposes only, launching soon"
+  },
   "nav": {
     "home": "Home",
     "marketplace": "Marketplace",
