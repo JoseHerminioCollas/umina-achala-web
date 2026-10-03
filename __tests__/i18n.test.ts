@@ -1,0 +1,44 @@
+import en from "../frontend/src/locales/en.json";
+import es from "../frontend/src/locales/es.json";
+
+// Flatten nested translation objects to "a.b.c" => value (arrays keep their index)
+const flatten = (obj: unknown, prefix = ""): Record<string, unknown> =>
+  Object.entries(obj as Record<string, unknown>).reduce(
+    (acc, [key, value]) => {
+      const path = prefix ? `${prefix}.${key}` : key;
+      if (value && typeof value === "object") {
+        Object.assign(acc, flatten(value, path));
+      } else {
+        acc[path] = value;
+      }
+      return acc;
+    },
+    {} as Record<string, unknown>,
+  );
+
+const enFlat = flatten(en);
+const esFlat = flatten(es);
+
+describe("translations", () => {
+  it("English and Spanish have the same keys", () => {
+    const enKeys = Object.keys(enFlat).sort();
+    const esKeys = Object.keys(esFlat).sort();
+    expect(esKeys.filter((k) => !enKeys.includes(k))).toEqual([]);
+    expect(enKeys.filter((k) => !esKeys.includes(k))).toEqual([]);
+  });
+
+  it("has no empty strings", () => {
+    const empty = [
+      ...Object.entries(enFlat).map(([k, v]) => ["en." + k, v]),
+      ...Object.entries(esFlat).map(([k, v]) => ["es." + k, v]),
+    ]
+      .filter(([, v]) => typeof v === "string" && v.trim() === "")
+      .map(([k]) => k);
+    expect(empty).toEqual([]);
+  });
+
+  it("contains no remnants of the old Rumi name", () => {
+    expect(JSON.stringify(en)).not.toMatch(/rumi/i);
+    expect(JSON.stringify(es)).not.toMatch(/rumi/i);
+  });
+});

@@ -55,3 +55,75 @@ describe("filterItems", () => {
     expect(result).toHaveLength(data.length);
   });
 });
+
+describe("filterItems (combined and edge cases)", () => {
+  const stone = (
+    type: string,
+    cut?: string,
+    mountedBy?: string,
+  ) => {
+    const attrs: { trait_type: string; value?: string }[] = [
+      { trait_type: "Stone Type", value: type },
+    ];
+    if (cut !== undefined) attrs.push({ trait_type: "Stone Cut", value: cut });
+    if (mountedBy !== undefined)
+      attrs.push({ trait_type: "Mounted By", value: mountedBy });
+    return { attributes: attrs };
+  };
+
+  const data = [
+    stone("Jade", "Cabochon", "Ana"),
+    stone("Jade", "Faceted"),
+    stone("Amethyst", "Cabochon", "Luis"),
+    stone("Amethyst"),
+  ];
+  const none: Filters = { type: "", cut: "", mounted: "" };
+
+  it("combines type and cut", () => {
+    const result = filterItems(data, { ...none, type: "Jade", cut: "Cabochon" });
+    expect(result).toEqual([data[0]]);
+  });
+
+  it("combines cut and mounted", () => {
+    const result = filterItems(data, { ...none, cut: "Cabochon", mounted: "true" });
+    expect(result).toEqual([data[0], data[2]]);
+  });
+
+  it("combines type, cut and mounted=false", () => {
+    const result = filterItems(data, {
+      ...none,
+      type: "Jade",
+      cut: "Faceted",
+      mounted: "false",
+    });
+    expect(result).toEqual([data[1]]);
+  });
+
+  it("returns nothing when no stone matches", () => {
+    expect(filterItems(data, { ...none, type: "Quartz" })).toEqual([]);
+    expect(
+      filterItems(data, { ...none, type: "Amethyst", cut: "Faceted" }),
+    ).toEqual([]);
+  });
+
+  it("treats a missing Stone Cut attribute as 'No Cut'", () => {
+    const result = filterItems(data, { ...none, cut: "No Cut" });
+    expect(result).toEqual([data[3]]);
+  });
+
+  it("treats a whitespace-only Mounted By as unmounted", () => {
+    const items = [stone("Jade", "Cabochon", "   ")];
+    expect(filterItems(items, { ...none, mounted: "true" })).toEqual([]);
+    expect(filterItems(items, { ...none, mounted: "false" })).toEqual(items);
+  });
+
+  it("does not mutate the input array", () => {
+    const copy = [...data];
+    filterItems(data, { ...none, type: "Jade" });
+    expect(data).toEqual(copy);
+  });
+
+  it("handles an empty list", () => {
+    expect(filterItems([], { ...none, type: "Jade" })).toEqual([]);
+  });
+});
