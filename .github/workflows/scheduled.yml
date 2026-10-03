@@ -1,0 +1,50 @@
+name: Scheduled build and test
+
+# Catches problems nobody pushed: a dependency update that breaks the build,
+# a new vulnerability, or a Node change. Scheduled runs happen on the default
+# branch only. Run it by hand from the Actions tab with "Run workflow".
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm test
+
+      - run: npm run build
+
+      # Serve the production build and check the pages respond.
+      - name: Smoke test the build
+        run: |
+          npx vite preview --port 4173 &
+          for i in $(seq 1 20); do
+            curl -fs http://localhost:4173/ > /dev/null && break
+            sleep 1
+          done
+          curl -fsS http://localhost:4173/ | grep -q 'id="root"'
+          # client-side route: the server must fall back to index.html
+          curl -fsS -o /dev/null http://localhost:4173/marketplace
+          # the bundled script referenced by index.html must be served
+          script=$(curl -fsS http://localhost:4173/ | grep -o 'assets/index-[^"]*\.js' | head -1)
+          curl -fsS -o /dev/null "http://localhost:4173/$script"
+
+      # Informational: many findings come from transitive Hedera/IPFS packages,
+      # so this warns instead of failing the run.
+      - name: Dependency audit (non-blocking)
+        run: npm audit --audit-level=high || echo "::warning::npm audit found high-severity vulnerabilities"

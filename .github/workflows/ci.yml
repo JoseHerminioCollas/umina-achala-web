@@ -30,3 +30,6 @@ jobs:
 
       # Hedera and IPFS are mocked, so no secrets or .env files are needed.
       - run: npm test
+
+      # Make sure the production build still compiles (output is discarded).
+      - run: npm run build
