@@ -97,6 +97,25 @@ UMA evolucionará como la moneda nativa del ecosistema.
 
 ---
 
+## 🛠️ Desarrollo
+```
+npm install       # instalar dependencias
+npm run dev       # servidor de desarrollo con recarga en vivo
+npm test          # ejecutar las pruebas
+```
+
+### Probar el sitio localmente antes de subir cambios
+1. `npm run check` — ejecuta las pruebas y luego compila el sitio en `/tmp/umina-build`. Se detiene si falla alguna prueba y no modifica la carpeta `build/` versionada.
+2. `npm run check:preview` — sirve esa compilación en http://localhost:4173. Vite muestra la dirección real; si el puerto está ocupado, usa el siguiente libre.
+3. Abre el sitio en tu navegador y pruébalo manualmente. Presiona `Ctrl+C` para detener la vista previa.
+
+La vista previa sirve la última compilación y no vuelve a compilar, así que ejecuta `npm run check` de nuevo después de cambiar el código. `check` escribe en `/tmp` (Linux y macOS).
+
+`npm run build` escribe en la carpeta `build/` versionada; úsalo solo al preparar un despliegue.
+
+### Verificaciones automáticas
+GitHub Actions ejecuta las pruebas y la compilación en cada push y pull request (`.github/workflows/ci.yml`). Una ejecución semanal programada (`.github/workflows/scheduled.yml`) también sirve el sitio compilado y comprueba que sus páginas respondan.
+
 ## 📚 Documentación
 - [Documentación de Exportación Minera](umina-documents/mining-export.md) — Flujo de trabajo, notas de cumplimiento e integración.  
 - [Lista de Verificación para Compradores](umina-documents/buyer_checklist.md) — Guía práctica para compradores.  

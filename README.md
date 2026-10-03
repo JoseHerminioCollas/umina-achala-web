@@ -79,6 +79,25 @@ UMA will evolve into the native currency of the ecosystem.
 - Enables fractional ownership of high‑value pieces.  
 - Paired with USDC in liquidity pools to establish real cash value.  
 
+## 🛠️ Development
+```
+npm install       # install dependencies
+npm run dev       # dev server with live reload
+npm test          # run the tests
+```
+
+### Test the site locally before pushing
+1. `npm run check` — runs the tests, then builds the site into `/tmp/umina-build`. It stops if a test fails, and it does not touch the tracked `build/` folder.
+2. `npm run check:preview` — serves that build at http://localhost:4173. Vite prints the actual address; if the port is busy it uses the next free one.
+3. Open the site in your browser and test it manually. Press `Ctrl+C` to stop the preview.
+
+The preview serves the last build and does not rebuild, so run `npm run check` again after changing code. `check` writes to `/tmp` (Linux and macOS).
+
+`npm run build` writes to the tracked `build/` folder; use it only when preparing a deploy.
+
+### Automated checks
+GitHub Actions runs the tests and the build on every push and pull request (`.github/workflows/ci.yml`). A scheduled weekly run (`.github/workflows/scheduled.yml`) also serves the built site and checks that its pages respond.
+
 ## 📚 Documentation
 - [Mining Export Documentation](umina-documents/mining-export.md) — Workflow steps, compliance notes, and integration details.  
 - [Buyer’s Checklist](umina-documents/buyer_checklist.md) — Practical guide for buyers.  

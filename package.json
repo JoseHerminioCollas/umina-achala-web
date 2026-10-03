@@ -9,6 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "jest",
+    "check": "npm test && vite build --outDir /tmp/umina-build --emptyOutDir",
+    "check:preview": "vite preview --outDir /tmp/umina-build --port 4173",
     "deploy": "gh-pages -d docs"
   },
   "dependencies": {
