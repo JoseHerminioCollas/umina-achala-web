@@ -28,7 +28,7 @@ The `properties` object contains compliance‑critical fields:
 - **`stone_id`** → Unique identifier (`UMINA-2026-CH-03`).  
 - **`hs_code`** → Harmonized System Code (`7103.99.00.00`).  
 - **`jurisdiction`** → Country of origin (`Peru`).  
-- **`legal_uri`** → Project legal reference (`https://rumi.earth`).  
+- **`legal_uri`** → Project legal reference (`https://umina-achala.pe/`).  
 - **`vendor_ruc`** → SUNAT tax ID (`20999887766`).  
 - **`artisan_rna`** → MINCETUR RNA number (`RNA-112233`).  
 - **`mining_concession`** → Concession ID (`Arequipa-Chrys-03`).  
