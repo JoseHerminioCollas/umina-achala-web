@@ -17,44 +17,78 @@
   color: var(--accent);
 }
 
-.form {
+.intro {
+  max-width: 500px;
+  margin: 0 0 1.5rem;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+.contact {
+  /* Height of the embedded Google Form. It cannot size itself (different site),
+     so make this tall enough that the form never needs its own scroll bar. */
+  --form-height: 1500px;
+}
+
+.frame {
   width: 100%;
-  max-width: 500px; /* fixed width cap */
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  max-width: 640px;
+  height: var(--form-height);
+  border: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
 }
 
-.label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-}
-
-.input,
-.textarea {
-  padding: 0.5rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.button {
+.phoneButton {
+  display: none; /* shown on phones, where the embedded form is too tall */
   padding: 0.75rem 1.5rem;
   background: var(--accent);
   color: #fff;
-  border: none;
   border-radius: 4px;
-  cursor: pointer;
-  align-self: flex-start;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
 }
 
-.button:hover {
+.phoneButton:hover {
   color: #000;
   background: #fff;
+}
+
+.note {
+  max-width: 500px;
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.note a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .contact {
+    width: 94%;
+    padding: 1.25rem;
+  }
+}
+
+/* Narrow screens: the embedded form wraps into a very tall column that a fixed
+   height cannot fit, so open the form in its own tab instead. */
+@media (max-width: 640px) {
+  .frame,
+  .newTabNote {
+    display: none;
+  }
+  .phoneButton {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 641px) {
+  .contact {
+    --form-height: 1720px;
+  }
 }

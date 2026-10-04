@@ -1,42 +1,72 @@
 /** @jest-environment jsdom */
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router-dom";
 import i18n from "../../frontend/src/i18n";
 import Contact from "../../frontend/src/components/Contact";
+import { CONTACT_FORM_URL } from "../../frontend/src/config";
 
-const fillAndSend = async () => {
-  await userEvent.type(screen.getByLabelText("Name"), "Ana");
-  await userEvent.type(screen.getByLabelText("Email"), "ana@example.com");
-  await userEvent.type(screen.getByLabelText("Message"), "Hello");
-  await userEvent.click(screen.getByRole("button", { name: "Send" }));
-};
+const setup = () =>
+  render(
+    <MemoryRouter>
+      <Contact />
+    </MemoryRouter>,
+  );
 
-describe("Contact form", () => {
+describe("Contact page (embedded Google Form)", () => {
   beforeEach(() => i18n.changeLanguage("en"));
   afterEach(() => jest.restoreAllMocks());
 
-  it("shows the demo alert on submit", async () => {
-    const alert = jest.spyOn(window, "alert").mockImplementation(() => {});
-    render(<Contact />);
-    await fillAndSend();
-    expect(alert).toHaveBeenCalledWith("Contact form is for demonstration only.");
+  it("explains what the form is for", () => {
+    setup();
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Contact Umiña Achala");
+    expect(screen.getByText(/notified when the site launches/i)).toBeInTheDocument();
   });
 
-  it("does not log the submitted name, email or message (#77)", async () => {
-    jest.spyOn(window, "alert").mockImplementation(() => {});
-    const log = jest.spyOn(console, "log").mockImplementation(() => {});
-    const info = jest.spyOn(console, "info").mockImplementation(() => {});
-    const debug = jest.spyOn(console, "debug").mockImplementation(() => {});
-    render(<Contact />);
-    await fillAndSend();
-    [log, info, debug].forEach((spy) => expect(spy).not.toHaveBeenCalled());
+  it("embeds the Google Form in the page", () => {
+    setup();
+    const frame = screen.getByTitle("Contact form");
+    expect(frame.tagName).toBe("IFRAME");
+    expect(frame).toHaveAttribute("src", `${CONTACT_FORM_URL}?embedded=true`);
+    expect(frame).toHaveAttribute("scrolling", "no"); // no scroll bar inside the page's own
   });
 
-  it("requires name, email and message", async () => {
-    const alert = jest.spyOn(window, "alert").mockImplementation(() => {});
-    render(<Contact />);
-    await userEvent.click(screen.getByRole("button", { name: "Send" }));
-    expect(alert).not.toHaveBeenCalled(); // browser validation blocks the submit
+  it("also offers the form in a new tab", () => {
+    setup();
+    const link = screen.getByRole("link", { name: "Open the form in a new tab" });
+    expect(link).toHaveAttribute("href", CONTACT_FORM_URL);
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", expect.stringContaining("noopener"));
+  });
+
+  it("has a button that opens the form in a new tab (used on phones instead of the embed)", () => {
+    setup();
+    const button = screen.getByRole("link", { name: "Open the contact form" });
+    expect(button).toHaveAttribute("href", CONTACT_FORM_URL);
+    expect(button).toHaveAttribute("target", "_blank");
+    expect(button).toHaveAttribute("rel", expect.stringContaining("noopener"));
+  });
+
+  it("points to the privacy page and says Google Forms collects the data", () => {
+    setup();
+    expect(screen.getByText(/collected with Google Forms/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Privacy & Cookies" })).toHaveAttribute("href", "/privacy");
+  });
+
+  it("is shown in Spanish", async () => {
+    await i18n.changeLanguage("es");
+    setup();
+    expect(screen.getByTitle("Formulario de contacto")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Abrir el formulario en una pestaña nueva" })).toHaveAttribute(
+      "href",
+      CONTACT_FORM_URL,
+    );
+    expect(screen.getByText(/se recoge con Google Forms/i)).toBeInTheDocument();
+  });
+
+  it("no longer has its own input fields (nothing to log, #77)", () => {
+    setup();
+    expect(screen.queryByRole("textbox")).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Send" })).not.toBeInTheDocument();
   });
 });

@@ -1,5 +1,6 @@
 // src/components/Header.tsx
 import React from "react";
+import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import styles from "./Header.module.css";
 import { useTranslation } from "react-i18next";
@@ -27,7 +28,12 @@ const Header = () => {
             <p className={styles.tagline}>
               <b>{t("site.tagline")}</b>
             </p>
-            <p className={styles.demoNotice}>{t("demo.notice")}</p>
+            <p className={styles.demoNotice}>
+              {t("demo.notice")}{" "}
+              <Link to="/contact" className={styles.demoLink}>
+                {t("demo.contactLink")}
+              </Link>
+            </p>
           </div>
         </div>
       </div>

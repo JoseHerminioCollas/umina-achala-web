@@ -1,60 +1,42 @@
 // Contact.tsx
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Contact.module.css";
 import { useTranslation } from "react-i18next";
+import { CONTACT_FORM_URL } from "../config";
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: integrate with backend or email service (e.g., Formspree, Netlify Forms, custom API)
-    alert(t("contact.alert"));
-  };
 
   return (
     <div className={styles.contact}>
       <h1 className={styles.title}>{t("contact.title")}</h1>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <label className={styles.label}>
-          {t("contact.name")}
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className={styles.input}
-            required
-          />
-        </label>
-        <label className={styles.label}>
-          {t("contact.email")}
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className={styles.input}
-            required
-          />
-        </label>
-        <label className={styles.label}>
-          {t("contact.message")}
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            className={styles.textarea}
-            required
-          />
-        </label>
-        <button type="submit" className={styles.button}>{t("contact.send")}</button>
-      </form>
+      <p className={styles.intro}>{t("contact.intro")}</p>
+      <iframe
+        src={`${CONTACT_FORM_URL}?embedded=true`}
+        title={t("contact.frameTitle")}
+        className={styles.frame}
+        scrolling="no"
+        loading="lazy"
+      >
+        {t("contact.loading")}
+      </iframe>
+      <a
+        href={CONTACT_FORM_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.phoneButton}
+      >
+        {t("contact.openForm")}
+      </a>
+      <p className={`${styles.note} ${styles.newTabNote}`}>
+        <a href={CONTACT_FORM_URL} target="_blank" rel="noopener noreferrer">
+          {t("contact.openInNewTab")}
+        </a>
+      </p>
+      <p className={styles.note}>
+        {t("contact.privacyNote")} <Link to="/privacy">{t("nav.privacy")}</Link>
+      </p>
     </div>
   );
 };

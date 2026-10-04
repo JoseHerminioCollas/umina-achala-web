@@ -56,3 +56,10 @@ describe("demo notice (#84)", () => {
     );
   });
 });
+
+describe("demo notice contact link (#68)", () => {
+  it("has the English and Spanish link text", () => {
+    expect(en.demo.contactLink).toBe("Contact us to be notified.");
+    expect(es.demo.contactLink).toBe("Contáctenos para que le avisemos.");
+  });
+});

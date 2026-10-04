@@ -4,7 +4,8 @@
     "tagline": "Stones and jewelry from Peru"
   },
   "demo": {
-    "notice": "Web page for demonstration purposes only, launching soon"
+    "notice": "Web page for demonstration purposes only, launching soon",
+    "contactLink": "Contact us to be notified."
   },
   "nav": {
     "home": "Home",
@@ -75,11 +76,12 @@
   },
   "contact": {
     "title": "Contact Umiña Achala",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send",
-    "alert": "Contact form is for demonstration only."
+    "intro": "Leave your name and email to be notified when the site launches, or to ask about our stones and jewelry. Use the form below.",
+    "openForm": "Open the contact form",
+    "frameTitle": "Contact form",
+    "loading": "Loading the form…",
+    "openInNewTab": "Open the form in a new tab",
+    "privacyNote": "Your information is collected with Google Forms. Details:"
   },
   "marketplace": {
     "noResults": "No stones match your filters. Try adjusting your search."
@@ -105,7 +107,8 @@
     "policyItems": [
       "Wallet addresses are used solely for authentication and transactions.",
       "Compliance identifiers (Concession ID, REINFO ID, RUC, RNA) are stored immutably on Hedera.",
-      "Metadata is linked to NFTs for provenance and transparency."
+      "Metadata is linked to NFTs for provenance and transparency.",
+      "Contact form information (name, email, phone number and comments) is collected with Google Forms and used only to reply and to notify you about the launch."
     ],
     "cookies": "🍪 Cookies",
     "cookiesDesc": "Our platform uses cookies to improve user experience and ensure secure access. Cookies help us remember preferences, maintain session integrity, and analyze platform usage.",

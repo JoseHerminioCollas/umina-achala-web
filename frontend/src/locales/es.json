@@ -4,7 +4,8 @@
     "tagline": "Piedras y joyería desde Perú"
   },
   "demo": {
-    "notice": "Página web solo con fines de demostración, próximamente"
+    "notice": "Página web solo con fines de demostración, próximamente",
+    "contactLink": "Contáctenos para que le avisemos."
   },
   "nav": {
     "home": "Inicio",
@@ -75,11 +76,12 @@
   },
   "contact": {
     "title": "Contacto Umiña Achala",
-    "name": "Nombre",
-    "email": "Correo",
-    "message": "Mensaje",
-    "send": "Enviar",
-    "alert": "El formulario de contacto es solo una demostración."
+    "intro": "Déjenos su nombre y correo para avisarle cuando el sitio se lance, o para consultar por nuestras piedras y joyería. Use el formulario a continuación.",
+    "openForm": "Abrir el formulario de contacto",
+    "frameTitle": "Formulario de contacto",
+    "loading": "Cargando el formulario…",
+    "openInNewTab": "Abrir el formulario en una pestaña nueva",
+    "privacyNote": "Su información se recoge con Google Forms. Detalles:"
   },
   "marketplace": {
     "noResults": "Ninguna piedra coincide con tus filtros. Intenta ajustar tu búsqueda."
@@ -105,7 +107,8 @@
     "policyItems": [
       "Las direcciones de billetera se utilizan solo para autenticación y transacciones.",
       "Los identificadores de cumplimiento (ID de Concesión, ID REINFO, RUC, RNA) se almacenan inmutablemente en Hedera.",
-      "Los metadatos se vinculan a NFTs para procedencia y transparencia."
+      "Los metadatos se vinculan a NFTs para procedencia y transparencia.",
+      "La información del formulario de contacto (nombre, correo, teléfono y comentarios) se recoge con Google Forms y se usa solo para responderle y avisarle del lanzamiento."
     ],
     "cookies": "🍪 Cookies",
     "cookiesDesc": "Nuestra plataforma usa cookies para mejorar la experiencia del usuario y garantizar acceso seguro. Las cookies nos ayudan a recordar preferencias, mantener la integridad de la sesión y analizar el uso de la plataforma.",
