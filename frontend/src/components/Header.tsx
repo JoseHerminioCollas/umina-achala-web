@@ -30,7 +30,11 @@ const Header = () => {
             </p>
             <p className={styles.demoNotice}>
               {t("demo.notice")}{" "}
-              <Link to="/contact" className={styles.demoLink}>
+              <Link
+                to="/contact"
+                className={styles.demoLink}
+                data-umami-event="header-contact-link"
+              >
                 {t("demo.contactLink")}
               </Link>
             </p>
@@ -43,6 +47,8 @@ const Header = () => {
             role="img"
             aria-label="Español"
             title="Español"
+            data-umami-event={i18n.language?.startsWith("es") ? undefined : "language-switch"}
+            data-umami-event-to="es"
             className={
               i18n.language?.startsWith("es")
                 ? styles.activeFlag
@@ -58,6 +64,8 @@ const Header = () => {
             role="img"
             aria-label="English"
             title="English"
+            data-umami-event={i18n.language?.startsWith("es") ? "language-switch" : undefined}
+            data-umami-event-to="en"
             className={
               i18n.language?.startsWith("es")
                 ? styles.inactiveFlag

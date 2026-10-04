@@ -92,3 +92,22 @@ describe("brand spelling", () => {
     expect(JSON.stringify(es)).not.toMatch(/\bUmina\b/);
   });
 });
+
+describe("privacy page analytics wording (#87)", () => {
+  it("names Umami and no longer claims analytics cookies", () => {
+    for (const lang of [en, es] as const) {
+      expect(lang.privacy.analytics).toMatch(/Umami/);
+      expect(lang.privacy.analytics).not.toMatch(/Cookies:|Cookies de Análisis/);
+    }
+  });
+
+  it("says where the analytics data is stored (EU)", () => {
+    expect(en.privacy.analytics).toMatch(/European Union/);
+    expect(es.privacy.analytics).toMatch(/Unión Europea/);
+  });
+
+  it("mentions the server access logs in both languages", () => {
+    expect(en.privacy.policyItems.some((i: string) => /access logs/i.test(i))).toBe(true);
+    expect(es.privacy.policyItems.some((i: string) => /registros de acceso/i.test(i))).toBe(true);
+  });
+});

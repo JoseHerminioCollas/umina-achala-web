@@ -142,13 +142,14 @@
       "Las direcciones de billetera se utilizan solo para autenticación y transacciones.",
       "Los identificadores de cumplimiento (ID de Concesión, ID REINFO, RUC, RNA) se almacenan inmutablemente en Hedera.",
       "Los metadatos se vinculan a NFTs para procedencia y transparencia.",
-      "La información del formulario de contacto (nombre, correo, teléfono y comentarios) se recoge con Google Forms y se usa solo para responderle y avisarle del lanzamiento."
+      "La información del formulario de contacto (nombre, correo, teléfono y comentarios) se recoge con Google Forms y se usa solo para responderle y avisarle del lanzamiento.",
+      "Nuestro servidor web guarda registros de acceso estándar, incluidas las direcciones IP, por seguridad y para resolver problemas, y los conserva por un tiempo limitado."
     ],
     "cookies": "🍪 Cookies",
     "cookiesDesc": "Nuestra plataforma usa cookies para mejorar la experiencia del usuario y garantizar acceso seguro. Las cookies nos ayudan a recordar preferencias, mantener la integridad de la sesión y analizar el uso de la plataforma.",
     "essential": "<strong>Cookies Esenciales:</strong> Requeridas para inicio de sesión, conexión de billetera y navegación segura.",
     "preference": "<strong>Cookies de Preferencia:</strong> Almacenan idioma, pantalla y configuración de accesibilidad.",
-    "analytics": "<strong>Cookies de Análisis:</strong> Proporcionan información sobre el uso de la plataforma para mejorar los servicios.",
+    "analytics": "<strong>Analítica:</strong> Usamos Umami, un servicio de analítica que respeta la privacidad. No usa cookies ni crea perfiles personales. Registra las páginas vistas, el sitio de origen, su país y el tipo de dispositivo y navegador, para ayudarnos a mejorar el sitio. Los datos se almacenan en la Unión Europea.",
     "rights": "⚖️ Tus Derechos",
     "rightsDesc": "Puedes solicitar acceso a tus datos, pedir correcciones o solicitar eliminación cuando sea aplicable. Los registros de blockchain son inmutables, pero los datos fuera de la cadena, como las preferencias, pueden actualizarse o eliminarse."
   },

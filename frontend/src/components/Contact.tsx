@@ -28,11 +28,17 @@ const Contact: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         className={styles.phoneButton}
+        data-umami-event="contact-form-button"
       >
         {t("contact.openForm")}
       </a>
       <p className={`${styles.note} ${styles.newTabNote}`}>
-        <a href={CONTACT_FORM_URL} target="_blank" rel="noopener noreferrer">
+        <a
+          href={CONTACT_FORM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-umami-event="contact-form-newtab"
+        >
           {t("contact.openInNewTab")}
         </a>
       </p>

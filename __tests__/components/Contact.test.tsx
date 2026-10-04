@@ -47,6 +47,18 @@ describe("Contact page (embedded Google Form)", () => {
     expect(button).toHaveAttribute("rel", expect.stringContaining("noopener"));
   });
 
+  it("tracks clicks on the form links (analytics events)", () => {
+    setup();
+    expect(screen.getByRole("link", { name: "Open the contact form" })).toHaveAttribute(
+      "data-umami-event",
+      "contact-form-button",
+    );
+    expect(screen.getByRole("link", { name: "Open the form in a new tab" })).toHaveAttribute(
+      "data-umami-event",
+      "contact-form-newtab",
+    );
+  });
+
   it("points to the privacy page and says Google Forms collects the data", () => {
     setup();
     expect(screen.getByText(/collected with Google Forms/i)).toBeInTheDocument();

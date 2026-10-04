@@ -142,13 +142,14 @@
       "Wallet addresses are used solely for authentication and transactions.",
       "Compliance identifiers (Concession ID, REINFO ID, RUC, RNA) are stored immutably on Hedera.",
       "Metadata is linked to NFTs for provenance and transparency.",
-      "Contact form information (name, email, phone number and comments) is collected with Google Forms and used only to reply and to notify you about the launch."
+      "Contact form information (name, email, phone number and comments) is collected with Google Forms and used only to reply and to notify you about the launch.",
+      "Our web server keeps standard access logs, including IP addresses, for security and troubleshooting, and keeps them for a limited time."
     ],
     "cookies": "🍪 Cookies",
     "cookiesDesc": "Our platform uses cookies to improve user experience and ensure secure access. Cookies help us remember preferences, maintain session integrity, and analyze platform usage.",
     "essential": "<strong>Essential Cookies:</strong> Required for login, wallet connection, and secure navigation.",
     "preference": "<strong>Preference Cookies:</strong> Store language, display, and accessibility settings.",
-    "analytics": "<strong>Analytics Cookies:</strong> Provide insights into platform usage to improve services.",
+    "analytics": "<strong>Analytics:</strong> We use Umami, a privacy-friendly analytics service. It sets no cookies and does not build personal profiles. It records page views, the site you came from, your country, and your device and browser type, to help us improve the site. The data is stored in the European Union.",
     "rights": "⚖️ Your Rights",
     "rightsDesc": "You may request access to your data, ask for corrections, or request deletion where applicable. Blockchain records are immutable, but off‑chain data such as preferences can be updated or removed."
   },
