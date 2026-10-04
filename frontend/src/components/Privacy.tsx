@@ -2,9 +2,11 @@
 import React from "react";
 import styles from "./Privacy.module.css";
 import { useTranslation } from "react-i18next";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const Privacy = () => {
   const { t } = useTranslation();
+  usePageMeta("privacy");
   return (
     <div className={styles.privacy}>
       <h1 className={styles.title}>{t("privacy.title")}</h1>

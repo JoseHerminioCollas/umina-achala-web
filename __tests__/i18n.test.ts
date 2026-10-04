@@ -63,3 +63,25 @@ describe("demo notice contact link (#68)", () => {
     expect(es.demo.contactLink).toBe("Contáctenos para que le avisemos.");
   });
 });
+
+describe("page titles and descriptions (#86)", () => {
+  const pages = ["home", "marketplace", "about", "faqs", "privacy", "contact", "admin", "compliance"];
+
+  it.each(pages)("%s has a title and description in both languages", (page) => {
+    for (const lang of [en, es] as const) {
+      const entry = (lang as any).seo[page];
+      expect(entry.title.length).toBeGreaterThan(0);
+      expect(entry.description.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("titles are short enough for search results and descriptions are not too long", () => {
+    for (const lang of [en, es] as const) {
+      for (const page of pages) {
+        const entry = (lang as any).seo[page];
+        expect(entry.title.length).toBeLessThanOrEqual(65);
+        expect(entry.description.length).toBeLessThanOrEqual(160);
+      }
+    }
+  });
+});

@@ -2,6 +2,7 @@
 import React from "react";
 import { render, screen, within, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router-dom";
 import "../../frontend/src/i18n";
 import Marketplace from "../../frontend/src/components/Marketplace";
 import { UminaFacade } from "../../frontend/src/data/UminaFacade";
@@ -26,13 +27,13 @@ const emptyCombo = types
 
 describe("Marketplace", () => {
   it("shows the first page of stones", () => {
-    render(<Marketplace />);
+    render(<MemoryRouter><Marketplace /></MemoryRouter>);
     expect(viewButtons()).toHaveLength(Math.min(PER_PAGE, all.length));
     expect(shownNames()).toEqual(all.slice(0, PER_PAGE).map((u) => u.name));
   });
 
   it("pages through the stones", async () => {
-    render(<Marketplace />);
+    render(<MemoryRouter><Marketplace /></MemoryRouter>);
     await userEvent.click(screen.getByRole("button", { name: "2" }));
     expect(shownNames()).toEqual(all.slice(PER_PAGE, PER_PAGE * 2).map((u) => u.name));
     await userEvent.click(screen.getByRole("button", { name: "Next" }));
@@ -40,7 +41,7 @@ describe("Marketplace", () => {
   });
 
   it("filters by stone type and hides the pager when one page is enough", async () => {
-    render(<Marketplace />);
+    render(<MemoryRouter><Marketplace /></MemoryRouter>);
     const type = types[0];
     const expected = filterItems(all, { type, cut: "", mounted: "" });
     expect(expected.length).toBeLessThanOrEqual(PER_PAGE);
@@ -50,7 +51,7 @@ describe("Marketplace", () => {
   });
 
   it("filters by mounted", async () => {
-    render(<Marketplace />);
+    render(<MemoryRouter><Marketplace /></MemoryRouter>);
     await userEvent.selectOptions(screen.getAllByRole("combobox")[2], "true");
     const expected = filterItems(all, { type: "", cut: "", mounted: "true" });
     expect(screen.getAllByText("Mounted by:")).toHaveLength(
@@ -59,7 +60,7 @@ describe("Marketplace", () => {
   });
 
   it("returns to page 1 when a filter changes (#57)", async () => {
-    const { container } = render(<Marketplace />);
+    const { container } = render(<MemoryRouter><Marketplace /></MemoryRouter>);
     const lastPage = Math.ceil(all.length / PER_PAGE);
     await userEvent.click(screen.getByRole("button", { name: String(lastPage) }));
     expect(container.querySelector(".activePage")).toHaveTextContent(String(lastPage));
@@ -73,7 +74,7 @@ describe("Marketplace", () => {
 
   it("shows a message when no stone matches the filters", async () => {
     expect(emptyCombo).toBeDefined();
-    render(<Marketplace />);
+    render(<MemoryRouter><Marketplace /></MemoryRouter>);
     const [typeSelect, cutSelect] = screen.getAllByRole("combobox");
     await userEvent.selectOptions(typeSelect, emptyCombo!.type);
     await userEvent.selectOptions(cutSelect, emptyCombo!.cut);
@@ -84,7 +85,7 @@ describe("Marketplace", () => {
   });
 
   it("opens the stone modal from a card and closes it on Escape", async () => {
-    render(<Marketplace />);
+    render(<MemoryRouter><Marketplace /></MemoryRouter>);
     expect(screen.queryByRole("heading", { level: 2 })).not.toBeInTheDocument();
     await userEvent.click(viewButtons()[0]);
     const modal = screen.getByRole("heading", { level: 2 });

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "./ComplianceDashboard.module.css";
 import { useTranslation } from "react-i18next";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 interface ComplianceItem {
   id: string;
@@ -49,6 +50,7 @@ const mockData: ComplianceItem[] = [
 
 const ComplianceDashboard: React.FC = () => {
   const { t } = useTranslation();
+  usePageMeta("compliance", { noindex: true });
   const [search, setSearch] = useState("");
 
   const filteredData = mockData.filter(

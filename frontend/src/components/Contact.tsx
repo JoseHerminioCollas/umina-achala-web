@@ -3,10 +3,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Contact.module.css";
 import { useTranslation } from "react-i18next";
+import { usePageMeta } from "../hooks/usePageMeta";
 import { CONTACT_FORM_URL } from "../config";
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
+  usePageMeta("contact");
 
   return (
     <div className={styles.contact}>

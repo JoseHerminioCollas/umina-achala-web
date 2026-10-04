@@ -6,9 +6,11 @@ import Card from "./Card";
 import StoneModal from "./StoneModal";
 import styles from "./Hero.module.css";
 import { useTranslation } from "react-i18next";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const Hero = () => {
   const { t } = useTranslation();
+  usePageMeta("home");
   const [open, setOpen] = useState<Umina | null>(null);
   const featured = UminaFacade.fromJSON().getFeatured(3);
 

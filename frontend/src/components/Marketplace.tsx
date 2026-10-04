@@ -8,10 +8,12 @@ import { UminaFacade } from "../data/UminaFacade";
 import styles from "./Marketplace.module.css";
 import Pager from "./Pager";
 import { useTranslation } from "react-i18next";
+import { usePageMeta } from "../hooks/usePageMeta";
 import { filterItems } from "../utils/filterItems";
 
 const Marketplace: React.FC = () => {
   const { t } = useTranslation();
+  usePageMeta("marketplace");
   const [open, setOpen] = useState<Umina | null>(null);
   const data = UminaFacade.fromJSON().getAll();
   const [filters, setFilters] = useState({

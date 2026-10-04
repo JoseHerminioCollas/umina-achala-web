@@ -7,6 +7,40 @@
     "notice": "Página web solo con fines de demostración, próximamente",
     "contactLink": "Contáctenos para que le avisemos."
   },
+  "seo": {
+    "home": {
+      "title": "Umiña Achala | Piedras y joyería del Perú, origen verificado",
+      "description": "Gemas, minerales y joyería del Perú con origen documentado, registrado en la blockchain de Hedera. Explore el mercado o contáctenos."
+    },
+    "marketplace": {
+      "title": "Mercado | Umiña Achala",
+      "description": "Explore piedras y joyería del Perú: amatista, jade, lapislázuli, malaquita y más. Filtre por tipo, corte y montura."
+    },
+    "about": {
+      "title": "Acerca de | Umiña Achala",
+      "description": "Cómo Umiña Achala registra el origen de piedras, minerales y joyería del Perú, y reconoce a los mineros y artesanos detrás de ellas."
+    },
+    "faqs": {
+      "title": "Preguntas frecuentes | Umiña Achala",
+      "description": "Respuestas a preguntas frecuentes sobre Umiña Achala, cómo se registra el origen y cómo comprar piedras y joyería del Perú."
+    },
+    "privacy": {
+      "title": "Privacidad y Cookies | Umiña Achala",
+      "description": "Cómo Umiña Achala trata su información, incluidos los datos del formulario de contacto, las cookies y sus derechos."
+    },
+    "contact": {
+      "title": "Contacto | Umiña Achala",
+      "description": "Contacte a Umiña Achala por piedras y joyería del Perú, o pida que le avisemos cuando el sitio se lance."
+    },
+    "admin": {
+      "title": "Administrador | Umiña Achala",
+      "description": "Acceso de administrador."
+    },
+    "compliance": {
+      "title": "Panel de Cumplimiento | Umiña Achala",
+      "description": "Panel de cumplimiento para reguladores."
+    }
+  },
   "nav": {
     "home": "Inicio",
     "marketplace": "Mercado",

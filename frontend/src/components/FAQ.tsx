@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./FAQ.module.css";
 import { useTranslation } from "react-i18next";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const FAQ = () => {
   const { t } = useTranslation();
+  usePageMeta("faqs");
   return (
     <div className={styles.faqPage}>
       <h1 className={styles.title}>{t("faq.title")}</h1>

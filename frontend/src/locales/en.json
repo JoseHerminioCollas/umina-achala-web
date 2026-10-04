@@ -7,6 +7,40 @@
     "notice": "Web page for demonstration purposes only, launching soon",
     "contactLink": "Contact us to be notified."
   },
+  "seo": {
+    "home": {
+      "title": "Umiña Achala | Peruvian stones and jewelry, origin verified",
+      "description": "Peruvian gemstones, minerals and jewelry with documented origin, recorded on the Hedera blockchain. Browse the marketplace or contact us."
+    },
+    "marketplace": {
+      "title": "Marketplace | Umiña Achala",
+      "description": "Browse Peruvian stones and jewelry: amethyst, jade, lapis lazuli, malachite and more. Filter by type, cut and mounting."
+    },
+    "about": {
+      "title": "About | Umiña Achala",
+      "description": "How Umiña Achala records the origin of Peruvian stones, minerals and jewelry, and recognizes the miners and artisans behind them."
+    },
+    "faqs": {
+      "title": "FAQs | Umiña Achala",
+      "description": "Answers to common questions about Umiña Achala, how provenance is recorded, and how to buy Peruvian stones and jewelry."
+    },
+    "privacy": {
+      "title": "Privacy & Cookies | Umiña Achala",
+      "description": "How Umiña Achala handles your information, including contact form data, cookies and your rights."
+    },
+    "contact": {
+      "title": "Contact | Umiña Achala",
+      "description": "Contact Umiña Achala about Peruvian stones and jewelry, or ask to be notified when the site launches."
+    },
+    "admin": {
+      "title": "Admin | Umiña Achala",
+      "description": "Administrator login."
+    },
+    "compliance": {
+      "title": "Compliance Dashboard | Umiña Achala",
+      "description": "Compliance dashboard for regulators."
+    }
+  },
   "nav": {
     "home": "Home",
     "marketplace": "Marketplace",

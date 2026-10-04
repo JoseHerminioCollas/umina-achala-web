@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./AboutPage.module.css";
 import { useTranslation } from "react-i18next";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const AboutPage = () => {
   const { t } = useTranslation();
+  usePageMeta("about");
   return (
     <div className={styles.aboutPage}>
       <h1 className={styles.title}>{t("about.title")}</h1>

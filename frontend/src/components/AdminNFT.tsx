@@ -2,9 +2,11 @@
 import React, { useState } from "react";
 import styles from "./AdminNFT.module.css";
 import { useTranslation } from "react-i18next";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const AdminNFT: React.FC = () => {
   const { t } = useTranslation();
+  usePageMeta("admin", { noindex: true });
   const [formData, setFormData] = useState({ username: "", password: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
