@@ -85,3 +85,10 @@ describe("page titles and descriptions (#86)", () => {
     }
   });
 });
+
+describe("brand spelling", () => {
+  it("writes the brand with the ñ in the visible text (Umiña, not Umina)", () => {
+    expect(JSON.stringify(en)).not.toMatch(/\bUmina\b/);
+    expect(JSON.stringify(es)).not.toMatch(/\bUmina\b/);
+  });
+});
