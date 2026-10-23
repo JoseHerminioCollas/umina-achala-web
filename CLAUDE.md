@@ -40,7 +40,7 @@ No lint script is configured. `tsconfig.json` only covers `frontend/src` (strict
 - Hedera scripts load credentials from `.env.testnet` via dotenv (mainnet line is commented in the script; switch it manually). `.env*` files are gitignored and hold real operator/admin/supply/wipe keys — never print or commit them.
 - Changes to the frontend are only visible in the deployed site after `npm run build`, since `build/` is tracked.
 - The project was renamed from "Rumi" to "Umiña Achala". Code uses `Umina` (`Umina` type, `UMINA_TOKEN_ID`, stone IDs like `UMINA-2026-CH-03`); the brand is "Umiña Achala". Search for `rumi` to find any remnant. Everything built before the rename (the `build/` bundle) still shows the old name until rebuilt.
-- Known issues in the Hedera scripts (`createUminaToken.js`, `mintUminaNFT.js`) are tracked in #71–#74; check them before running a script on testnet.
+- Known issues in the Hedera scripts (`createUminaToken.js`, `mintUminaNFT.js`) are tracked in the `umina-achala-chain` repo (`umina-achala-chain#1` to `#4`, formerly #71–#74 here); check them before running a script on testnet. Chain issues sit on Project #1 under Phase 2 (#15), so use `-R umina-achala/umina-achala-chain` with `gh issue`.
 - `npx tsc --noEmit` currently reports 4 errors in `StoneModal.tsx` (missing `tokenId` / `serialNumber` on `Umina`; see #89), and `vite build` does not type-check.
 
 ## Live site and deploy
@@ -56,7 +56,7 @@ No lint script is configured. `tsconfig.json` only covers `frontend/src` (strict
 
 ## Project management
 
-- Issues and the board live in the org repo `umina-achala/umina-achala-web` (project: https://github.com/orgs/umina-achala/projects/1). The `origin` remote is a personal fork and `upstream` is the org repo, so pass `-R umina-achala/umina-achala-web` to `gh issue` commands.
+- Issues and the board live in the org repo `umina-achala/umina-achala-web` (Hedera script issues live in `umina-achala/umina-achala-chain` and share the same project) (project: https://github.com/orgs/umina-achala/projects/1). The `origin` remote is a personal fork and `upstream` is the org repo, so pass `-R umina-achala/umina-achala-web` to `gh issue` commands.
 - The site is built in four phases, each a parent issue with its tasks as sub-issues and a matching milestone: Phase 1 demo site, no contract (#64), Phase 2 testnet (#15), Phase 3 mainnet (#39), Phase 4 UMA coin (#21). When a task moves between phases, change both its parent and its milestone. Work that is not tied to a phase (recurring or never-finished tasks, such as SEO monitoring in #100) is a sub-issue of **#101 "Ongoing tasks"**, with no milestone. The Phase 1 launch checklist is #103; server work is #98 (before the first deploy) and #102 (tuning). An issue can have only one parent.
 - Board fields: Status (Todo / In Progress / Done), Priority (P0–P3, P0 most urgent), and Delivery (Done in fork / Done in upstream / In production). Delivery is set by hand and is separate from Status. Labels: `frontend`, `blockchain`, `payments`, `infra`, `refactor`, `production`, `marketing`, plus GitHub's defaults.
 - The project's item list (`gh project item-list`) and the board lag by up to a minute after changes; re-check before assuming an update failed.
