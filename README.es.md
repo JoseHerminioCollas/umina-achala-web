@@ -117,20 +117,22 @@ La vista previa sirve la última compilación y no vuelve a compilar, así que e
 GitHub Actions ejecuta las pruebas y la compilación en cada push y pull request (`.github/workflows/ci.yml`). Una ejecución semanal programada (`.github/workflows/scheduled.yml`) también sirve el sitio compilado y comprueba que sus páginas respondan.
 
 ## 📚 Documentación
-- [Documentación de Exportación Minera](umina-documents/mining-export.md) — Flujo de trabajo, notas de cumplimiento e integración.  
-- [Lista de Verificación para Compradores](umina-documents/buyer_checklist.md) — Guía práctica para compradores.  
-- [Cumplimiento](umina-documents/compliance.md) — Normas de exportación y referencias regulatorias.  
-- [Gobernanza](umina-documents/governance.md) — Supervisión y propiedad de boutiques.  
-- [Aviso Legal](umina-documents/legal_disclaimer.md) — Notas de responsabilidad.  
-- [Metadatos](umina-documents/metadata.md) — Estándares de metadatos de tokens.  
-- [Emisión de NFT](umina-documents/mint-nft-token.md) — Proceso paso a paso.  
-- [Creación de Contrato NFT](umina-documents/create-nft-token.md) — Instrucciones de despliegue.  
-- [Códigos HS de Especímenes](umina-documents/umina_specimens_hs_codes.md) — Catálogo de gemas y minerales.  
-- [Mitigación de Riesgos](umina-documents/risk-mitigation.md) — Prevención de fraude y riesgos de exportación.  
-- [Términos](umina-documents/terms.md) — Condiciones de participación.  
-- [Interfaz de Usuario](umina-documents/user_interface.md) — Descripción del mercado y panel de cumplimiento.  
-- [Visión Futura](umina-documents/future-vision.md) — Hoja de ruta a largo plazo.  
-- [Referencias](umina-documents/reference.md) — Materiales de apoyo.  
+
+Los documentos están en [umina-achala-documents](https://github.com/umina-achala/umina-achala-documents) y los scripts de Hedera en [umina-achala-chain](https://github.com/umina-achala/umina-achala-chain).
+- [Documentación de Exportación Minera](https://github.com/umina-achala/umina-achala-documents/blob/main/mining-export.md) — Flujo de trabajo, notas de cumplimiento e integración.  
+- [Lista de Verificación para Compradores](https://github.com/umina-achala/umina-achala-documents/blob/main/buyer_checklist.md) — Guía práctica para compradores.  
+- [Cumplimiento](https://github.com/umina-achala/umina-achala-documents/blob/main/compliance.md) — Normas de exportación y referencias regulatorias.  
+- [Gobernanza](https://github.com/umina-achala/umina-achala-documents/blob/main/governance.md) — Supervisión y propiedad de boutiques.  
+- [Aviso Legal](https://github.com/umina-achala/umina-achala-documents/blob/main/legal_disclaimer.md) — Notas de responsabilidad.  
+- [Metadatos](https://github.com/umina-achala/umina-achala-documents/blob/main/metadata.md) — Estándares de metadatos de tokens.  
+- [Emisión de NFT](https://github.com/umina-achala/umina-achala-documents/blob/main/mint-nft-token.md) — Proceso paso a paso.  
+- [Creación de Contrato NFT](https://github.com/umina-achala/umina-achala-documents/blob/main/create-nft-token.md) — Instrucciones de despliegue.  
+- [Códigos HS de Especímenes](https://github.com/umina-achala/umina-achala-documents/blob/main/umina_specimens_hs_codes.md) — Catálogo de gemas y minerales.  
+- [Mitigación de Riesgos](https://github.com/umina-achala/umina-achala-documents/blob/main/risk-mitigation.md) — Prevención de fraude y riesgos de exportación.  
+- [Términos](https://github.com/umina-achala/umina-achala-documents/blob/main/terms.md) — Condiciones de participación.  
+- [Interfaz de Usuario](https://github.com/umina-achala/umina-achala-documents/blob/main/user_interface.md) — Descripción del mercado y panel de cumplimiento.  
+- [Visión Futura](https://github.com/umina-achala/umina-achala-documents/blob/main/future-vision.md) — Hoja de ruta a largo plazo.  
+- [Referencias](https://github.com/umina-achala/umina-achala-documents/blob/main/reference.md) — Materiales de apoyo.  
 
 **Referencias Relevantes:**  
 - Ley General de Minería (DS Nº 014-92-EM) — Ley General de Minería del Perú  

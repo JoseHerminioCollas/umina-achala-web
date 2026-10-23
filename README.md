@@ -99,20 +99,22 @@ The preview serves the last build and does not rebuild, so run `npm run check` a
 GitHub Actions runs the tests and the build on every push and pull request (`.github/workflows/ci.yml`). A scheduled weekly run (`.github/workflows/scheduled.yml`) also serves the built site and checks that its pages respond.
 
 ## 📚 Documentation
-- [Mining Export Documentation](umina-documents/mining-export.md) — Workflow steps, compliance notes, and integration details.  
-- [Buyer’s Checklist](umina-documents/buyer_checklist.md) — Practical guide for buyers.  
-- [Compliance](umina-documents/compliance.md) — Export rules and regulatory references.  
-- [Governance](umina-documents/governance.md) — Oversight and boutique ownership.  
-- [Legal Disclaimer](umina-documents/legal_disclaimer.md) — Liability notes.  
-- [Metadata](umina-documents/metadata.md) — Token metadata standards.  
-- [Mint NFT Token](umina-documents/mint-nft-token.md) — Step‑by‑step minting process.  
-- [Create NFT Token](umina-documents/create-nft-token.md) — Contract creation instructions.  
-- [Specimens HS Codes](umina-documents/umina_specimens_hs_codes.md) — Gemstone and mineral catalog.  
-- [Risk Mitigation](umina-documents/risk-mitigation.md) — Compliance and fraud prevention.  
-- [Terms](umina-documents/terms.md) — Participation terms.  
-- [User Interface](umina-documents/user_interface.md) — Marketplace and dashboard overview.  
-- [Future Vision](umina-documents/future-vision.md) — Long‑term roadmap.  
-- [Reference](umina-documents/reference.md) — Supporting materials.  
+
+The documents live in [umina-achala-documents](https://github.com/umina-achala/umina-achala-documents) and the Hedera scripts in [umina-achala-chain](https://github.com/umina-achala/umina-achala-chain).
+- [Mining Export Documentation](https://github.com/umina-achala/umina-achala-documents/blob/main/mining-export.md) — Workflow steps, compliance notes, and integration details.  
+- [Buyer’s Checklist](https://github.com/umina-achala/umina-achala-documents/blob/main/buyer_checklist.md) — Practical guide for buyers.  
+- [Compliance](https://github.com/umina-achala/umina-achala-documents/blob/main/compliance.md) — Export rules and regulatory references.  
+- [Governance](https://github.com/umina-achala/umina-achala-documents/blob/main/governance.md) — Oversight and boutique ownership.  
+- [Legal Disclaimer](https://github.com/umina-achala/umina-achala-documents/blob/main/legal_disclaimer.md) — Liability notes.  
+- [Metadata](https://github.com/umina-achala/umina-achala-documents/blob/main/metadata.md) — Token metadata standards.  
+- [Mint NFT Token](https://github.com/umina-achala/umina-achala-documents/blob/main/mint-nft-token.md) — Step‑by‑step minting process.  
+- [Create NFT Token](https://github.com/umina-achala/umina-achala-documents/blob/main/create-nft-token.md) — Contract creation instructions.  
+- [Specimens HS Codes](https://github.com/umina-achala/umina-achala-documents/blob/main/umina_specimens_hs_codes.md) — Gemstone and mineral catalog.  
+- [Risk Mitigation](https://github.com/umina-achala/umina-achala-documents/blob/main/risk-mitigation.md) — Compliance and fraud prevention.  
+- [Terms](https://github.com/umina-achala/umina-achala-documents/blob/main/terms.md) — Participation terms.  
+- [User Interface](https://github.com/umina-achala/umina-achala-documents/blob/main/user_interface.md) — Marketplace and dashboard overview.  
+- [Future Vision](https://github.com/umina-achala/umina-achala-documents/blob/main/future-vision.md) — Long‑term roadmap.  
+- [Reference](https://github.com/umina-achala/umina-achala-documents/blob/main/reference.md) — Supporting materials.  
 
 **Relevant References:**  
 - Ley General de Minería (DS Nº 014-92-EM) — Peru’s General Mining Law  
