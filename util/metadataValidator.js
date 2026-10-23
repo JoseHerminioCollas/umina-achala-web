@@ -1,5 +1,5 @@
 /**
- * Importable validator for HIP-412 Umiña metadata
+ * Importable validator for HIP-412 Umiña metadata (schema check used by the data tests; minting lives in umina-achala-chain)
  */
 import Ajv from "ajv";
 import addFormats from "ajv-formats";

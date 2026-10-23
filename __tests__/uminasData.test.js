@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { validateMetadata } from "../hedera-scripts/metadataValidator.js";
+import { validateMetadata } from "../util/metadataValidator.js";
 
 const uminas = JSON.parse(
   fs.readFileSync("./frontend/src/data/uminas.json", "utf8"),
