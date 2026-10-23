@@ -70,16 +70,18 @@ No lint script is configured. `tsconfig.json` only covers `frontend/src` (strict
 - Component tests wrap pages in a `MemoryRouter` (the pages call `usePageMeta`, which needs the router). `jest.setup.js` provides `TextEncoder` for react-router in jsdom.
 - Some browser consoles show many errors from a wallet extension (`inpage.js`, "Broadcast channel unavailable"); they are not from the site. Check in a private window.
 
-### Work summary comments
+### Work summaries (project status updates)
 
-When posting a work-summary comment (e.g. on an issue/PR in Project #1), include these two tags so a downstream parser can extract it:
+Each day's work summary is one **project status update** on Project #1 (org `umina-achala`, project number 1), created with the `createProjectV2StatusUpdate` GraphQL mutation (`gh api graphql`). One update per day worked; do not edit an old update to add a new day. A status update cannot take comments, so history is the list of updates. Set `status` (`ON_TRACK`, `AT_RISK`, `OFF_TRACK`, `INACTIVE` or `COMPLETE`) and `startDate` to the day worked. Ask for the hours; do not guess. Earlier summaries are comments on #70 and stay there.
+
+The body must include these two tags, so the hours can be totalled by reading the updates (`projectV2.statusUpdates`); there is no separate parser:
 
 ```
 work_summary
-worked_on_task_for_hours: <N>
+hours_worked: <N>
 ```
 
-- `work_summary` marks the comment as a work summary.
-- `worked_on_task_for_hours: <N>` records hours worked, as a number (e.g. `2.5`).
+- `work_summary` marks the update as a work summary.
+- `hours_worked: <N>` records the hours worked in the period the update covers (usually one day, across several tasks), as a number (e.g. `2.5`).
 
-Both tags must appear verbatim in the comment body, followed by the prose summary.
+Both tags must appear verbatim in the body, followed by the prose summary. The summaries on #70 and the first four status updates were written with the old tag name `worked_on_task_for_hours`; the status updates were renamed to `hours_worked`, the #70 comments were not.
