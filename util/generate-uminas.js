@@ -79,9 +79,13 @@ function makeUmina(index, type) {
   umina.image = `/${imagePath}`; // served from /public/images/... in Vite
 
   umina.properties.stone_id = id;
-  umina.properties.mining_concession = `Peru-${type}-${index}`;
+  // 9-digit INGEMMET Código Único (fake, unique per stone; umina-achala-chain#5)
+  umina.properties.mining_concession = `0102538${String(index).padStart(2, "0")}`;
   umina.properties.cut_by_id = cutArtisan.id;
   umina.properties.mounted_by_id = mountArtisan.id;
+  // type is an id from schema/stone-types.json (umina-achala-chain#14)
+  umina.properties.stone_type = type;
+  umina.properties.specimen_form = mounted ? "crafted" : isCut ? "worked" : "natural";
 
   umina.attributes = umina.attributes.map(attr => {
     switch (attr.trait_type) {

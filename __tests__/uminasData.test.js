@@ -53,6 +53,16 @@ describe("frontend/src/data/uminas.json", () => {
     });
   });
 
+  // schema/stone-types.json is a copy from umina-achala-chain (#14)
+  test("every stone_type is in the stone-type list, not deprecated and not a fossil", () => {
+    const { types } = JSON.parse(fs.readFileSync("./schema/stone-types.json", "utf8"));
+    const byId = new Map(types.map((t) => [t.id, t]));
+    const bad = uminas
+      .map((u) => u.properties.stone_type)
+      .filter((id) => !byId.has(id) || byId.get(id).deprecated || byId.get(id).kind === "fossil");
+    expect(bad).toEqual([]);
+  });
+
   test("contains no remnants of the old Rumi name", () => {
     expect(JSON.stringify(uminas)).not.toMatch(/rumi/i);
   });
