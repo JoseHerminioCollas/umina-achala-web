@@ -1,7 +1,7 @@
 {
   "name": "Umiña Stone #003 - Chrysocolla",
   "creator": "Umiña Achala",
-  "description": "Certified Mine-to-Market Chrysocolla. Extracted from Arequipa Region with verified ethical provenance and full regulatory compliance.",
+  "description": "Documented Mine-to-Market Chrysocolla. Extracted from Arequipa Region with verified ethical provenance and full regulatory compliance.",
   "format": "HIP412@2.0.0",
   "metadata_version": "1.0.0",
   "properties": {
@@ -11,6 +11,7 @@
     "hs_code": "7103.99.00.00",
     "jurisdiction": "Peru",
     "legal_uri": "https://umina-achala.pe/",
+    "vendor_name": "Umiña Achala",
     "vendor_ruc": "20999887768",
     "artisan_rna": "RNA-112233",
     "mining_concession": "010253815",
@@ -49,7 +50,7 @@
     { "trait_type": "Mining Concession", "value": "010253815" },
     {
       "trait_type": "Legal Status",
-      "value": "Certified Origin & Artisan Transformation"
+      "value": "Documented Origin & Artisan Transformation"
     },
     {
       "trait_type": "Verification Level",

@@ -2,7 +2,7 @@
   {
     "name": "Umiña Stone #001 - amethyst",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market amethyst, cut by Elena Castillo, unmounted specimen.",
+    "description": "Documented Mine-to-Market amethyst, cut by Elena Castillo, unmounted specimen.",
     "image": "/images/amethyst/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -12,6 +12,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253801",
@@ -116,7 +117,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -127,7 +128,7 @@
   {
     "name": "Umiña Stone #002 - quartz",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market quartz, cut by Carlos Sánchez and mounted by Ana Torres.",
+    "description": "Documented Mine-to-Market quartz, cut by Carlos Sánchez and mounted by Ana Torres.",
     "image": "/images/quartz/mounted/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -137,6 +138,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253802",
@@ -241,7 +243,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -252,7 +254,7 @@
   {
     "name": "Umiña Stone #003 - chrysocolla",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market chrysocolla, cut by Patricia Rojas, unmounted specimen.",
+    "description": "Documented Mine-to-Market chrysocolla, cut by Patricia Rojas, unmounted specimen.",
     "image": "/images/chrysocolla/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -262,6 +264,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253803",
@@ -366,7 +369,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -377,7 +380,7 @@
   {
     "name": "Umiña Stone #004 - obsidian",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market obsidian, cut by María López, unmounted specimen.",
+    "description": "Documented Mine-to-Market obsidian, cut by María López, unmounted specimen.",
     "image": "/images/obsidian/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -387,6 +390,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253804",
@@ -491,7 +495,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -502,7 +506,7 @@
   {
     "name": "Umiña Stone #005 - jade",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market jade, cut by Patricia Rojas, unmounted specimen.",
+    "description": "Documented Mine-to-Market jade, cut by Patricia Rojas, unmounted specimen.",
     "image": "/images/jade/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -512,6 +516,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253805",
@@ -616,7 +621,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -627,7 +632,7 @@
   {
     "name": "Umiña Stone #006 - tourmaline",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market tourmaline, cut by Carlos Sánchez and mounted by Carmen Díaz.",
+    "description": "Documented Mine-to-Market tourmaline, cut by Carlos Sánchez and mounted by Carmen Díaz.",
     "image": "/images/tourmaline/mounted/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -637,6 +642,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253806",
@@ -741,7 +747,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -752,7 +758,7 @@
   {
     "name": "Umiña Stone #007 - lapis_lazuli",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market lapis_lazuli, cut by Elena Castillo, unmounted specimen.",
+    "description": "Documented Mine-to-Market lapis_lazuli, cut by Elena Castillo, unmounted specimen.",
     "image": "/images/lapis_lazuli/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -762,6 +768,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253807",
@@ -866,7 +873,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -877,7 +884,7 @@
   {
     "name": "Umiña Stone #008 - malachite",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market malachite, cut by Miguel Herrera, unmounted specimen.",
+    "description": "Documented Mine-to-Market malachite, cut by Miguel Herrera, unmounted specimen.",
     "image": "/images/malachite/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -887,6 +894,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253808",
@@ -991,7 +999,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -1002,7 +1010,7 @@
   {
     "name": "Umiña Stone #009 - ruby",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market ruby, cut by Carmen Díaz, unmounted specimen.",
+    "description": "Documented Mine-to-Market ruby, cut by Carmen Díaz, unmounted specimen.",
     "image": "/images/ruby/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -1012,6 +1020,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253809",
@@ -1116,7 +1125,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -1127,7 +1136,7 @@
   {
     "name": "Umiña Stone #010 - sapphire",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market sapphire, uncut specimen.",
+    "description": "Documented Mine-to-Market sapphire, uncut specimen.",
     "image": "/images/sapphire/mounted/uncut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -1137,6 +1146,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253810",
@@ -1241,7 +1251,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -1252,7 +1262,7 @@
   {
     "name": "Umiña Stone #011 - amethyst",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market amethyst, uncut specimen.",
+    "description": "Documented Mine-to-Market amethyst, uncut specimen.",
     "image": "/images/amethyst/uncut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -1262,6 +1272,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253811",
@@ -1366,7 +1377,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -1377,7 +1388,7 @@
   {
     "name": "Umiña Stone #012 - quartz",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market quartz, cut by Miguel Herrera and mounted by José Ramírez.",
+    "description": "Documented Mine-to-Market quartz, cut by Miguel Herrera and mounted by José Ramírez.",
     "image": "/images/quartz/mounted/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -1387,6 +1398,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253812",
@@ -1491,7 +1503,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -1502,7 +1514,7 @@
   {
     "name": "Umiña Stone #013 - chrysocolla",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market chrysocolla, uncut specimen.",
+    "description": "Documented Mine-to-Market chrysocolla, uncut specimen.",
     "image": "/images/chrysocolla/mounted/uncut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -1512,6 +1524,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253813",
@@ -1616,7 +1629,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -1627,7 +1640,7 @@
   {
     "name": "Umiña Stone #014 - obsidian",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market obsidian, cut by María López and mounted by Elena Castillo.",
+    "description": "Documented Mine-to-Market obsidian, cut by María López and mounted by Elena Castillo.",
     "image": "/images/obsidian/mounted/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -1637,6 +1650,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253814",
@@ -1741,7 +1755,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -1752,7 +1766,7 @@
   {
     "name": "Umiña Stone #015 - jade",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market jade, cut by José Ramírez and mounted by María López.",
+    "description": "Documented Mine-to-Market jade, cut by José Ramírez and mounted by María López.",
     "image": "/images/jade/mounted/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -1762,6 +1776,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253815",
@@ -1866,7 +1881,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -1877,7 +1892,7 @@
   {
     "name": "Umiña Stone #016 - tourmaline",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market tourmaline, cut by Luis Fernández, unmounted specimen.",
+    "description": "Documented Mine-to-Market tourmaline, cut by Luis Fernández, unmounted specimen.",
     "image": "/images/tourmaline/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -1887,6 +1902,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253816",
@@ -1991,7 +2007,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -2002,7 +2018,7 @@
   {
     "name": "Umiña Stone #017 - lapis_lazuli",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market lapis_lazuli, cut by María López, unmounted specimen.",
+    "description": "Documented Mine-to-Market lapis_lazuli, cut by María López, unmounted specimen.",
     "image": "/images/lapis_lazuli/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -2012,6 +2028,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253817",
@@ -2116,7 +2133,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -2127,7 +2144,7 @@
   {
     "name": "Umiña Stone #018 - malachite",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market malachite, cut by Luis Fernández, unmounted specimen.",
+    "description": "Documented Mine-to-Market malachite, cut by Luis Fernández, unmounted specimen.",
     "image": "/images/malachite/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -2137,6 +2154,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253818",
@@ -2241,7 +2259,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -2252,7 +2270,7 @@
   {
     "name": "Umiña Stone #019 - ruby",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market ruby, cut by Miguel Herrera, unmounted specimen.",
+    "description": "Documented Mine-to-Market ruby, cut by Miguel Herrera, unmounted specimen.",
     "image": "/images/ruby/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -2262,6 +2280,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253819",
@@ -2366,7 +2385,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -2377,7 +2396,7 @@
   {
     "name": "Umiña Stone #020 - sapphire",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market sapphire, cut by Elena Castillo, unmounted specimen.",
+    "description": "Documented Mine-to-Market sapphire, cut by Elena Castillo, unmounted specimen.",
     "image": "/images/sapphire/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -2387,6 +2406,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253820",
@@ -2491,7 +2511,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -2502,7 +2522,7 @@
   {
     "name": "Umiña Stone #021 - amethyst",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market amethyst, cut by Carmen Díaz, unmounted specimen.",
+    "description": "Documented Mine-to-Market amethyst, cut by Carmen Díaz, unmounted specimen.",
     "image": "/images/amethyst/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -2512,6 +2532,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253821",
@@ -2616,7 +2637,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -2627,7 +2648,7 @@
   {
     "name": "Umiña Stone #022 - quartz",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market quartz, cut by Patricia Rojas, unmounted specimen.",
+    "description": "Documented Mine-to-Market quartz, cut by Patricia Rojas, unmounted specimen.",
     "image": "/images/quartz/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -2637,6 +2658,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253822",
@@ -2741,7 +2763,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -2752,7 +2774,7 @@
   {
     "name": "Umiña Stone #023 - chrysocolla",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market chrysocolla, cut by José Ramírez and mounted by Miguel Herrera.",
+    "description": "Documented Mine-to-Market chrysocolla, cut by José Ramírez and mounted by Miguel Herrera.",
     "image": "/images/chrysocolla/mounted/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -2762,6 +2784,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253823",
@@ -2866,7 +2889,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -2877,7 +2900,7 @@
   {
     "name": "Umiña Stone #024 - obsidian",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market obsidian, cut by María López and mounted by Luis Fernández.",
+    "description": "Documented Mine-to-Market obsidian, cut by María López and mounted by Luis Fernández.",
     "image": "/images/obsidian/mounted/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -2887,6 +2910,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253824",
@@ -2991,7 +3015,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -3002,7 +3026,7 @@
   {
     "name": "Umiña Stone #025 - jade",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market jade, uncut specimen.",
+    "description": "Documented Mine-to-Market jade, uncut specimen.",
     "image": "/images/jade/uncut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -3012,6 +3036,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253825",
@@ -3116,7 +3141,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -3127,7 +3152,7 @@
   {
     "name": "Umiña Stone #026 - tourmaline",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market tourmaline, cut by Carmen Díaz, unmounted specimen.",
+    "description": "Documented Mine-to-Market tourmaline, cut by Carmen Díaz, unmounted specimen.",
     "image": "/images/tourmaline/cut/stone_1.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -3137,6 +3162,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253826",
@@ -3241,7 +3267,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -3252,7 +3278,7 @@
   {
     "name": "Umiña Stone #027 - lapis_lazuli",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market lapis_lazuli, cut by Carmen Díaz, unmounted specimen.",
+    "description": "Documented Mine-to-Market lapis_lazuli, cut by Carmen Díaz, unmounted specimen.",
     "image": "/images/lapis_lazuli/cut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -3262,6 +3288,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253827",
@@ -3366,7 +3393,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -3377,7 +3404,7 @@
   {
     "name": "Umiña Stone #028 - malachite",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market malachite, uncut specimen.",
+    "description": "Documented Mine-to-Market malachite, uncut specimen.",
     "image": "/images/malachite/uncut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -3387,6 +3414,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253828",
@@ -3491,7 +3519,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -3502,7 +3530,7 @@
   {
     "name": "Umiña Stone #029 - ruby",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market ruby, uncut specimen.",
+    "description": "Documented Mine-to-Market ruby, uncut specimen.",
     "image": "/images/ruby/mounted/uncut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -3512,6 +3540,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253829",
@@ -3616,7 +3645,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",
@@ -3627,7 +3656,7 @@
   {
     "name": "Umiña Stone #030 - sapphire",
     "creator": "Umiña Achala",
-    "description": "Certified Mine-to-Market sapphire, uncut specimen.",
+    "description": "Documented Mine-to-Market sapphire, uncut specimen.",
     "image": "/images/sapphire/uncut/stone_2.jpg",
     "type": "image/jpg",
     "format": "HIP412@2.0.0",
@@ -3637,6 +3666,7 @@
       "hs_code": "7103.99.00.00",
       "jurisdiction": "Peru",
       "legal_uri": "https://umina-achala.pe/",
+      "vendor_name": "Umiña Achala",
       "vendor_ruc": "20999887768",
       "artisan_rna": "RNA-112233",
       "mining_concession": "010253830",
@@ -3741,7 +3771,7 @@
       },
       {
         "trait_type": "Legal Status",
-        "value": "Certified Origin & Artisan Transformation"
+        "value": "Documented Origin & Artisan Transformation"
       },
       {
         "trait_type": "Verification Level",

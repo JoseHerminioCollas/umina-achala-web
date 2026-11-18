@@ -68,9 +68,9 @@ function makeUmina(index, type) {
   const name = `Umiña Stone #${String(index).padStart(3,"0")} - ${type}`;
   const description = isCut
     ? mounted
-      ? `Certified Mine-to-Market ${type}, cut by ${cutArtisan.name} and mounted by ${mountArtisan.name}.`
-      : `Certified Mine-to-Market ${type}, cut by ${cutArtisan.name}, unmounted specimen.`
-    : `Certified Mine-to-Market ${type}, uncut specimen.`;
+      ? `Documented Mine-to-Market ${type}, cut by ${cutArtisan.name} and mounted by ${mountArtisan.name}.`
+      : `Documented Mine-to-Market ${type}, cut by ${cutArtisan.name}, unmounted specimen.`
+    : `Documented Mine-to-Market ${type}, uncut specimen.`;
 
   // ✅ Use public folder image reference
   const imagePath = pickImage(type, isCut, mounted);
