@@ -23,3 +23,5 @@ logs/
 .DS_Store
 
 .vscode/
+# The site catalog, built by umina-achala-chain src/catalog/buildCatalog.js (umina-achala-chain#44, #89); never committed
+frontend/public/data/
