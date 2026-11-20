@@ -34,6 +34,68 @@ describe("StoneModal", () => {
     );
   });
 
+  describe("gallery (#130)", () => {
+    const thumbs = () => screen.getAllByRole("button").filter((b) => b.querySelector("img"));
+    const LEFT = "Front view, turned left 25° (estimated from photo 1)";
+
+    it("shows the main photo large, with a thumbnail for each of the 6 photos", () => {
+      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      expect(screen.getByRole("img", { name: umina.metadata.name })).toBeInTheDocument();
+      expect(thumbs()).toHaveLength(6);
+      expect(thumbs()[0]).toHaveAttribute("aria-current", "true");
+      expect(screen.getByText("photo 1 of 6")).toBeInTheDocument();
+      expect(thumbs()[1].querySelector("img")).toHaveAttribute("loading", "lazy");
+    });
+
+    it("a thumbnail shows its photo large, with its description as the caption", async () => {
+      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      await userEvent.click(screen.getByRole("button", { name: LEFT }));
+      expect(screen.getByRole("img", { name: LEFT })).toBeInTheDocument();
+      expect(screen.getByText("photo 2 of 6")).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: LEFT })).toHaveAttribute("aria-current", "true");
+      expect(thumbs()[0]).not.toHaveAttribute("aria-current");
+    });
+
+    it("right and left arrow keys step through the photos, round the ends", () => {
+      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      fireEvent.keyDown(document, { key: "ArrowRight" });
+      expect(screen.getByRole("img", { name: LEFT })).toBeInTheDocument();
+      fireEvent.keyDown(document, { key: "ArrowLeft" });
+      fireEvent.keyDown(document, { key: "ArrowLeft" });
+      expect(screen.getByText("photo 6 of 6")).toBeInTheDocument();
+      expect(screen.getByRole("img", { name: "Back view (estimated from photo 1)" })).toBeInTheDocument();
+    });
+
+    it("loads the display copy large and the thumbnails from the catalog's copies", () => {
+      const media = {
+        [umina.metadata.image]: { thumb: "media/QmA/thumb.webp", display: "media/QmA/display.webp" },
+      };
+      render(<StoneModal open={umina} setOpen={jest.fn()} media={media} />);
+      expect(screen.getByRole("img", { name: umina.metadata.name })).toHaveAttribute(
+        "src",
+        "./data/media/QmA/display.webp",
+      );
+      expect(thumbs()[0].querySelector("img")).toHaveAttribute("src", "./data/media/QmA/thumb.webp");
+    });
+
+    it("an item with one photo has no thumbnails", () => {
+      render(<StoneModal open={withMetadata({ files: [] })} setOpen={jest.fn()} />);
+      expect(screen.getByRole("img", { name: umina.metadata.name })).toBeInTheDocument();
+      expect(thumbs()).toHaveLength(0);
+      expect(screen.queryByText(/photo 1 of/)).not.toBeInTheDocument();
+      fireEvent.keyDown(document, { key: "ArrowRight" });
+      expect(screen.getByRole("img", { name: umina.metadata.name })).toBeInTheDocument();
+    });
+
+    it("opens each item on its first photo", async () => {
+      const { rerender } = render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      await userEvent.click(screen.getByRole("button", { name: LEFT }));
+      rerender(<StoneModal open={achala} setOpen={jest.fn()} />);
+      expect(screen.getByRole("img", { name: achala.metadata.name })).toBeInTheDocument();
+      expect(screen.getByText("photo 1 of 2")).toBeInTheDocument(); // its default file is the main photo again
+    });
+  });
+
   it("lists attributes but hides HS Code, Stone Type and empty values", () => {
     const open = withMetadata({
       attributes: [

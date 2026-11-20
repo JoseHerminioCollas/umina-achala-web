@@ -1,7 +1,8 @@
 // src/components/StoneModal.tsx
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { CatalogItem, Media } from "../types/catalog";
-import { attribute, complianceEvent, formatPrice, imageUrl, title } from "../utils/item";
+import { attribute, complianceEvent, formatPrice, photos, title } from "../utils/item";
+import Gallery from "./Gallery";
 import styles from "./StoneModal.module.css";
 import { useTranslation } from "react-i18next";
 import { hashscanNftUrl, hashscanTopicUrl, hashscanMessageUrl } from "../utils/chainLinks";
@@ -18,12 +19,20 @@ const HIDDEN_TRAITS = ["HS Code", "Stone Type", "Piece Type"];
 
 const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen, media }) => {
   const { t } = useTranslation();
+  const gallery = useMemo(() => (open ? photos(open, media) : []), [open, media]);
+  const [selected, setSelected] = useState(0);
 
-  // Escape key handler
+  // each item opens on its first photo
+  useEffect(() => setSelected(0), [open]);
+
+  // Escape closes; left / right step through the photos (#130)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpen(null);
+      } else if (gallery.length > 1 && (e.key === "ArrowRight" || e.key === "ArrowLeft")) {
+        const step = e.key === "ArrowRight" ? 1 : -1;
+        setSelected((i) => (i + step + gallery.length) % gallery.length);
       }
     };
 
@@ -33,7 +42,7 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen, media }) => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [open, setOpen]);
+  }, [open, setOpen, gallery.length]);
 
   if (!open) return null;
 
@@ -52,7 +61,12 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen, media }) => {
           <button className={styles.close} onClick={() => setOpen(null)}>×</button>
         </div>
         <div className={styles.modalBody}>
-          <img src={imageUrl(open, "display", media)} alt={open.metadata.name} />
+          <Gallery
+            photos={gallery}
+            selected={selected}
+            setSelected={setSelected}
+            name={open.metadata.name}
+          />
           <div>
             <p className={styles.price}>
               {t("modal.price")} {formatPrice(open.price)}

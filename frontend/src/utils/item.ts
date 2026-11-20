@@ -38,16 +38,47 @@ export function imageUrl(
   size: keyof MediaCopies = "display",
   media: Media = {},
 ): string {
-  const copies = media[item.metadata.image];
-  return copies ? CATALOG_FOLDER + copies[size] : ipfsToGatewayUrl(item.metadata.image);
+  return photoUrl(item.metadata.image, size, media);
+}
+
+/** One photo's URL at a size: the site's copy when the catalog has one, the gateway otherwise. */
+function photoUrl(uri: string, size: keyof MediaCopies, media: Media): string {
+  const copies = media[uri];
+  return copies ? CATALOG_FOLDER + copies[size] : ipfsToGatewayUrl(uri);
 }
 
 const isImage = (f: MetadataFile) => f.type.startsWith("image/");
 
-/** Every photo: the main one, then the image files, as gateway URLs. */
-export function photos(item: WithMetadata): string[] {
-  const urls = [item.metadata.image, ...item.metadata.files.filter(isImage).map((f) => f.uri)];
-  return Array.from(new Set(urls)).map(ipfsToGatewayUrl);
+export interface Photo {
+  uri: string; // ipfs://
+  thumb: string; // URL of the thumbnail, for the gallery's row
+  display: string; // URL of the display copy, for the large photo
+  description: string; // the file's description; empty for the main photo
+}
+
+/**
+ * Every photo of an item (#130): the main one (`image`), then the image
+ * files in metadata order, each once, with the site's copies when the catalog
+ * has them (umina-achala-chain#45) and the IPFS gateway otherwise.
+ *
+ * A file marked `is_default_file` is the one `image` stands for (HIP-412):
+ * mints made before umina-achala-chain#42 list the main photo both as `image`
+ * and as that file, so it is left out, or the main photo would show twice.
+ * Remove this skip (and its test) once no catalog item has is_default_file:
+ * after the out-of-date testnet mints are minted again, or on mainnet (#131).
+ */
+export function photos(item: WithMetadata, media: Media = {}): Photo[] {
+  const described = new Map<string, string>();
+  described.set(item.metadata.image, "");
+  for (const f of item.metadata.files.filter((f) => isImage(f) && !f.is_default_file)) {
+    if (!described.has(f.uri)) described.set(f.uri, f.metadata?.description ?? "");
+  }
+  return [...described].map(([uri, description]) => ({
+    uri,
+    thumb: photoUrl(uri, "thumb", media),
+    display: photoUrl(uri, "display", media),
+    description,
+  }));
 }
 
 export interface Document {

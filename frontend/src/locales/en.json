@@ -171,6 +171,7 @@
     "viewHashscan": "View Minted Token on HashScan",
     "viewCompliance": "View Compliance Record on HashScan",
     "price": "Price:",
+    "photoCount": "photo {{n}} of {{total}}",
     "stonesInPiece": "Stones in this piece"
   },
   "compliance": {

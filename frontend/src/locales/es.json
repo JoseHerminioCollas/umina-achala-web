@@ -171,6 +171,7 @@
     "viewHashscan": "Ver Token Acuñado en HashScan",
     "viewCompliance": "Ver Registro de Cumplimiento en HashScan",
     "price": "Precio:",
+    "photoCount": "foto {{n}} de {{total}}",
     "stonesInPiece": "Piedras de esta pieza"
   },
   "compliance": {
