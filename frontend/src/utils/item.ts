@@ -1,6 +1,6 @@
 // src/utils/item.ts
 // What the site shows of a catalog item (#124), for both kinds.
-import { CatalogItem, MountedStone, Price } from "../types/catalog";
+import { CatalogEvent, CatalogItem, MountedStone, Price } from "../types/catalog";
 import { MetadataFile } from "../types/metadata";
 import { ipfsToGatewayUrl } from "./chainLinks";
 
@@ -53,6 +53,23 @@ export function documents(item: WithMetadata): Document[] {
       type: f.type,
       description: f.metadata?.description ?? "",
     }));
+}
+
+/**
+ * The item's own latest COMPLIANCE event on the provenance topic, if it has
+ * one with a consensus timestamp. An item's events can include events about
+ * other NFTs (e.g. the Achala a stone is mounted in), so they are matched by
+ * stone_id.
+ */
+export function complianceEvent(item: CatalogItem | MountedStone): CatalogEvent | undefined {
+  return item.events
+    .filter(
+      (e) =>
+        e.event.event === "COMPLIANCE" &&
+        e.event.stone_id === item.stone_id &&
+        e.consensus_timestamp,
+    )
+    .at(-1);
 }
 
 /** The price as shown, e.g. "45 HBAR". */

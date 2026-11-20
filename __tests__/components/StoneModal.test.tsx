@@ -2,7 +2,7 @@
 import React from "react";
 import { render, screen, fireEvent, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import "../../frontend/src/i18n";
+import i18n from "../../frontend/src/i18n";
 import StoneModal from "../../frontend/src/components/StoneModal";
 import { UminaItem } from "../../frontend/src/types/catalog";
 import { achala, umina } from "../fixtures/catalog";
@@ -87,27 +87,49 @@ describe("StoneModal", () => {
     const link = screen.getByRole("link", { name: "View Minted Token on HashScan" });
     expect(link).toHaveAttribute(
       "href",
-      `https://hashscan.io/testnet/token/${umina.token_id}/nft/${umina.serial}`,
+      `https://hashscan.io/testnet/token/${umina.token_id}/${umina.serial}`,
     );
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", expect.stringContaining("noopener"));
   });
 
-  it("links to the compliance HCS topic on HashScan testnet when a topic exists", () => {
+  const COMPLIANCE = "View Compliance Record on HashScan";
+
+  it("links to the item's own COMPLIANCE message on HashScan, and opens it", () => {
     render(<StoneModal open={umina} setOpen={jest.fn()} />);
-    const link = screen.getByRole("link", { name: "View Compliance HCS Topic" });
+    const link = screen.getByRole("link", { name: COMPLIANCE });
+    // seq 63, the agate's COMPLIANCE on the provenance topic
     expect(link).toHaveAttribute(
+      "href",
+      "https://hashscan.io/testnet/transaction/1795104674.631909729/message",
+    );
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(fireEvent.click(link)).toBe(true); // not cancelled: no demo message (#83)
+  });
+
+  it("links to the compliance topic when the item has no COMPLIANCE event", () => {
+    render(<StoneModal open={{ ...umina, events: [] }} setOpen={jest.fn()} />);
+    expect(screen.getByRole("link", { name: COMPLIANCE })).toHaveAttribute(
       "href",
       `https://hashscan.io/testnet/topic/${umina.metadata.properties.hcs_compliance_topic}`,
     );
   });
 
-  it("omits the compliance link when there is no topic", () => {
+  it("omits the compliance link with neither an event nor a topic", () => {
     const open = withMetadata({
       properties: { ...umina.metadata.properties, hcs_compliance_topic: undefined },
     });
-    render(<StoneModal open={open} setOpen={jest.fn()} />);
-    expect(screen.queryByRole("link", { name: "View Compliance HCS Topic" })).not.toBeInTheDocument();
+    render(<StoneModal open={{ ...open, events: [] }} setOpen={jest.fn()} />);
+    expect(screen.queryByRole("link", { name: COMPLIANCE })).not.toBeInTheDocument();
+  });
+
+  it("names the compliance link in Spanish", async () => {
+    await i18n.changeLanguage("es");
+    render(<StoneModal open={umina} setOpen={jest.fn()} />);
+    expect(
+      screen.getByRole("link", { name: "Ver Registro de Cumplimiento en HashScan" }),
+    ).toBeInTheDocument();
+    await i18n.changeLanguage("en");
   });
 
   it("has no list of stones for an Umiña", () => {
@@ -124,7 +146,7 @@ describe("StoneModal", () => {
     expect(item).toHaveTextContent("Gold · 18.4 g");
     expect(within(item).getByRole("link", { name: stone.stone_id })).toHaveAttribute(
       "href",
-      `https://hashscan.io/testnet/token/${stone.token_id}/nft/${stone.serial}`,
+      `https://hashscan.io/testnet/token/${stone.token_id}/${stone.serial}`,
     );
   });
 });

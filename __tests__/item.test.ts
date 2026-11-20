@@ -1,5 +1,6 @@
 import {
   attribute,
+  complianceEvent,
   documents,
   formatPrice,
   imageUrl,
@@ -53,6 +54,16 @@ describe("item helpers", () => {
       "application/pdf",
       "model/gltf-binary",
     ]);
+  });
+
+  it("complianceEvent is the item's own COMPLIANCE, not another NFT's", () => {
+    expect(complianceEvent(umina)?.seq).toBe(63);
+    expect(complianceEvent(achala)?.event.stone_id).toBe(achala.stone_id);
+    // the mounted gold's events also hold its Achalas' COMPLIANCE events
+    const gold = achala.stones[0];
+    expect(gold.events.filter((e) => e.event.event === "COMPLIANCE").length).toBeGreaterThan(1);
+    expect(complianceEvent(gold)?.event.stone_id).toBe(gold.stone_id);
+    expect(complianceEvent({ ...umina, events: [] })).toBeUndefined();
   });
 
   it("formatPrice shows the amount and the currency", () => {

@@ -1,19 +1,26 @@
 import {
   hashscanNftUrl,
   hashscanTopicUrl,
+  hashscanMessageUrl,
   ipfsToGatewayUrl,
 } from "../frontend/src/utils/chainLinks";
 
 describe("chainLinks", () => {
   it("links an NFT to its HashScan page on the site's network, testnet (#75)", () => {
     expect(hashscanNftUrl("0.0.11400486", 7)).toBe(
-      "https://hashscan.io/testnet/token/0.0.11400486/nft/7",
+      "https://hashscan.io/testnet/token/0.0.11400486/7",
     );
   });
 
   it("links a topic to its HashScan page on testnet", () => {
     expect(hashscanTopicUrl("0.0.11400670")).toBe(
       "https://hashscan.io/testnet/topic/0.0.11400670",
+    );
+  });
+
+  it("links an HCS message by its consensus timestamp, on its Message tab", () => {
+    expect(hashscanMessageUrl("1795019810.296993104")).toBe(
+      "https://hashscan.io/testnet/transaction/1795019810.296993104/message",
     );
   });
 

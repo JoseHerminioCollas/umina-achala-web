@@ -7,10 +7,17 @@ const HASHSCAN = `https://hashscan.io/${NETWORK}`;
 
 /** The HashScan page of one NFT: a token and a serial number. */
 export const hashscanNftUrl = (tokenId: string, serialNumber: number | string) =>
-  `${HASHSCAN}/token/${tokenId}/nft/${serialNumber}`;
+  `${HASHSCAN}/token/${tokenId}/${serialNumber}`;
 
 /** The HashScan page of an HCS topic. */
 export const hashscanTopicUrl = (topicId: string) => `${HASHSCAN}/topic/${topicId}`;
+
+/**
+ * The HashScan page of one HCS message, by its consensus timestamp, opened on
+ * its Message tab (the message's content), not the transaction's Summary.
+ */
+export const hashscanMessageUrl = (consensusTimestamp: string) =>
+  `${HASHSCAN}/transaction/${consensusTimestamp}/message`;
 
 /**
  * An ipfs:// URL as a gateway URL, e.g. "ipfs://<cid>/photo.png" →
