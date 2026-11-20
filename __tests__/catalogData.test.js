@@ -30,6 +30,32 @@ describe("__tests__/fixtures/catalog.json", () => {
     expect(achala.stones.length).toBeGreaterThan(0);
   });
 
+  // schema/stone-types.json is a copy from umina-achala-chain (#14)
+  test("every stone_type is in the stone-type list, not deprecated and not a fossil", () => {
+    const { types } = read("./schema/stone-types.json");
+    const byId = new Map(types.map((t) => [t.id, t]));
+    const used = [];
+    const stone = (nft) => {
+      const p = nft.metadata.properties;
+      used.push(p.stone_type, ...(p.materials ?? []).map((m) => m.stone_type));
+    };
+    for (const item of catalog.items) {
+      if (item.kind === "achala") {
+        used.push(...(item.metadata.properties.metals ?? []).map((m) => m.stone_type));
+        item.stones.forEach(stone);
+      } else stone(item);
+    }
+    const bad = used.filter(
+      (id) => !byId.has(id) || byId.get(id).deprecated || byId.get(id).kind === "fossil",
+    );
+    expect(used.length).toBeGreaterThan(0);
+    expect(bad).toEqual([]);
+  });
+
+  test("contains no remnants of the old Rumi name", () => {
+    expect(JSON.stringify(catalog)).not.toMatch(/rumi/i);
+  });
+
   test("each item's metadata, and each mounted stone's, matches its HIP-412 schema", () => {
     const failures = [];
     const check = (validate, nft) => {
