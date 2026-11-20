@@ -51,11 +51,10 @@
 }
 
 .modalBody img {
-  flex: 1;
+  display: block;
   width: 100%;
-  height: auto;
-  max-height: 200px; /* reduce image height */
-  object-fit: cover;
+  height: 360px;
+  object-fit: contain; /* the whole stone, never cropped */
   border-radius: 6px;
 }
 
@@ -110,7 +109,7 @@
   }
 
   .modalBody img {
-    max-height: 160px; /* smaller image for tablets/phones */
+    height: 260px; /* smaller image for tablets/phones */
   }
 
   .hashscanLinks a {
