@@ -66,6 +66,21 @@
   overflow: visible;
 }
 
+.price {
+  margin: 0 0 0.5em 0;
+  font-weight: bold;
+}
+
+.stones h3 {
+  margin: 1em 0 0.3em 0;
+  font-size: 1rem;
+}
+
+.stones ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
 .hashscanLinks {
   margin-top: 1.5em;
   text-align: center;

@@ -1,0 +1,540 @@
+{
+  "schema_version": 1,
+  "network": "testnet",
+  "built_at": "2026-11-19T22:30:17Z",
+  "source": {
+    "mirror": "https://testnet.mirrornode.hedera.com",
+    "ipfs_gateway": "https://gateway.pinata.cloud/ipfs/",
+    "umina_token_id": "0.0.11400486",
+    "achala_token_id": "0.0.11400589",
+    "provenance_topic": "0.0.11400670",
+    "display_topic": "0.0.11400772",
+    "treasury_id": "0.0.4631334",
+    "provenance_seq": 70,
+    "display_seq": 5
+  },
+  "items": [
+    {
+      "kind": "umina",
+      "stone_id": "UMINA-2026-AG-01",
+      "token_id": "0.0.11400486",
+      "serial": 15,
+      "metadata_cid": "Qmf7DDGpqm9ZRH2eEuh9GprmLGTb2HRu7ceTUMy7PqS1Bn",
+      "metadata": {
+        "creator": "Umiña Achala",
+        "description": "Sample tumbled agate from Cusco, submitted through the mint form (fake data for testing).",
+        "format": "HIP412@2.0.0",
+        "metadata_version": "1.0.0",
+        "properties": {
+          "stone_id": "UMINA-2026-AG-01",
+          "stone_type": "agate",
+          "specimen_form": "worked",
+          "hs_code": "7103.99.00.00",
+          "jurisdiction": "Peru",
+          "legal_uri": "https://umina-achala.pe/",
+          "vendor_name": "Umiña Achala",
+          "vendor_ruc": "20999887768",
+          "mining_concession": "010253815",
+          "reinfo_id": "10456789124",
+          "reinfo_status": "Vigente",
+          "compliance_proof_hcs": "0.0.4631334@1795104669.997320796",
+          "hcs_compliance_topic": "0.0.11400670"
+        },
+        "attributes": [
+          {
+            "trait_type": "Stone Type",
+            "value": "Agate"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Worked"
+          },
+          {
+            "trait_type": "Weight",
+            "value": "14.2 g"
+          },
+          {
+            "trait_type": "Grading",
+            "value": "Collector Grade"
+          },
+          {
+            "trait_type": "Date Mined",
+            "value": "2026-01-20"
+          },
+          {
+            "trait_type": "Stone Cut",
+            "value": "Tumbled"
+          }
+        ],
+        "name": "Agate · UMINA-2026-AG-01",
+        "files": [
+          {
+            "uri": "ipfs://QmUn3AtmKuEuWKPemZnmDnipr81DLRguGnoFKuBEXR9AuF",
+            "type": "image/png",
+            "checksum": "3020d99eb596cc9858e3a4ea577758dde79ed82a8a966d426b184db4fa14df27",
+            "metadata": {
+              "description": "Front view, turned left 25° (estimated from photo 1)"
+            }
+          },
+          {
+            "uri": "ipfs://QmaaG8nBhPbyJDXC7hmhYq9RbGRtMNCCcqnp6RY5iZYhQ7",
+            "type": "image/png",
+            "checksum": "a15a511699248ed0483851406f6156058c234da6dd7e97e593b448e86271701f",
+            "metadata": {
+              "description": "Front view, turned right 25° (estimated from photo 1)"
+            }
+          },
+          {
+            "uri": "ipfs://QmaJ7B2xDQSFtzqpfE4iTxuhLFniDKePXPMHyAsy5ThLLf",
+            "type": "image/png",
+            "checksum": "0f837fab17dc6bb48d6b9095ef8d8139c1cfc2000fb0f42d86cf1a0c1ce9faea",
+            "metadata": {
+              "description": "Front view, tilted to show the top (estimated from photo 1)"
+            }
+          },
+          {
+            "uri": "ipfs://QmZB8kRcxHTbEPorTbtf1h2vswNPgS4Nssd2DvrSmVa1Sm",
+            "type": "image/png",
+            "checksum": "bc4507f64c8cb3bd82ef80d50db6b21e7afb2a3fcee2ca9d37bac643cf3b482c",
+            "metadata": {
+              "description": "Side view (estimated from photo 1)"
+            }
+          },
+          {
+            "uri": "ipfs://QmQfjtqx9GYGxEr6WfiM8GTQ8gBV2mD9oN9bQj3t626heK",
+            "type": "image/png",
+            "checksum": "9f87219f0b5579e183da4815d8447a6aa4aba87f42895ebc8e2a48325a6f15c5",
+            "metadata": {
+              "description": "Back view (estimated from photo 1)"
+            }
+          },
+          {
+            "uri": "ipfs://QmSfTcj463Yu2FbUwFz3BSrFNBsFwfpkUVDpn3PuUMiQKK",
+            "type": "application/pdf",
+            "metadata": {
+              "description": "Store receipt (sample, fake)"
+            }
+          },
+          {
+            "uri": "ipfs://QmRu4iyBv443RZ4zxVCs1GfRMZhF2hRW8aXLAbbzPcuWZZ",
+            "type": "application/pdf",
+            "metadata": {
+              "description": "Mining concession and extraction permit (sample, fake)"
+            }
+          },
+          {
+            "uri": "ipfs://QmY9SkPzF11KtNXsEsoTeEEDi2sLet6pme1YqvXRUhDRN5",
+            "type": "model/gltf-binary",
+            "metadata": {
+              "description": "3D model, estimated from one photo (sample)"
+            }
+          }
+        ],
+        "image": "ipfs://QmNqDuU4L1YZS7sEQh5yMDusZEBaGcBNbdxtJyF5PsEsqp",
+        "type": "image/png"
+      },
+      "events": [
+        {
+          "seq": 63,
+          "consensus_timestamp": "1795104674.631909729",
+          "event": {
+            "event": "COMPLIANCE",
+            "schema_version": 1,
+            "stone_id": "UMINA-2026-AG-01",
+            "token_id": "0.0.11400486",
+            "serials": [],
+            "actor_id": "0.0.4631334",
+            "occurred_at": "2026-11-19T16:11:14Z",
+            "stone_type": "agate",
+            "vendor_ruc": "20999887768",
+            "mining_concession": "010253815",
+            "reinfo_id": "10456789124",
+            "hs_code": "7103.99.00.00"
+          }
+        },
+        {
+          "seq": 64,
+          "consensus_timestamp": "1795104689.579040763",
+          "event": {
+            "event": "MINT",
+            "schema_version": 1,
+            "stone_id": "UMINA-2026-AG-01",
+            "token_id": "0.0.11400486",
+            "serials": [
+              "15"
+            ],
+            "actor_id": "0.0.4631334",
+            "occurred_at": "2026-11-19T16:11:29Z",
+            "ref": "0.0.4631334@1795104680.029084747",
+            "ipfs_cid": "Qmf7DDGpqm9ZRH2eEuh9GprmLGTb2HRu7ceTUMy7PqS1Bn"
+          }
+        }
+      ],
+      "price": {
+        "amount": "45",
+        "currency": "HBAR",
+        "listed_seq": 5,
+        "listed_at": "1795122957.380953766"
+      }
+    },
+    {
+      "kind": "achala",
+      "stone_id": "ACHALA-2026-PE-02",
+      "token_id": "0.0.11400589",
+      "serial": 5,
+      "metadata_cid": "QmS3JfKDTszKumZRBnEgKAz9DpkiCaaTHtQAFCuA26ucxM",
+      "metadata": {
+        "creator": "Joyería Ejemplo S.A.C.",
+        "description": "Sample pendant remade from the same documented Umiña gold nugget after Achala E was taken apart (burned), drilled for a cord; its gold is the nugget itself (metal source umina), submitted through the mint form (fake data for testing).",
+        "format": "HIP412@2.0.0",
+        "metadata_version": "1.0.0",
+        "properties": {
+          "stone_id": "ACHALA-2026-PE-02",
+          "piece_type": "pendant",
+          "stones": [
+            {
+              "serial": 8,
+              "stone_id": "UMINA-2026-AU-01"
+            }
+          ],
+          "metals": [
+            {
+              "stone_type": "gold",
+              "fineness": "22k",
+              "weight_g": 18.4,
+              "source": "umina",
+              "stone_id": "UMINA-2026-AU-01"
+            }
+          ],
+          "technique": "Natural nugget, drilled and polished on the high points",
+          "artisan_rna": "RNA-112233",
+          "hs_code": "7113.19.00.00",
+          "jurisdiction": "Peru",
+          "legal_uri": "https://umina-achala.pe/",
+          "vendor_name": "Joyería Ejemplo S.A.C.",
+          "vendor_ruc": "20999887768",
+          "umina_token_id": "0.0.11400486",
+          "compliance_proof_hcs": "0.0.4631334@1795097731.691484975",
+          "hcs_compliance_topic": "0.0.11400670"
+        },
+        "attributes": [
+          {
+            "trait_type": "Piece Type",
+            "value": "Pendant"
+          },
+          {
+            "trait_type": "Metal",
+            "value": "Gold 22k"
+          },
+          {
+            "trait_type": "Stones",
+            "value": "Gold"
+          },
+          {
+            "trait_type": "Artisan",
+            "value": "RNA-112233"
+          },
+          {
+            "trait_type": "Cord",
+            "value": "Black waxed cotton, 45 cm"
+          }
+        ],
+        "name": "Pendant in gold · ACHALA-2026-PE-02",
+        "files": [
+          {
+            "uri": "ipfs://Qmd53S59VLwxdxVGeMZJ2DymVXEb3iUkGqP2Ph7P6fHu9H",
+            "type": "image/jpeg",
+            "is_default_file": true,
+            "checksum": "a5e30f5a57af893dcdc51a705ce16de1cb869ea428bfb73a5778ac740911e09c",
+            "metadata": {
+              "description": "Front view"
+            }
+          },
+          {
+            "uri": "ipfs://QmXMzrw2TWn9sPZkSCFPDdMLaMhK4kAYGsV9fM559khmqH",
+            "type": "image/png",
+            "is_default_file": false,
+            "checksum": "1ccccbe7a35a1fdcd769caa32ec86f334638b6f8884818399c98c92ca221d2b8",
+            "metadata": {
+              "description": "Front view, transparent background"
+            }
+          }
+        ],
+        "image": "ipfs://QmVbQ8E7LLSVJupvPqYVJmrZHFj7ci7AcLcsWWfQypFbtE",
+        "type": "image/jpeg"
+      },
+      "events": [
+        {
+          "seq": 58,
+          "consensus_timestamp": "1795097739.811315630",
+          "event": {
+            "event": "COMPLIANCE",
+            "schema_version": 1,
+            "stone_id": "ACHALA-2026-PE-02",
+            "token_id": "0.0.11400589",
+            "serials": [],
+            "actor_id": "0.0.4631334",
+            "occurred_at": "2026-11-19T14:15:39Z",
+            "piece_type": "pendant",
+            "artisan_rna": "RNA-112233",
+            "vendor_ruc": "20999887768",
+            "hs_code": "7113.19.00.00",
+            "from_stone_ids": [
+              "UMINA-2026-AU-01"
+            ]
+          }
+        },
+        {
+          "seq": 59,
+          "consensus_timestamp": "1795097751.290843661",
+          "event": {
+            "event": "MINT",
+            "schema_version": 1,
+            "stone_id": "ACHALA-2026-PE-02",
+            "token_id": "0.0.11400589",
+            "serials": [
+              "5"
+            ],
+            "actor_id": "0.0.4631334",
+            "occurred_at": "2026-11-19T14:15:50Z",
+            "ref": "0.0.4631334@1795097746.588202697",
+            "ipfs_cid": "QmS3JfKDTszKumZRBnEgKAz9DpkiCaaTHtQAFCuA26ucxM",
+            "from_stone_ids": [
+              "UMINA-2026-AU-01"
+            ]
+          }
+        }
+      ],
+      "price": {
+        "amount": "120",
+        "currency": "HBAR",
+        "listed_seq": 2,
+        "listed_at": "1795122810.137650104"
+      },
+      "stones": [
+        {
+          "stone_id": "UMINA-2026-AU-01",
+          "token_id": "0.0.11400486",
+          "serial": 8,
+          "metadata_cid": "Qma6VrKqRi8BFkGHvLsQpNjYFL34NCp3y8uAfXBq9LSda7",
+          "metadata": {
+            "name": "Umiña Stone #01 - Gold",
+            "creator": "Umiña Achala",
+            "description": "Sample natural gold nugget from artisanal mining in Arequipa, submitted through the mint form (fake data for testing).",
+            "format": "HIP412@2.0.0",
+            "metadata_version": "1.0.0",
+            "properties": {
+              "stone_id": "UMINA-2026-AU-01",
+              "stone_type": "gold",
+              "specimen_form": "natural",
+              "materials": [
+                {
+                  "stone_type": "gold",
+                  "role": "host",
+                  "form": "nugget",
+                  "weight_g": 18.4
+                }
+              ],
+              "hs_code": "7108.12.00.00",
+              "jurisdiction": "Peru",
+              "legal_uri": "https://umina-achala.pe/",
+              "vendor_name": "Umiña Achala",
+              "vendor_ruc": "20999887768",
+              "mining_concession": "010253815",
+              "reinfo_id": "10456789124",
+              "reinfo_status": "Vigente",
+              "compliance_proof_hcs": "0.0.4631334@1795019751.160640129",
+              "hcs_compliance_topic": "0.0.11400670"
+            },
+            "attributes": [
+              {
+                "trait_type": "Stone Type",
+                "value": "Gold"
+              },
+              {
+                "trait_type": "Form",
+                "value": "Natural"
+              },
+              {
+                "trait_type": "Weight",
+                "value": "18.4 g"
+              },
+              {
+                "trait_type": "Grading",
+                "value": "Collector Grade"
+              },
+              {
+                "trait_type": "Date Mined",
+                "value": "2026-09-02"
+              },
+              {
+                "trait_type": "Fineness",
+                "value": "22k (about 92% gold)"
+              }
+            ],
+            "files": [
+              {
+                "uri": "ipfs://Qmd53S59VLwxdxVGeMZJ2DymVXEb3iUkGqP2Ph7P6fHu9H",
+                "type": "image/jpeg",
+                "is_default_file": true,
+                "checksum": "a5e30f5a57af893dcdc51a705ce16de1cb869ea428bfb73a5778ac740911e09c",
+                "metadata": {
+                  "description": "Front view"
+                }
+              },
+              {
+                "uri": "ipfs://QmXMzrw2TWn9sPZkSCFPDdMLaMhK4kAYGsV9fM559khmqH",
+                "type": "image/png",
+                "is_default_file": false,
+                "checksum": "1ccccbe7a35a1fdcd769caa32ec86f334638b6f8884818399c98c92ca221d2b8",
+                "metadata": {
+                  "description": "Front view, transparent background"
+                }
+              },
+              {
+                "uri": "ipfs://QmRCyxFVwgdXgBEcGSYjnboUzNyH63vEtU93YgUGMj39Zo",
+                "type": "model/gltf-binary",
+                "metadata": {
+                  "description": "3D model, estimated from one image (sample)"
+                }
+              },
+              {
+                "uri": "ipfs://QmezBy1CtAomybB4XSiVP8iAjLEZqUnE4s3vdJvB926ipX",
+                "type": "application/pdf",
+                "metadata": {
+                  "description": "Store receipt (sample, fake)"
+                }
+              },
+              {
+                "uri": "ipfs://QmWanu25UK1PbGs4YDTgvdrevx2c6zYBRS9D4QvKt5J73c",
+                "type": "application/pdf",
+                "metadata": {
+                  "description": "Mining concession and extraction permit (sample, fake)"
+                }
+              }
+            ],
+            "image": "ipfs://QmVbQ8E7LLSVJupvPqYVJmrZHFj7ci7AcLcsWWfQypFbtE",
+            "type": "image/jpeg"
+          },
+          "events": [
+            {
+              "seq": 20,
+              "consensus_timestamp": "1795019758.515027760",
+              "event": {
+                "event": "COMPLIANCE",
+                "schema_version": 1,
+                "stone_id": "UMINA-2026-AU-01",
+                "token_id": "0.0.11400486",
+                "serials": [],
+                "actor_id": "0.0.4631334",
+                "occurred_at": "2026-11-18T16:35:57Z",
+                "stone_type": "gold",
+                "vendor_ruc": "20999887768",
+                "mining_concession": "010253815",
+                "reinfo_id": "10456789124",
+                "hs_code": "7108.12.00.00"
+              }
+            },
+            {
+              "seq": 21,
+              "consensus_timestamp": "1795019771.048930739",
+              "event": {
+                "event": "MINT",
+                "schema_version": 1,
+                "stone_id": "UMINA-2026-AU-01",
+                "token_id": "0.0.11400486",
+                "serials": [
+                  "8"
+                ],
+                "actor_id": "0.0.4631334",
+                "occurred_at": "2026-11-18T16:36:10Z",
+                "ref": "0.0.4631334@1795019765.245253873",
+                "ipfs_cid": "Qma6VrKqRi8BFkGHvLsQpNjYFL34NCp3y8uAfXBq9LSda7"
+              }
+            },
+            {
+              "seq": 26,
+              "consensus_timestamp": "1795020052.490177235",
+              "event": {
+                "event": "COMPLIANCE",
+                "schema_version": 1,
+                "stone_id": "ACHALA-2026-PE-01",
+                "token_id": "0.0.11400589",
+                "serials": [],
+                "actor_id": "0.0.4631334",
+                "occurred_at": "2026-11-18T16:40:52Z",
+                "piece_type": "pendant",
+                "artisan_rna": "RNA-112233",
+                "vendor_ruc": "20999887768",
+                "hs_code": "7113.19.00.00",
+                "from_stone_ids": [
+                  "UMINA-2026-AU-01"
+                ]
+              }
+            },
+            {
+              "seq": 27,
+              "consensus_timestamp": "1795020062.690355104",
+              "event": {
+                "event": "MINT",
+                "schema_version": 1,
+                "stone_id": "ACHALA-2026-PE-01",
+                "token_id": "0.0.11400589",
+                "serials": [
+                  "4"
+                ],
+                "actor_id": "0.0.4631334",
+                "occurred_at": "2026-11-18T16:41:02Z",
+                "ref": "0.0.4631334@1795020056.822136065",
+                "ipfs_cid": "QmdsgpKZmmqTihJ3i3gHppVH4XFD1bfyNR41eJmG7Wftv7",
+                "from_stone_ids": [
+                  "UMINA-2026-AU-01"
+                ]
+              }
+            },
+            {
+              "seq": 58,
+              "consensus_timestamp": "1795097739.811315630",
+              "event": {
+                "event": "COMPLIANCE",
+                "schema_version": 1,
+                "stone_id": "ACHALA-2026-PE-02",
+                "token_id": "0.0.11400589",
+                "serials": [],
+                "actor_id": "0.0.4631334",
+                "occurred_at": "2026-11-19T14:15:39Z",
+                "piece_type": "pendant",
+                "artisan_rna": "RNA-112233",
+                "vendor_ruc": "20999887768",
+                "hs_code": "7113.19.00.00",
+                "from_stone_ids": [
+                  "UMINA-2026-AU-01"
+                ]
+              }
+            },
+            {
+              "seq": 59,
+              "consensus_timestamp": "1795097751.290843661",
+              "event": {
+                "event": "MINT",
+                "schema_version": 1,
+                "stone_id": "ACHALA-2026-PE-02",
+                "token_id": "0.0.11400589",
+                "serials": [
+                  "5"
+                ],
+                "actor_id": "0.0.4631334",
+                "occurred_at": "2026-11-19T14:15:50Z",
+                "ref": "0.0.4631334@1795097746.588202697",
+                "ipfs_cid": "QmS3JfKDTszKumZRBnEgKAz9DpkiCaaTHtQAFCuA26ucxM",
+                "from_stone_ids": [
+                  "UMINA-2026-AU-01"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

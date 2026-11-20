@@ -3,7 +3,11 @@ export default {
   testEnvironment: "node", // component tests opt in with `@jest-environment jsdom`
   extensionsToTreatAsEsm: [".ts", ".tsx"],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  testPathIgnorePatterns: ["/node_modules/", "<rootDir>/__tests__/mocks/"],
+  testPathIgnorePatterns: [
+    "/node_modules/",
+    "<rootDir>/__tests__/mocks/",
+    "<rootDir>/__tests__/fixtures/",
+  ],
   moduleNameMapper: {
     "\\.css$": "identity-obj-proxy",
     // import.meta.env is Vite's; tests run with no VITE_ variables set

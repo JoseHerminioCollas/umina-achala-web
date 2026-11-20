@@ -11,6 +11,7 @@ interface ImportMetaEnv {
   readonly VITE_DISPLAY_TOPIC_ID?: string;
   readonly VITE_TREASURY_ACCOUNT_ID?: string;
   readonly VITE_IPFS_GATEWAY_URL?: string;
+  readonly VITE_CATALOG_URL?: string;
 }
 
 interface ImportMeta {

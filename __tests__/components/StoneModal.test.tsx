@@ -1,16 +1,16 @@
 /** @jest-environment jsdom */
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "../../frontend/src/i18n";
 import StoneModal from "../../frontend/src/components/StoneModal";
-import { UminaFacade } from "../../frontend/src/data/UminaFacade";
+import { UminaItem } from "../../frontend/src/types/catalog";
+import { achala, umina } from "../fixtures/catalog";
 
-const base = UminaFacade.fromJSON().getAll()[0];
-const typeOf = (u: typeof base) =>
-  u.attributes.find((a) => a.trait_type === "Stone Type")!.value;
-
-const item = (over: Record<string, unknown> = {}) => ({ ...base, ...over }) as typeof base;
+const withMetadata = (over: Partial<UminaItem["metadata"]>): UminaItem => ({
+  ...umina,
+  metadata: { ...umina.metadata, ...over },
+});
 
 describe("StoneModal", () => {
   it("renders nothing when no stone is open", () => {
@@ -18,14 +18,15 @@ describe("StoneModal", () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it("shows the stone type as the heading and the image", () => {
-    render(<StoneModal open={base} setOpen={jest.fn()} />);
-    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(typeOf(base));
-    expect(screen.getByRole("img", { name: base.name })).toBeInTheDocument();
+  it("shows the stone type as the heading, the image and the price", () => {
+    render(<StoneModal open={umina} setOpen={jest.fn()} />);
+    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent("Agate");
+    expect(screen.getByRole("img", { name: umina.metadata.name })).toBeInTheDocument();
+    expect(screen.getByText("Price: 45 HBAR")).toBeInTheDocument();
   });
 
   it("lists attributes but hides HS Code, Stone Type and empty values", () => {
-    const open = item({
+    const open = withMetadata({
       attributes: [
         { trait_type: "Stone Type", value: "jade" },
         { trait_type: "HS Code", value: "7103" },
@@ -43,14 +44,14 @@ describe("StoneModal", () => {
 
   it("closes from the × button", async () => {
     const setOpen = jest.fn();
-    render(<StoneModal open={base} setOpen={setOpen} />);
+    render(<StoneModal open={umina} setOpen={setOpen} />);
     await userEvent.click(screen.getByRole("button", { name: "×" }));
     expect(setOpen).toHaveBeenCalledWith(null);
   });
 
   it("closes when the backdrop is clicked but not when the content is", async () => {
     const setOpen = jest.fn();
-    const { container } = render(<StoneModal open={base} setOpen={setOpen} />);
+    const { container } = render(<StoneModal open={umina} setOpen={setOpen} />);
     await userEvent.click(screen.getByRole("heading", { level: 2 }));
     expect(setOpen).not.toHaveBeenCalled();
     await userEvent.click(container.firstElementChild as Element);
@@ -59,7 +60,7 @@ describe("StoneModal", () => {
 
   it("closes on Escape while open", () => {
     const setOpen = jest.fn();
-    render(<StoneModal open={base} setOpen={setOpen} />);
+    render(<StoneModal open={umina} setOpen={setOpen} />);
     fireEvent.keyDown(document, { key: "Escape" });
     expect(setOpen).toHaveBeenCalledWith(null);
   });
@@ -68,40 +69,62 @@ describe("StoneModal", () => {
     const setOpen = jest.fn();
     const { rerender } = render(<StoneModal open={null} setOpen={setOpen} />);
     fireEvent.keyDown(document, { key: "Escape" });
-    rerender(<StoneModal open={base} setOpen={setOpen} />);
+    rerender(<StoneModal open={umina} setOpen={setOpen} />);
     fireEvent.keyDown(document, { key: "Enter" });
     expect(setOpen).not.toHaveBeenCalled();
   });
 
   it("stops listening for Escape after unmounting", () => {
     const setOpen = jest.fn();
-    const { unmount } = render(<StoneModal open={base} setOpen={setOpen} />);
+    const { unmount } = render(<StoneModal open={umina} setOpen={setOpen} />);
     unmount();
     fireEvent.keyDown(document, { key: "Escape" });
     expect(setOpen).not.toHaveBeenCalled();
   });
 
-  it("links to the compliance HCS topic in a new tab when a topic exists", () => {
-    const topic = "0.0.123456";
-    const open = item({ properties: { ...base.properties, hcs_compliance_topic: topic } });
-    render(<StoneModal open={open} setOpen={jest.fn()} />);
-    const link = screen.getByRole("link", { name: "View Compliance HCS Topic" });
-    expect(link).toHaveAttribute("href", `https://hashscan.io/testnet/topic/${topic}`);
+  it("links to the NFT on HashScan testnet, in a new tab", () => {
+    render(<StoneModal open={umina} setOpen={jest.fn()} />);
+    const link = screen.getByRole("link", { name: "View Minted Token on HashScan" });
+    expect(link).toHaveAttribute(
+      "href",
+      `https://hashscan.io/testnet/token/${umina.token_id}/nft/${umina.serial}`,
+    );
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", expect.stringContaining("noopener"));
   });
 
+  it("links to the compliance HCS topic on HashScan testnet when a topic exists", () => {
+    render(<StoneModal open={umina} setOpen={jest.fn()} />);
+    const link = screen.getByRole("link", { name: "View Compliance HCS Topic" });
+    expect(link).toHaveAttribute(
+      "href",
+      `https://hashscan.io/testnet/topic/${umina.metadata.properties.hcs_compliance_topic}`,
+    );
+  });
+
   it("omits the compliance link when there is no topic", () => {
-    const open = item({ properties: { ...base.properties, hcs_compliance_topic: "" } });
+    const open = withMetadata({
+      properties: { ...umina.metadata.properties, hcs_compliance_topic: undefined },
+    });
     render(<StoneModal open={open} setOpen={jest.fn()} />);
     expect(screen.queryByRole("link", { name: "View Compliance HCS Topic" })).not.toBeInTheDocument();
   });
 
-  it("shows the HashScan token link only when tokenId and serialNumber are set", () => {
-    const { rerender } = render(<StoneModal open={base} setOpen={jest.fn()} />);
-    expect(screen.queryByRole("link", { name: "View Minted Token on HashScan" })).not.toBeInTheDocument();
-    rerender(<StoneModal open={item({ tokenId: "0.0.555", serialNumber: 7 })} setOpen={jest.fn()} />);
-    const link = screen.getByRole("link", { name: "View Minted Token on HashScan" });
-    expect(link).toHaveAttribute("href", "https://hashscan.io/testnet/token/0.0.555/nft/7");
+  it("has no list of stones for an Umiña", () => {
+    render(<StoneModal open={umina} setOpen={jest.fn()} />);
+    expect(screen.queryByText("Stones in this piece")).not.toBeInTheDocument();
+  });
+
+  it("shows an Achala's piece type and lists its stones, each linked to its NFT", () => {
+    render(<StoneModal open={achala} setOpen={jest.fn()} />);
+    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent("Pendant");
+    const list = screen.getByRole("heading", { name: "Stones in this piece" }).parentElement!;
+    const stone = achala.stones[0];
+    const item = within(list).getByRole("listitem");
+    expect(item).toHaveTextContent("Gold · 18.4 g");
+    expect(within(item).getByRole("link", { name: stone.stone_id })).toHaveAttribute(
+      "href",
+      `https://hashscan.io/testnet/token/${stone.token_id}/nft/${stone.serial}`,
+    );
   });
 });

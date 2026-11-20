@@ -118,21 +118,24 @@
     "privacyNote": "Su información se recoge con Google Forms. Detalles:"
   },
   "marketplace": {
-    "noResults": "Ninguna piedra coincide con tus filtros. Intenta ajustar tu búsqueda."
+    "noResults": "Ninguna piedra coincide con tus filtros. Intenta ajustar tu búsqueda.",
+    "loading": "Cargando las piedras…",
+    "error": "No se pudieron cargar las piedras. Inténtalo de nuevo más tarde.",
+    "empty": "Todavía no hay piedras a la venta."
   },
   "card": {
     "viewUmina": "Ver Umiña",
     "viewAchala": "Ver Achala",
     "buySoon": "¡Compra con UMA próximamente!",
-    "mountedBy": "Montado por:"
+    "stones": "Piedras:"
   },
   "filters": {
+    "kind": "Mostrar:",
+    "kind_umina": "Piedras",
+    "kind_achala": "Joyas",
     "type": "Tipo:",
     "cut": "Corte:",
-    "mounted": "Montado:",
-    "all": "Todo",
-    "mounted_yes": "Montado",
-    "mounted_no": "Sin Montar"
+    "all": "Todo"
   },
   "privacy": {
     "title": "Privacidad y Cookies",
@@ -167,7 +170,9 @@
   "modal": {
     "viewHashscan": "Ver Token Acuñado en HashScan",
     "viewCompliance": "Ver Tema HCS de Cumplimiento",
-    "complianceUnavailable": "Todavía no hay una página de cumplimiento para mostrar porque el sitio no está terminado. Esto es solo una demostración."
+    "complianceUnavailable": "Todavía no hay una página de cumplimiento para mostrar porque el sitio no está terminado. Esto es solo una demostración.",
+    "price": "Precio:",
+    "stonesInPiece": "Piedras de esta pieza"
   },
   "compliance": {
     "title": "Panel de Cumplimiento (Vista de Regulador)",

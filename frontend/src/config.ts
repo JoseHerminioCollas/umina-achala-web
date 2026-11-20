@@ -42,6 +42,12 @@ export const DISPLAY_TOPIC_ID = env.VITE_DISPLAY_TOPIC_ID || "0.0.11400772";
 export const TREASURY_ACCOUNT_ID = env.VITE_TREASURY_ACCOUNT_ID || "0.0.4631334";
 
 /**
+ * The site's catalog (#89), built from the chain by umina-achala-chain#44 and
+ * served next to the site (frontend/public/data/ in dev, build/data/ live).
+ */
+export const CATALOG_URL = env.VITE_CATALOG_URL || "./data/catalog.json";
+
+/**
  * The IPFS gateway for ipfs:// links, ending in "/ipfs/": Pinata's public
  * gateway, the one the catalog builder uses (umina-achala-chain#44).
  */

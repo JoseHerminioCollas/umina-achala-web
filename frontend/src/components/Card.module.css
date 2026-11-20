@@ -37,10 +37,14 @@
   border-radius: 999px;
   font-size: 0.8rem;
 }
-.mountedBy {
+.detail {
   margin: 4px 0 0 0;
   font-size: 0.8rem;
   color: #555;
+}
+.price {
+  margin: 6px 0 0 0;
+  font-weight: bold;
 }
 
 .cardActions {

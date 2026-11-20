@@ -1,67 +1,69 @@
 // src/components/Marketplace.tsx
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import Card from "./Card";
 import Filters from "./Filters";
 import StoneModal from "./StoneModal";
-import { Umina } from "../types/umina";
-import { UminaFacade } from "../data/UminaFacade";
+import { CatalogItem } from "../types/catalog";
 import styles from "./Marketplace.module.css";
 import Pager from "./Pager";
 import { useTranslation } from "react-i18next";
 import { usePageMeta } from "../hooks/usePageMeta";
-import { filterItems } from "../utils/filterItems";
+import { useCatalog } from "../hooks/useCatalog";
+import { Filters as FilterValues, filterItems, filterOptions } from "../utils/filterItems";
+
+const PER_PAGE = 6;
 
 const Marketplace: React.FC = () => {
   const { t } = useTranslation();
   usePageMeta("marketplace");
-  const [open, setOpen] = useState<Umina | null>(null);
-  const data = UminaFacade.fromJSON().getAll();
-  const [filters, setFilters] = useState({
-    type: "",
-    types: Array.from(
-      new Set(
-        data.map(
-          (i) =>
-            i.attributes.find((a) => a.trait_type === "Stone Type")?.value ||
-            "",
-        ),
-      ),
-    ),
-    cut: "",
-    cuts: Array.from(
-      new Set(
-        data.map(
-          (i) =>
-            i.attributes.find((a) => a.trait_type === "Stone Cut")?.value ||
-            "No Cut",
-        ),
-      ),
-    ),
-    mounted: "",
-  });
+  const state = useCatalog();
+  const [open, setOpen] = useState<CatalogItem | null>(null);
+  const [filters, setFilters] = useState<FilterValues>({ kind: "", type: "", cut: "" });
   const [page, setPage] = useState(1);
-  const perPage = 6;
 
-  const filtered = filterItems(data, filters);
-  const totalPages = Math.ceil(filtered.length / perPage);
-  const pagedItems = filtered.slice((page - 1) * perPage, page * perPage);
+  const items = state.status === "ready" ? state.catalog.getAll() : [];
+  const options = useMemo(() => filterOptions(items), [items]);
+
+  if (state.status === "loading") {
+    return (
+      <section className={styles.marketplace}>
+        <div className={styles.noResults}>{t("marketplace.loading")}</div>
+      </section>
+    );
+  }
+  if (state.status === "error") {
+    return (
+      <section className={styles.marketplace}>
+        <div className={styles.noResults} role="alert">{t("marketplace.error")}</div>
+      </section>
+    );
+  }
+  if (items.length === 0) {
+    return (
+      <section className={styles.marketplace}>
+        <div className={styles.noResults}>{t("marketplace.empty")}</div>
+      </section>
+    );
+  }
+
+  const filtered = filterItems(items, filters);
+  const totalPages = Math.ceil(filtered.length / PER_PAGE);
+  const pagedItems = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   return (
     <section className={styles.marketplace}>
       <div className={styles.controls}>
-        <Filters filters={filters} setFilters={setFilters} setPage={setPage} />
+        <Filters filters={filters} options={options} setFilters={setFilters} setPage={setPage} />
         <Pager page={page} totalPages={totalPages} setPage={setPage} />
       </div>
       {filtered.length === 0 ? (
         <div className={styles.noResults}>{t("marketplace.noResults")}</div>
       ) : (
-        <>
-          <div className={styles.cards}>
-            {pagedItems.map((it) => (
-              <Card key={it.properties.stone_id} item={it} onClick={setOpen} />
-            ))}
-          </div>
-        </>
+        <div className={styles.cards}>
+          {pagedItems.map((it) => (
+            <Card key={it.stone_id} item={it} onClick={setOpen} />
+          ))}
+        </div>
       )}
       <StoneModal open={open} setOpen={setOpen} />
     </section>

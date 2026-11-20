@@ -1,95 +1,122 @@
 /** @jest-environment jsdom */
 import React from "react";
-import { render, screen, within, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import "../../frontend/src/i18n";
 import Marketplace from "../../frontend/src/components/Marketplace";
-import { UminaFacade } from "../../frontend/src/data/UminaFacade";
-import { filterItems } from "../../frontend/src/utils/filterItems";
+import { resetCatalog } from "../../frontend/src/hooks/useCatalog";
+import { Catalog } from "../../frontend/src/types/catalog";
+import { achala, catalog, makeUmina, mockFetch, withItems } from "../fixtures/catalog";
 
-const all = UminaFacade.fromJSON().getAll();
 const PER_PAGE = 6;
-const attr = (u: (typeof all)[number], trait: string) =>
-  u.attributes.find((a) => a.trait_type === trait)?.value || "";
 
-// image alt text is the stone name, which is unique per stone
-const shownNames = () =>
-  screen.getAllByRole("img").map((img) => img.getAttribute("alt"));
-const viewButtons = () => screen.getAllByRole("button", { name: "View Umiña" });
+// 12 stones of 4 types (gold has no cut), then the gold pendant: 3 pages
+const TYPES = [
+  ["Agate", "Tumbled"],
+  ["Quartz", "Step Cut"],
+  ["Opal", "Cabochon"],
+  ["Gold", undefined],
+] as const;
+const stones = Array.from({ length: 12 }, (_, i) => makeUmina(i + 1, ...TYPES[i % 4]));
+const all = [...stones, achala];
+const big = withItems(all);
 
-// find a type + cut combination that no stone has
-const types = Array.from(new Set(all.map((u) => attr(u, "Stone Type"))));
-const cuts = Array.from(new Set(all.map((u) => attr(u, "Stone Cut") || "No Cut")));
-const emptyCombo = types
-  .flatMap((type) => cuts.map((cut) => ({ type, cut })))
-  .find((f) => filterItems(all, { ...f, mounted: "" }).length === 0);
+const names = (items: typeof all) => items.map((i) => i.metadata.name);
+// image alt text is the item's name, which is unique per item
+const shownNames = () => screen.getAllByRole("img").map((img) => img.getAttribute("alt"));
+const combo = (label: string) => screen.getByRole("combobox", { name: label });
+
+const renderWith = async (body: Catalog | number = big) => {
+  mockFetch(body);
+  const result = render(<MemoryRouter><Marketplace /></MemoryRouter>);
+  return result;
+};
 
 describe("Marketplace", () => {
-  it("shows the first page of stones", () => {
-    render(<MemoryRouter><Marketplace /></MemoryRouter>);
-    expect(viewButtons()).toHaveLength(Math.min(PER_PAGE, all.length));
-    expect(shownNames()).toEqual(all.slice(0, PER_PAGE).map((u) => u.name));
+  beforeEach(() => resetCatalog());
+  afterEach(() => jest.restoreAllMocks());
+
+  it("shows a loading message, then the first page of items", async () => {
+    await renderWith();
+    expect(screen.getByText("Loading the stones…")).toBeInTheDocument();
+    await screen.findAllByRole("img");
+    expect(shownNames()).toEqual(names(all.slice(0, PER_PAGE)));
   });
 
-  it("pages through the stones", async () => {
-    render(<MemoryRouter><Marketplace /></MemoryRouter>);
-    await userEvent.click(screen.getByRole("button", { name: "2" }));
-    expect(shownNames()).toEqual(all.slice(PER_PAGE, PER_PAGE * 2).map((u) => u.name));
-    await userEvent.click(screen.getByRole("button", { name: "Next" }));
-    expect(shownNames()).toEqual(all.slice(PER_PAGE * 2, PER_PAGE * 3).map((u) => u.name));
-  });
-
-  it("filters by stone type and hides the pager when one page is enough", async () => {
-    render(<MemoryRouter><Marketplace /></MemoryRouter>);
-    const type = types[0];
-    const expected = filterItems(all, { type, cut: "", mounted: "" });
-    expect(expected.length).toBeLessThanOrEqual(PER_PAGE);
-    await userEvent.selectOptions(screen.getAllByRole("combobox")[0], type);
-    expect(shownNames()).toEqual(expected.map((u) => u.name));
-    expect(screen.queryByRole("button", { name: "Next" })).not.toBeInTheDocument();
-  });
-
-  it("filters by mounted", async () => {
-    render(<MemoryRouter><Marketplace /></MemoryRouter>);
-    await userEvent.selectOptions(screen.getAllByRole("combobox")[2], "true");
-    const expected = filterItems(all, { type: "", cut: "", mounted: "true" });
-    expect(screen.getAllByText("Mounted by:")).toHaveLength(
-      Math.min(PER_PAGE, expected.length),
+  it("shows an error, not a blank page, when the catalog cannot be loaded", async () => {
+    jest.spyOn(console, "error").mockImplementation(() => {});
+    await renderWith(404);
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "The stones could not be loaded. Please try again later.",
     );
   });
 
-  it("returns to page 1 when a filter changes (#57)", async () => {
-    const { container } = render(<MemoryRouter><Marketplace /></MemoryRouter>);
-    const lastPage = Math.ceil(all.length / PER_PAGE);
-    await userEvent.click(screen.getByRole("button", { name: String(lastPage) }));
-    expect(container.querySelector(".activePage")).toHaveTextContent(String(lastPage));
-
-    const unmounted = filterItems(all, { type: "", cut: "", mounted: "false" });
-    expect(unmounted.length).toBeGreaterThan(PER_PAGE); // pager stays visible
-    await userEvent.selectOptions(screen.getAllByRole("combobox")[2], "false");
-    expect(container.querySelector(".activePage")).toHaveTextContent("1");
-    expect(shownNames()).toEqual(unmounted.slice(0, PER_PAGE).map((u) => u.name));
+  it("says no stones are listed when the catalog is empty", async () => {
+    await renderWith(withItems([]));
+    expect(await screen.findByText("No stones listed yet.")).toBeInTheDocument();
   });
 
-  it("shows a message when no stone matches the filters", async () => {
-    expect(emptyCombo).toBeDefined();
-    render(<MemoryRouter><Marketplace /></MemoryRouter>);
-    const [typeSelect, cutSelect] = screen.getAllByRole("combobox");
-    await userEvent.selectOptions(typeSelect, emptyCombo!.type);
-    await userEvent.selectOptions(cutSelect, emptyCombo!.cut);
+  it("shows the testnet catalog: the agate and the gold pendant", async () => {
+    await renderWith(catalog);
+    await screen.findAllByRole("img");
+    expect(shownNames()).toEqual(names(catalog.items as typeof all));
+    expect(screen.getByRole("button", { name: "View Umiña" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "View Achala" })).toBeInTheDocument();
+  });
+
+  it("pages through the items", async () => {
+    await renderWith();
+    await screen.findAllByRole("img");
+    await userEvent.click(screen.getByRole("button", { name: "2" }));
+    expect(shownNames()).toEqual(names(all.slice(PER_PAGE, PER_PAGE * 2)));
+    await userEvent.click(screen.getByRole("button", { name: "Next" }));
+    expect(shownNames()).toEqual(names(all.slice(PER_PAGE * 2)));
+  });
+
+  it("filters by kind", async () => {
+    await renderWith();
+    await screen.findAllByRole("img");
+    await userEvent.selectOptions(combo("Show:"), "achala");
+    expect(shownNames()).toEqual(names([achala]));
+  });
+
+  it("filters by stone type, matching an Achala by its stones", async () => {
+    await renderWith();
+    await screen.findAllByRole("img");
+    await userEvent.selectOptions(combo("Type:"), "Gold");
+    const gold = all.filter((i) => i.kind === "achala" || i.metadata.name.startsWith("Gold"));
+    expect(shownNames()).toEqual(names(gold));
+    expect(screen.queryByRole("button", { name: "Next" })).not.toBeInTheDocument();
+  });
+
+  it("returns to page 1 when a filter changes (#57)", async () => {
+    const { container } = await renderWith();
+    await screen.findAllByRole("img");
+    await userEvent.click(screen.getByRole("button", { name: "3" }));
+    expect(container.querySelector(".activePage")).toHaveTextContent("3");
+    await userEvent.selectOptions(combo("Show:"), "umina");
+    expect(container.querySelector(".activePage")).toHaveTextContent("1");
+    expect(shownNames()).toEqual(names(stones.slice(0, PER_PAGE)));
+  });
+
+  it("shows a message when nothing matches the filters", async () => {
+    await renderWith();
+    await screen.findAllByRole("img");
+    await userEvent.selectOptions(combo("Type:"), "Gold");
+    await userEvent.selectOptions(combo("Cut:"), "Tumbled");
     expect(
       screen.getByText("No stones match your filters. Try adjusting your search."),
     ).toBeInTheDocument();
-    expect(screen.queryAllByRole("button", { name: "View Umiña" })).toHaveLength(0);
+    expect(screen.queryAllByRole("img")).toHaveLength(0);
   });
 
-  it("opens the stone modal from a card and closes it on Escape", async () => {
-    render(<MemoryRouter><Marketplace /></MemoryRouter>);
+  it("opens the detail from a card and closes it on Escape", async () => {
+    await renderWith();
+    await screen.findAllByRole("img");
     expect(screen.queryByRole("heading", { level: 2 })).not.toBeInTheDocument();
-    await userEvent.click(viewButtons()[0]);
-    const modal = screen.getByRole("heading", { level: 2 });
-    expect(modal).toHaveTextContent(attr(all[0], "Stone Type"));
+    await userEvent.click(screen.getAllByRole("button", { name: "View Umiña" })[0]);
+    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent("Agate");
     fireEvent.keyDown(document, { key: "Escape" });
     expect(screen.queryByRole("heading", { level: 2 })).not.toBeInTheDocument();
   });

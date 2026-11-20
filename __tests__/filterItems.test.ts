@@ -1,129 +1,50 @@
-import { filterItems, Filters } from "../frontend/src/utils/filterItems";
+import { filterItems, filterOptions, NO_CUT } from "../frontend/src/utils/filterItems";
+import { achala, makeUmina } from "./fixtures/catalog";
 
-const makeItem = (attrs: { trait_type: string; value?: string }[]) => ({
-  attributes: attrs,
-});
+const agate = makeUmina(1, "Agate", "Tumbled");
+const gold = makeUmina(2, "Gold"); // no cut
+const quartz = makeUmina(3, "Quartz", "Step Cut");
+const items = [agate, gold, quartz, achala]; // achala: a gold pendant
+
+const ids = (filtered: typeof items) => filtered.map((i) => i.stone_id);
+const none = { kind: "", type: "", cut: "" } as const;
 
 describe("filterItems", () => {
-  const data = [
-    makeItem([{ trait_type: "Stone Type", value: "Granite" }]),
-    makeItem([{ trait_type: "Stone Cut", value: "Round" }]),
-    makeItem([{ trait_type: "Stone Cut", value: "" }]), // No Cut
-    makeItem([{ trait_type: "Mounted By", value: "Alice" }]),
-  ];
-
-  it("filters by type", () => {
-    const filters: Filters = { type: "Granite", cut: "", mounted: "" };
-    const result = filterItems(data, filters);
-    expect(result).toHaveLength(1);
-    expect(result[0].attributes[0].value).toBe("Granite");
+  it("returns everything with no filter", () => {
+    expect(filterItems(items, none)).toEqual(items);
   });
 
-  it("filters by cut", () => {
-    const filters: Filters = { type: "", cut: "Round", mounted: "" };
-    const result = filterItems(data, filters);
-    expect(result).toHaveLength(1);
-    expect(result[0].attributes[0].value).toBe("Round");
+  it("filters by kind: stones or jewelry", () => {
+    expect(ids(filterItems(items, { ...none, kind: "umina" }))).toEqual(ids([agate, gold, quartz]));
+    expect(filterItems(items, { ...none, kind: "achala" })).toEqual([achala]);
   });
 
-  it("filters by 'No Cut'", () => {
-    const filters: Filters = { type: "", cut: "No Cut", mounted: "" };
-    const result = filterItems(data, filters);
-    expect(result).toHaveLength(3);
-    expect(result[0].attributes[0].value).toBe("Granite");
+  it("matches a stone type on an Umiña or on any of an Achala's stones", () => {
+    expect(filterItems(items, { ...none, type: "Gold" })).toEqual([gold, achala]);
+    expect(filterItems(items, { ...none, type: "Agate" })).toEqual([agate]);
   });
 
-  it("filters by mounted=true", () => {
-    const filters: Filters = { type: "", cut: "", mounted: "true" };
-    const result = filterItems(data, filters);
-    expect(result).toHaveLength(1);
-    expect(result[0].attributes[0].value).toBe("Alice");
+  it("filters by cut, Umiña only", () => {
+    expect(filterItems(items, { ...none, cut: "Step Cut" })).toEqual([quartz]);
   });
 
-  it("filters by mounted=false", () => {
-    const filters: Filters = { type: "", cut: "", mounted: "false" };
-    const result = filterItems(data, filters);
-    // Should exclude the mounted item
-    expect(result.every((i) =>
-      !i.attributes.some((a) => a.trait_type === "Mounted By" && a.value)
-    )).toBe(true);
+  it("matches stones with no cut with NO_CUT, never an Achala", () => {
+    expect(filterItems(items, { ...none, cut: NO_CUT })).toEqual([gold]);
   });
 
-  it("returns all items when filters are empty", () => {
-    const filters: Filters = { type: "", cut: "", mounted: "" };
-    const result = filterItems(data, filters);
-    expect(result).toHaveLength(data.length);
+  it("combines filters", () => {
+    expect(filterItems(items, { kind: "umina", type: "Gold", cut: "" })).toEqual([gold]);
+    expect(filterItems(items, { kind: "achala", type: "Agate", cut: "" })).toEqual([]);
   });
 });
 
-describe("filterItems (combined and edge cases)", () => {
-  const stone = (
-    type: string,
-    cut?: string,
-    mountedBy?: string,
-  ) => {
-    const attrs: { trait_type: string; value?: string }[] = [
-      { trait_type: "Stone Type", value: type },
-    ];
-    if (cut !== undefined) attrs.push({ trait_type: "Stone Cut", value: cut });
-    if (mountedBy !== undefined)
-      attrs.push({ trait_type: "Mounted By", value: mountedBy });
-    return { attributes: attrs };
-  };
-
-  const data = [
-    stone("Jade", "Cabochon", "Ana"),
-    stone("Jade", "Faceted"),
-    stone("Amethyst", "Cabochon", "Luis"),
-    stone("Amethyst"),
-  ];
-  const none: Filters = { type: "", cut: "", mounted: "" };
-
-  it("combines type and cut", () => {
-    const result = filterItems(data, { ...none, type: "Jade", cut: "Cabochon" });
-    expect(result).toEqual([data[0]]);
+describe("filterOptions", () => {
+  it("lists each stone type once, sorted, including an Achala's stones", () => {
+    expect(filterOptions([quartz, achala, agate]).types).toEqual(["Agate", "Gold", "Quartz"]);
   });
 
-  it("combines cut and mounted", () => {
-    const result = filterItems(data, { ...none, cut: "Cabochon", mounted: "true" });
-    expect(result).toEqual([data[0], data[2]]);
-  });
-
-  it("combines type, cut and mounted=false", () => {
-    const result = filterItems(data, {
-      ...none,
-      type: "Jade",
-      cut: "Faceted",
-      mounted: "false",
-    });
-    expect(result).toEqual([data[1]]);
-  });
-
-  it("returns nothing when no stone matches", () => {
-    expect(filterItems(data, { ...none, type: "Quartz" })).toEqual([]);
-    expect(
-      filterItems(data, { ...none, type: "Amethyst", cut: "Faceted" }),
-    ).toEqual([]);
-  });
-
-  it("treats a missing Stone Cut attribute as 'No Cut'", () => {
-    const result = filterItems(data, { ...none, cut: "No Cut" });
-    expect(result).toEqual([data[3]]);
-  });
-
-  it("treats a whitespace-only Mounted By as unmounted", () => {
-    const items = [stone("Jade", "Cabochon", "   ")];
-    expect(filterItems(items, { ...none, mounted: "true" })).toEqual([]);
-    expect(filterItems(items, { ...none, mounted: "false" })).toEqual(items);
-  });
-
-  it("does not mutate the input array", () => {
-    const copy = [...data];
-    filterItems(data, { ...none, type: "Jade" });
-    expect(data).toEqual(copy);
-  });
-
-  it("handles an empty list", () => {
-    expect(filterItems([], { ...none, type: "Jade" })).toEqual([]);
+  it("lists the Umiña cuts, with NO_CUT for a stone without one", () => {
+    expect(filterOptions(items).cuts).toEqual([NO_CUT, "Step Cut", "Tumbled"]);
+    expect(filterOptions([achala]).cuts).toEqual([]);
   });
 });

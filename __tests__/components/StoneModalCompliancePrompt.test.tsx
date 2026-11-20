@@ -3,13 +3,7 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import i18n from "../../frontend/src/i18n";
 import StoneModal from "../../frontend/src/components/StoneModal";
-import { UminaFacade } from "../../frontend/src/data/UminaFacade";
-
-const base = UminaFacade.fromJSON().getAll()[0];
-const withTopic = {
-  ...base,
-  properties: { ...base.properties, hcs_compliance_topic: "0.0.123456" },
-};
+import { umina as withTopic } from "../fixtures/catalog";
 
 describe("StoneModal compliance link message (#83)", () => {
   beforeEach(() => i18n.changeLanguage("en"));
@@ -51,8 +45,7 @@ describe("StoneModal compliance link message (#83)", () => {
 
   it("does not show the message for the minted-token link", () => {
     const alert = jest.spyOn(window, "alert").mockImplementation(() => {});
-    const minted = { ...withTopic, tokenId: "0.0.555", serialNumber: 7 } as typeof withTopic;
-    render(<StoneModal open={minted} setOpen={jest.fn()} />);
+    render(<StoneModal open={withTopic} setOpen={jest.fn()} />);
     fireEvent.click(screen.getByRole("link", { name: "View Minted Token on HashScan" }));
     expect(alert).not.toHaveBeenCalled();
   });

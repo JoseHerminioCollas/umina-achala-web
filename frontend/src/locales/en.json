@@ -118,21 +118,24 @@
     "privacyNote": "Your information is collected with Google Forms. Details:"
   },
   "marketplace": {
-    "noResults": "No stones match your filters. Try adjusting your search."
+    "noResults": "No stones match your filters. Try adjusting your search.",
+    "loading": "Loading the stones…",
+    "error": "The stones could not be loaded. Please try again later.",
+    "empty": "No stones listed yet."
   },
   "card": {
     "viewUmina": "View Umiña",
     "viewAchala": "View Achala",
     "buySoon": "Buy with UMA coming soon!",
-    "mountedBy": "Mounted by:"
+    "stones": "Stones:"
   },
   "filters": {
+    "kind": "Show:",
+    "kind_umina": "Stones",
+    "kind_achala": "Jewelry",
     "type": "Type:",
     "cut": "Cut:",
-    "mounted": "Mounted:",
-    "all": "All",
-    "mounted_yes": "Mounted",
-    "mounted_no": "Unmounted"
+    "all": "All"
   },
   "privacy": {
     "title": "Privacy & Cookies",
@@ -167,7 +170,9 @@
   "modal": {
     "viewHashscan": "View Minted Token on HashScan",
     "viewCompliance": "View Compliance HCS Topic",
-    "complianceUnavailable": "There is no compliance page to show yet because the site is not finished. This is a demonstration only."
+    "complianceUnavailable": "There is no compliance page to show yet because the site is not finished. This is a demonstration only.",
+    "price": "Price:",
+    "stonesInPiece": "Stones in this piece"
   },
   "compliance": {
     "title": "Compliance Dashboard (Regulator View)",
