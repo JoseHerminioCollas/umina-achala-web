@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Umina } from "../types/umina";
 import styles from "./StoneModal.module.css";
 import { useTranslation } from "react-i18next";
+import { hashscanNftUrl, hashscanTopicUrl } from "../utils/chainLinks";
 
 interface StoneModalProps {
   open: Umina | null;
@@ -63,7 +64,7 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {
               {open.tokenId && open.serialNumber && (
                 <p>
                   <a
-                    href={`https://hashscan.io/mainnet/token/${open.tokenId}/nft/${open.serialNumber}`}
+                    href={hashscanNftUrl(open.tokenId, open.serialNumber)}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -74,7 +75,7 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {
               {open.properties.hcs_compliance_topic && (
                 <p>
                   <a
-                    href={`https://hashscan.io/mainnet/topic/${open.properties.hcs_compliance_topic}`}
+                    href={hashscanTopicUrl(open.properties.hcs_compliance_topic)}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => {

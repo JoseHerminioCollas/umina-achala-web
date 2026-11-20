@@ -86,7 +86,7 @@ describe("StoneModal", () => {
     const open = item({ properties: { ...base.properties, hcs_compliance_topic: topic } });
     render(<StoneModal open={open} setOpen={jest.fn()} />);
     const link = screen.getByRole("link", { name: "View Compliance HCS Topic" });
-    expect(link.getAttribute("href")).toContain(`/topic/${topic}`);
+    expect(link).toHaveAttribute("href", `https://hashscan.io/testnet/topic/${topic}`);
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", expect.stringContaining("noopener"));
   });
@@ -102,6 +102,6 @@ describe("StoneModal", () => {
     expect(screen.queryByRole("link", { name: "View Minted Token on HashScan" })).not.toBeInTheDocument();
     rerender(<StoneModal open={item({ tokenId: "0.0.555", serialNumber: 7 })} setOpen={jest.fn()} />);
     const link = screen.getByRole("link", { name: "View Minted Token on HashScan" });
-    expect(link.getAttribute("href")).toContain("/token/0.0.555/nft/7");
+    expect(link).toHaveAttribute("href", "https://hashscan.io/testnet/token/0.0.555/nft/7");
   });
 });
