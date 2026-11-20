@@ -22,6 +22,7 @@ const Marketplace: React.FC = () => {
   const [page, setPage] = useState(1);
 
   const items = state.status === "ready" ? state.catalog.getAll() : [];
+  const media = state.status === "ready" ? state.catalog.media : undefined;
   const options = useMemo(() => filterOptions(items), [items]);
 
   if (state.status === "loading") {
@@ -61,11 +62,11 @@ const Marketplace: React.FC = () => {
       ) : (
         <div className={styles.cards}>
           {pagedItems.map((it) => (
-            <Card key={it.stone_id} item={it} onClick={setOpen} />
+            <Card key={it.stone_id} item={it} onClick={setOpen} media={media} />
           ))}
         </div>
       )}
-      <StoneModal open={open} setOpen={setOpen} />
+      <StoneModal open={open} setOpen={setOpen} media={media} />
     </section>
   );
 };

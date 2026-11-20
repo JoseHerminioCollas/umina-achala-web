@@ -1,6 +1,7 @@
 // src/utils/item.ts
 // What the site shows of a catalog item (#124), for both kinds.
-import { CatalogEvent, CatalogItem, MountedStone, Price } from "../types/catalog";
+import { CATALOG_URL } from "../config";
+import { CatalogEvent, CatalogItem, Media, MediaCopies, MountedStone, Price } from "../types/catalog";
 import { MetadataFile } from "../types/metadata";
 import { ipfsToGatewayUrl } from "./chainLinks";
 
@@ -25,9 +26,20 @@ export function stoneTypes(item: CatalogItem): string[] {
   return item.kind === "achala" ? item.stones.map((s) => title(s)) : [title(item)];
 }
 
-/** The main photo, as a gateway URL. */
-export function imageUrl(item: WithMetadata): string {
-  return ipfsToGatewayUrl(item.metadata.image);
+// media paths are relative to catalog.json: "media/<cid>/thumb.webp" → "./data/media/<cid>/thumb.webp"
+const CATALOG_FOLDER = CATALOG_URL.replace(/[^/]*$/, "");
+
+/**
+ * The main photo: the site's copy of that size when the catalog has one
+ * (umina-achala-chain#45), the original through the IPFS gateway otherwise.
+ */
+export function imageUrl(
+  item: WithMetadata,
+  size: keyof MediaCopies = "display",
+  media: Media = {},
+): string {
+  const copies = media[item.metadata.image];
+  return copies ? CATALOG_FOLDER + copies[size] : ipfsToGatewayUrl(item.metadata.image);
 }
 
 const isImage = (f: MetadataFile) => f.type.startsWith("image/");

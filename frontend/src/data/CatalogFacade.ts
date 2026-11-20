@@ -2,13 +2,17 @@
 // The site's items, read from catalog.json (#89, #124). The catalog is loaded
 // at run time, so a rebuilt and published catalog shows with no site build.
 import { CATALOG_URL, NETWORK } from "../config";
-import { Catalog, CatalogItem } from "../types/catalog";
+import { Catalog, CatalogItem, Media } from "../types/catalog";
 
 export class CatalogFacade {
-  private constructor(private readonly items: CatalogItem[]) {}
+  private constructor(
+    private readonly items: CatalogItem[],
+    /** The site's copies of the photos (umina-achala-chain#45). */
+    readonly media: Media,
+  ) {}
 
   static fromCatalog(catalog: Catalog): CatalogFacade {
-    return new CatalogFacade(catalog.items);
+    return new CatalogFacade(catalog.items, catalog.media ?? {});
   }
 
   /** Everything UA has for sale: Umiña, then Achala, each by serial. */

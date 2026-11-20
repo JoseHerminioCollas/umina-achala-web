@@ -1,6 +1,6 @@
 // src/components/StoneModal.tsx
 import React, { useEffect } from "react";
-import { CatalogItem } from "../types/catalog";
+import { CatalogItem, Media } from "../types/catalog";
 import { attribute, complianceEvent, formatPrice, imageUrl, title } from "../utils/item";
 import styles from "./StoneModal.module.css";
 import { useTranslation } from "react-i18next";
@@ -9,12 +9,14 @@ import { hashscanNftUrl, hashscanTopicUrl, hashscanMessageUrl } from "../utils/c
 interface StoneModalProps {
   open: CatalogItem | null;
   setOpen: (item: CatalogItem | null) => void;
+  /** The catalog's photo copies; without them, photos load through the gateway. */
+  media?: Media;
 }
 
 // shown as the heading, or not at all
 const HIDDEN_TRAITS = ["HS Code", "Stone Type", "Piece Type"];
 
-const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {
+const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen, media }) => {
   const { t } = useTranslation();
 
   // Escape key handler
@@ -50,7 +52,7 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {
           <button className={styles.close} onClick={() => setOpen(null)}>×</button>
         </div>
         <div className={styles.modalBody}>
-          <img src={imageUrl(open)} alt={open.metadata.name} />
+          <img src={imageUrl(open, "display", media)} alt={open.metadata.name} />
           <div>
             <p className={styles.price}>
               {t("modal.price")} {formatPrice(open.price)}

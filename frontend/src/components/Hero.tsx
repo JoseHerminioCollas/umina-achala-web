@@ -15,6 +15,7 @@ const Hero = () => {
   const [open, setOpen] = useState<CatalogItem | null>(null);
   // the home page shows no message while loading or on error: the marketplace does
   const featured = state.status === "ready" ? state.catalog.getFeatured(3) : [];
+  const media = state.status === "ready" ? state.catalog.media : undefined;
 
   return (
     <>
@@ -26,7 +27,7 @@ const Hero = () => {
         {featured.length > 0 && (
           <div className={styles.heroGrid}>
             {featured.map((item) => (
-              <Card key={item.stone_id} item={item} onClick={setOpen} />
+              <Card key={item.stone_id} item={item} onClick={setOpen} media={media} />
             ))}
           </div>
         )}
@@ -36,7 +37,7 @@ const Hero = () => {
           </a>
         </section>
       </section>
-      <StoneModal open={open} setOpen={setOpen} />
+      <StoneModal open={open} setOpen={setOpen} media={media} />
     </>
   );
 };

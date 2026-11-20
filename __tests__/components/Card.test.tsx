@@ -37,6 +37,15 @@ describe("Card", () => {
     expect(img.getAttribute("src")).toMatch(/^https:\/\/gateway\.pinata\.cloud\/ipfs\//);
   });
 
+  it("uses the catalog's thumbnail when it has one", () => {
+    const media = { [umina.metadata.image]: { thumb: "media/QmA/thumb.webp", display: "media/QmA/display.webp" } };
+    render(<Card item={umina} onClick={jest.fn()} media={media} />);
+    expect(screen.getByRole("img", { name: umina.metadata.name })).toHaveAttribute(
+      "src",
+      "./data/media/QmA/thumb.webp",
+    );
+  });
+
   it("calls onClick with the item from the view button and the thumbnail", async () => {
     const onClick = jest.fn();
     render(<Card item={umina} onClick={onClick} />);

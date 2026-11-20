@@ -57,10 +57,20 @@ export interface AchalaItem extends Nft<AchalaMetadata> {
 
 export type CatalogItem = UminaItem | AchalaItem;
 
+/** The site's copies of one photo, WebP, relative to catalog.json (umina-achala-chain#45). */
+export interface MediaCopies {
+  thumb: string; // for the cards, about 400 px
+  display: string; // for the detail view, about 1080 px
+}
+
+/** Each photo's ipfs:// URI to its copies. A photo with no entry is loaded through the gateway. */
+export type Media = Record<string, MediaCopies>;
+
 export interface Catalog {
   schema_version: 1;
   network: "testnet" | "mainnet";
   built_at: string;
   source: CatalogSource;
   items: CatalogItem[];
+  media?: Media; // absent in a catalog built before umina-achala-chain#45
 }

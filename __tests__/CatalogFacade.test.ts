@@ -32,6 +32,12 @@ describe("CatalogFacade", () => {
     expect(facade.findById(mounted)).toBe(achala);
   });
 
+  it("media is the catalog's photo copies, or none for a catalog built without them", () => {
+    expect(facade.media).toEqual({});
+    const media = { "ipfs://QmA": { thumb: "media/QmA/thumb.webp", display: "media/QmA/display.webp" } };
+    expect(CatalogFacade.fromCatalog({ ...catalog, media }).media).toBe(media);
+  });
+
   it("findById returns undefined for an unknown id", () => {
     expect(facade.findById("UMINA-0000-XX-00")).toBeUndefined();
   });

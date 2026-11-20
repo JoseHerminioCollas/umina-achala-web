@@ -1,6 +1,6 @@
 // src/components/Card.tsx
 import React from "react";
-import { CatalogItem } from "../types/catalog";
+import { CatalogItem, Media } from "../types/catalog";
 import { attribute, formatPrice, imageUrl, stoneTypes, title } from "../utils/item";
 import styles from "./Card.module.css";
 import { useTranslation } from "react-i18next";
@@ -8,9 +8,11 @@ import { useTranslation } from "react-i18next";
 interface CardProps {
   item: CatalogItem;
   onClick: (item: CatalogItem) => void;
+  /** The catalog's photo copies; without them, photos load through the gateway. */
+  media?: Media;
 }
 
-const Card: React.FC<CardProps> = ({ item, onClick }) => {
+const Card: React.FC<CardProps> = ({ item, onClick, media }) => {
   const { t } = useTranslation();
   const cut = item.kind === "umina" ? attribute(item, "Stone Cut") : undefined;
   const metal = item.kind === "achala" ? attribute(item, "Metal") : undefined;
@@ -18,7 +20,7 @@ const Card: React.FC<CardProps> = ({ item, onClick }) => {
   return (
     <div className={styles.card}>
       <div className={styles.thumb} onClick={() => onClick(item)}>
-        <img src={imageUrl(item)} alt={item.metadata.name} width="100%" height="100%" />
+        <img src={imageUrl(item, "thumb", media)} alt={item.metadata.name} width="100%" height="100%" />
       </div>
       <div className={styles.meta}>
         <h3 className={styles.type}>{title(item)}</h3>

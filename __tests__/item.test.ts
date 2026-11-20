@@ -29,8 +29,19 @@ describe("item helpers", () => {
     expect(stoneTypes(achala)).toEqual(["Gold"]);
   });
 
-  it("imageUrl is the main photo through the gateway", () => {
+  it("imageUrl is the main photo through the gateway when the catalog has no copy", () => {
     expect(imageUrl(umina)).toBe(GATEWAY + umina.metadata.image.slice("ipfs://".length));
+    expect(imageUrl(umina, "thumb", {})).toBe(imageUrl(umina));
+  });
+
+  it("imageUrl is the site's copy of that size, next to catalog.json (umina-achala-chain#45)", () => {
+    const cid = umina.metadata.image.slice("ipfs://".length);
+    const media = {
+      [umina.metadata.image]: { thumb: `media/${cid}/thumb.webp`, display: `media/${cid}/display.webp` },
+    };
+    expect(imageUrl(umina, "thumb", media)).toBe(`./data/media/${cid}/thumb.webp`);
+    expect(imageUrl(umina, "display", media)).toBe(`./data/media/${cid}/display.webp`);
+    expect(imageUrl(achala, "thumb", media)).toMatch(/^https:\/\/gateway\.pinata\.cloud\/ipfs\//);
   });
 
   it("photos are the main photo, then the image files, with no PDF or 3D model", () => {

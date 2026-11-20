@@ -25,6 +25,15 @@ describe("StoneModal", () => {
     expect(screen.getByText("Price: 45 HBAR")).toBeInTheDocument();
   });
 
+  it("shows the catalog's display copy of the photo when it has one", () => {
+    const media = { [umina.metadata.image]: { thumb: "media/QmA/thumb.webp", display: "media/QmA/display.webp" } };
+    render(<StoneModal open={umina} setOpen={jest.fn()} media={media} />);
+    expect(screen.getByRole("img", { name: umina.metadata.name })).toHaveAttribute(
+      "src",
+      "./data/media/QmA/display.webp",
+    );
+  });
+
   it("lists attributes but hides HS Code, Stone Type and empty values", () => {
     const open = withMetadata({
       attributes: [
