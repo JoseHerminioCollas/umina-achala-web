@@ -92,7 +92,7 @@ describe("StoneModal", () => {
       await userEvent.click(screen.getByRole("button", { name: LEFT }));
       rerender(<StoneModal open={achala} setOpen={jest.fn()} />);
       expect(screen.getByRole("img", { name: achala.metadata.name })).toBeInTheDocument();
-      expect(screen.getByText("photo 1 of 2")).toBeInTheDocument(); // its default file is the main photo again
+      expect(thumbs()).toHaveLength(0); // one photo: the main one only
     });
   });
 

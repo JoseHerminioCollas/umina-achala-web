@@ -240,26 +240,7 @@
           }
         ],
         "name": "Pendant in gold · ACHALA-2026-PE-02",
-        "files": [
-          {
-            "uri": "ipfs://Qmd53S59VLwxdxVGeMZJ2DymVXEb3iUkGqP2Ph7P6fHu9H",
-            "type": "image/jpeg",
-            "is_default_file": true,
-            "checksum": "a5e30f5a57af893dcdc51a705ce16de1cb869ea428bfb73a5778ac740911e09c",
-            "metadata": {
-              "description": "Front view"
-            }
-          },
-          {
-            "uri": "ipfs://QmXMzrw2TWn9sPZkSCFPDdMLaMhK4kAYGsV9fM559khmqH",
-            "type": "image/png",
-            "is_default_file": false,
-            "checksum": "1ccccbe7a35a1fdcd769caa32ec86f334638b6f8884818399c98c92ca221d2b8",
-            "metadata": {
-              "description": "Front view, transparent background"
-            }
-          }
-        ],
+        "files": [],
         "image": "ipfs://QmVbQ8E7LLSVJupvPqYVJmrZHFj7ci7AcLcsWWfQypFbtE",
         "type": "image/jpeg"
       },
@@ -373,24 +354,6 @@
               }
             ],
             "files": [
-              {
-                "uri": "ipfs://Qmd53S59VLwxdxVGeMZJ2DymVXEb3iUkGqP2Ph7P6fHu9H",
-                "type": "image/jpeg",
-                "is_default_file": true,
-                "checksum": "a5e30f5a57af893dcdc51a705ce16de1cb869ea428bfb73a5778ac740911e09c",
-                "metadata": {
-                  "description": "Front view"
-                }
-              },
-              {
-                "uri": "ipfs://QmXMzrw2TWn9sPZkSCFPDdMLaMhK4kAYGsV9fM559khmqH",
-                "type": "image/png",
-                "is_default_file": false,
-                "checksum": "1ccccbe7a35a1fdcd769caa32ec86f334638b6f8884818399c98c92ca221d2b8",
-                "metadata": {
-                  "description": "Front view, transparent background"
-                }
-              },
               {
                 "uri": "ipfs://QmRCyxFVwgdXgBEcGSYjnboUzNyH63vEtU93YgUGMj39Zo",
                 "type": "model/gltf-binary",

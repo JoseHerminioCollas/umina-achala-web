@@ -59,18 +59,14 @@ export interface Photo {
 /**
  * Every photo of an item (#130): the main one (`image`), then the image
  * files in metadata order, each once, with the site's copies when the catalog
- * has them (umina-achala-chain#45) and the IPFS gateway otherwise.
- *
- * A file marked `is_default_file` is the one `image` stands for (HIP-412):
- * mints made before umina-achala-chain#42 list the main photo both as `image`
- * and as that file, so it is left out, or the main photo would show twice.
- * Remove this skip (and its test) once no catalog item has is_default_file:
- * after the out-of-date testnet mints are minted again, or on mainnet (#131).
+ * has them (umina-achala-chain#45) and the IPFS gateway otherwise. The mint
+ * puts the main photo only in `image` and the other photos in `files`
+ * (umina-achala-chain#42).
  */
 export function photos(item: WithMetadata, media: Media = {}): Photo[] {
   const described = new Map<string, string>();
   described.set(item.metadata.image, "");
-  for (const f of item.metadata.files.filter((f) => isImage(f) && !f.is_default_file)) {
+  for (const f of item.metadata.files.filter((f) => isImage(f))) {
     if (!described.has(f.uri)) described.set(f.uri, f.metadata?.description ?? "");
   }
   return [...described].map(([uri, description]) => ({

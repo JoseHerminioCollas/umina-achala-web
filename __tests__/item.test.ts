@@ -66,21 +66,6 @@ describe("item helpers", () => {
     expect(photos(umina, media)[0].thumb.startsWith(GATEWAY)).toBe(true);
   });
 
-  it("photos leaves out the default file, which is the main photo again (mints before chain #42)", () => {
-    const older = {
-      metadata: {
-        ...umina.metadata,
-        image: "ipfs://QmMainJpeg",
-        files: [
-          { uri: "ipfs://QmFullJpeg", type: "image/jpeg", is_default_file: true, metadata: { description: "Front view" } },
-          { uri: "ipfs://QmPng", type: "image/png", is_default_file: false, metadata: { description: "Front view, transparent background" } },
-          { uri: "ipfs://QmPdf", type: "application/pdf" },
-        ],
-      },
-    };
-    expect(photos(older).map((p) => p.uri)).toEqual(["ipfs://QmMainJpeg", "ipfs://QmPng"]);
-  });
-
   it("photos lists a photo once, even when image is also among the files", () => {
     const twice = {
       metadata: {
