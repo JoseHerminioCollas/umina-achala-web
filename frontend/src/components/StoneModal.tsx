@@ -1,7 +1,7 @@
 // src/components/StoneModal.tsx
 import React, { useEffect, useId, useMemo, useState } from "react";
 import { CatalogItem, Media } from "../types/catalog";
-import { attribute, complianceEvent, documents, formatPrice, photos, title } from "../utils/item";
+import { attribute, complianceEvent, documents, formatPrice, model, photos, title } from "../utils/item";
 import Gallery from "./Gallery";
 import styles from "./StoneModal.module.css";
 import { useTranslation } from "react-i18next";
@@ -56,20 +56,23 @@ const NewTabLink: React.FC<NewTabLinkProps> = ({ href, describedBy, className, p
 const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen, media }) => {
   const { t } = useTranslation();
   const gallery = useMemo(() => (open ? photos(open, media) : []), [open, media]);
+  // the 3D model is the last tile, after the photos (#119)
+  const stoneModel = useMemo(() => (open ? model(open, media) : undefined), [open, media]);
+  const tiles = gallery.length + (stoneModel ? 1 : 0);
   const [selected, setSelected] = useState(0);
   const newTabId = useId();
 
   // each item opens on its first photo
   useEffect(() => setSelected(0), [open]);
 
-  // Escape closes; left / right step through the photos (#130)
+  // Escape closes; left / right step through the photos and the 3D tile (#130, #119)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpen(null);
-      } else if (gallery.length > 1 && (e.key === "ArrowRight" || e.key === "ArrowLeft")) {
+      } else if (tiles > 1 && (e.key === "ArrowRight" || e.key === "ArrowLeft")) {
         const step = e.key === "ArrowRight" ? 1 : -1;
-        setSelected((i) => (i + step + gallery.length) % gallery.length);
+        setSelected((i) => (i + step + tiles) % tiles);
       }
     };
 
@@ -79,7 +82,7 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen, media }) => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [open, setOpen, gallery.length]);
+  }, [open, setOpen, tiles]);
 
   if (!open) return null;
 
@@ -103,6 +106,7 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen, media }) => {
         <div className={styles.modalBody}>
           <Gallery
             photos={gallery}
+            model={stoneModel}
             selected={selected}
             setSelected={setSelected}
             name={open.metadata.name}

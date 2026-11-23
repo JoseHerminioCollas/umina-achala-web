@@ -86,6 +86,22 @@ export function photos(item: WithMetadata, media: Media = {}): Photo[] {
   }));
 }
 
+export interface Model {
+  uri: string; // ipfs://
+  url: string; // the site's copy (data/media/<cid>/model.glb), or the gateway
+  description: string;
+}
+
+/**
+ * The item's 3D model (#119): the first file of type model/gltf-binary, from
+ * the site's copy when the catalog has one (umina-achala-chain#46), or
+ * undefined when it has none.
+ */
+export function model(item: WithMetadata, media: Media = {}): Model | undefined {
+  const file = item.metadata.files.find((f) => f.type === "model/gltf-binary");
+  return file && { uri: file.uri, url: fileUrl(file.uri, media), description: file.metadata?.description ?? "" };
+}
+
 export interface Document {
   uri: string; // ipfs://
   url: string; // the site's copy, or the gateway

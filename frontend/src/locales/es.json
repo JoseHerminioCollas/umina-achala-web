@@ -178,6 +178,13 @@
     "chainRecord": "Registro en blockchain",
     "newTab": "(se abre en una pestaña nueva)"
   },
+  "model": {
+    "label": "Modelo 3D",
+    "pause": "Pausar el giro",
+    "play": "Girar la piedra",
+    "viewInRoom": "Ver en tu espacio",
+    "unavailable": "El modelo 3D no se puede mostrar en este dispositivo."
+  },
   "compliance": {
     "title": "Panel de Cumplimiento (Vista de Regulador)",
     "search": "Buscar por Stone ID, Permiso, Tipo de Corte o Hedera Tx ID",

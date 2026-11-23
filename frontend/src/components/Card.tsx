@@ -1,7 +1,7 @@
 // src/components/Card.tsx
 import React from "react";
 import { CatalogItem, Media } from "../types/catalog";
-import { attribute, formatPrice, imageUrl, stoneTypes, title } from "../utils/item";
+import { attribute, formatPrice, imageUrl, model, stoneTypes, title } from "../utils/item";
 import styles from "./Card.module.css";
 import { useTranslation } from "react-i18next";
 
@@ -25,6 +25,11 @@ const Card: React.FC<CardProps> = ({ item, onClick, media }) => {
       <div className={styles.meta}>
         <h3 className={styles.type}>{title(item)}</h3>
         {cut && <span className={styles.badge}>{cut}</span>}
+        {model(item) && (
+          <span className={styles.badge} title={t("model.label")}>
+            3D
+          </span>
+        )}
         {item.kind === "achala" && (
           <p className={styles.detail}>
             {metal && <>{metal} · </>}

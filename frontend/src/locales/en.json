@@ -178,6 +178,13 @@
     "chainRecord": "Blockchain record",
     "newTab": "(opens in a new tab)"
   },
+  "model": {
+    "label": "3D model",
+    "pause": "Pause the turn",
+    "play": "Turn the stone",
+    "viewInRoom": "View in your room",
+    "unavailable": "The 3D model cannot be shown on this device."
+  },
   "compliance": {
     "title": "Compliance Dashboard (Regulator View)",
     "search": "Search by Stone ID, Permit, Cut Type, or Hedera Tx ID",

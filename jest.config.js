@@ -12,6 +12,8 @@ export default {
     "\\.css$": "identity-obj-proxy",
     // import.meta.env is Vite's; tests run with no VITE_ variables set
     "^(\\.{1,2}/)+env$": "<rootDir>/__tests__/mocks/env.ts",
+    // the 3D viewer needs WebGL, which jsdom does not have (#119)
+    "^@google/model-viewer$": "<rootDir>/__tests__/mocks/model-viewer.ts",
   },
   transform: {
     "^.+\\.tsx?$": ["ts-jest", { useESM: true }],

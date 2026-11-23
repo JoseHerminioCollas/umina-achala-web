@@ -22,6 +22,16 @@ describe("Card", () => {
     expect(screen.queryByText("Tumbled")).not.toBeInTheDocument();
   });
 
+  it("shows a 3D badge when the item has a 3D model (#119)", () => {
+    render(<Card item={umina} onClick={jest.fn()} />);
+    expect(screen.getByTitle("3D model")).toHaveTextContent("3D");
+  });
+
+  it("has no 3D badge without a model, even when an Achala's stone has one", () => {
+    render(<Card item={achala} onClick={jest.fn()} />);
+    expect(screen.queryByTitle("3D model")).not.toBeInTheDocument();
+  });
+
   it("shows an Achala's piece type, metal, stones and price", () => {
     render(<Card item={achala} onClick={jest.fn()} />);
     expect(screen.getByRole("heading", { name: "Pendant" })).toBeInTheDocument();

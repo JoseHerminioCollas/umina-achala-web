@@ -86,3 +86,6 @@
 .cartIcon:hover {
   color: gold; /* hover color */
 }
+.badge + .badge {
+  margin-left: 6px;
+}

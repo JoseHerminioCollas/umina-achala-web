@@ -1,6 +1,6 @@
 /** @jest-environment jsdom */
 import React from "react";
-import { render, screen, fireEvent, within } from "@testing-library/react";
+import { render, screen, fireEvent, within, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import i18n from "../../frontend/src/i18n";
 import StoneModal from "../../frontend/src/components/StoneModal";
@@ -35,7 +35,9 @@ describe("StoneModal", () => {
   });
 
   describe("gallery (#130)", () => {
-    const thumbs = () => screen.getAllByRole("button").filter((b) => b.querySelector("img"));
+    // the photo tiles; the 3D tile (#119) is tested below
+    const thumbs = () =>
+      screen.getAllByRole("button").filter((b) => b.querySelector("img") && b.getAttribute("aria-label") !== "3D model");
     const LEFT = "Front view, turned left 25° (estimated from photo 1)";
 
     it("shows the main photo large, with a thumbnail for each of the 6 photos", () => {
@@ -57,7 +59,7 @@ describe("StoneModal", () => {
     });
 
     it("right and left arrow keys step through the photos, round the ends", () => {
-      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      render(<StoneModal open={withMetadata({ files: umina.metadata.files.filter((f) => f.type !== "model/gltf-binary") })} setOpen={jest.fn()} />);
       fireEvent.keyDown(document, { key: "ArrowRight" });
       expect(screen.getByRole("img", { name: LEFT })).toBeInTheDocument();
       fireEvent.keyDown(document, { key: "ArrowLeft" });
@@ -93,6 +95,127 @@ describe("StoneModal", () => {
       rerender(<StoneModal open={achala} setOpen={jest.fn()} />);
       expect(screen.getByRole("img", { name: achala.metadata.name })).toBeInTheDocument();
       expect(thumbs()).toHaveLength(0); // one photo: the main one only
+    });
+  });
+
+  describe("3D model (#119)", () => {
+    const MODEL = "3D model, estimated from one photo (sample)";
+    const modelFile = umina.metadata.files.find((f) => f.type === "model/gltf-binary")!;
+    const tile = () => screen.getByRole("button", { name: "3D model" });
+    const viewer = () => document.querySelector("model-viewer");
+    let getContext: jest.SpiedFunction<typeof HTMLCanvasElement.prototype.getContext>;
+    const reducedMotion = (on: boolean) => {
+      window.matchMedia = jest.fn().mockReturnValue({ matches: on }) as unknown as typeof window.matchMedia;
+    };
+
+    beforeEach(() => {
+      // jsdom has no WebGL; a context object stands for one
+      getContext = jest
+        .spyOn(HTMLCanvasElement.prototype, "getContext")
+        .mockReturnValue({} as unknown as ReturnType<HTMLCanvasElement["getContext"]>);
+      reducedMotion(false);
+    });
+    afterEach(() => {
+      getContext.mockRestore();
+    });
+
+    it("is the last tile, after the photos, with a 3D badge; nothing 3D loads until it is selected", () => {
+      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      const tiles = screen.getAllByRole("button").filter((b) => b.querySelector("img"));
+      expect(tiles).toHaveLength(7);
+      expect(tiles[6]).toBe(tile());
+      expect(tile()).toHaveTextContent("3D");
+      expect(tile()).not.toHaveAttribute("aria-current");
+      expect(viewer()).toBeNull();
+    });
+
+    it("selecting it shows the model in place of the large photo, from the site's copy, with the main photo as poster", async () => {
+      const cid = modelFile.uri.slice("ipfs://".length);
+      const media = {
+        [umina.metadata.image]: { thumb: "media/QmA/thumb.webp", display: "media/QmA/display.webp" },
+        [modelFile.uri]: { file: `media/${cid}/model.glb` },
+      };
+      render(<StoneModal open={umina} setOpen={jest.fn()} media={media} />);
+      await userEvent.click(tile());
+      await waitFor(() => expect(viewer()).not.toBeNull());
+      expect(viewer()).toHaveAttribute("src", `./data/media/${cid}/model.glb`);
+      expect(viewer()).toHaveAttribute("poster", "./data/media/QmA/display.webp");
+      expect(viewer()).toHaveAttribute("alt", MODEL);
+      expect(viewer()).toHaveAttribute("camera-controls");
+      expect(viewer()).toHaveAttribute("auto-rotate");
+      expect(viewer()).toHaveAttribute("ar");
+      expect(tile()).toHaveAttribute("aria-current", "true");
+      expect(screen.getByText(MODEL)).toBeInTheDocument();
+      expect(screen.queryByRole("img", { name: umina.metadata.name })).not.toBeInTheDocument();
+    });
+
+    it("the arrow keys step onto it after the last photo and round to the first", async () => {
+      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      fireEvent.keyDown(document, { key: "ArrowLeft" });
+      expect(tile()).toHaveAttribute("aria-current", "true");
+      await waitFor(() => expect(viewer()).not.toBeNull());
+      fireEvent.keyDown(document, { key: "ArrowLeft" });
+      expect(screen.getByText("photo 6 of 6")).toBeInTheDocument();
+      fireEvent.keyDown(document, { key: "ArrowRight" });
+      fireEvent.keyDown(document, { key: "ArrowRight" });
+      expect(screen.getByText("photo 1 of 6")).toBeInTheDocument();
+      expect(viewer()).toBeNull();
+    });
+
+    it("a button pauses and restarts the turn", async () => {
+      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      await userEvent.click(tile());
+      await waitFor(() => expect(viewer()).not.toBeNull());
+      const pause = screen.getByRole("button", { name: "Pause the turn" });
+      expect(pause).toHaveAttribute("aria-pressed", "false");
+      await userEvent.click(pause);
+      expect(pause).toHaveAttribute("aria-pressed", "true");
+      expect(viewer()).not.toHaveAttribute("auto-rotate");
+      await userEvent.click(pause);
+      expect(viewer()).toHaveAttribute("auto-rotate");
+    });
+
+    it("starts still when the device asks for reduced motion", async () => {
+      reducedMotion(true);
+      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      await userEvent.click(tile());
+      await waitFor(() => expect(viewer()).not.toBeNull());
+      expect(viewer()).not.toHaveAttribute("auto-rotate");
+      expect(screen.getByRole("button", { name: "Pause the turn" })).toHaveAttribute("aria-pressed", "true");
+    });
+
+    it("without WebGL, or when the model fails, shows the main photo and says so", async () => {
+      getContext.mockReturnValue(null);
+      const { unmount } = render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      await userEvent.click(tile());
+      expect(await screen.findByText("The 3D model cannot be shown on this device.")).toBeInTheDocument();
+      expect(screen.getByRole("img", { name: MODEL })).toBeInTheDocument();
+      expect(viewer()).toBeNull();
+      unmount();
+
+      getContext.mockReturnValue({} as unknown as ReturnType<HTMLCanvasElement["getContext"]>);
+      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      await userEvent.click(tile());
+      await waitFor(() => expect(viewer()).not.toBeNull());
+      fireEvent(viewer()!, new Event("error"));
+      expect(await screen.findByText("The 3D model cannot be shown on this device.")).toBeInTheDocument();
+    });
+
+    it("an item with one photo and a model has two tiles", () => {
+      render(<StoneModal open={withMetadata({ files: [modelFile] })} setOpen={jest.fn()} />);
+      expect(screen.getAllByRole("button").filter((b) => b.querySelector("img"))).toHaveLength(2);
+    });
+
+    it("no tile without a model, nor for an Achala whose stone has one", () => {
+      render(<StoneModal open={achala} setOpen={jest.fn()} />);
+      expect(screen.queryByRole("button", { name: "3D model" })).not.toBeInTheDocument();
+    });
+
+    it("names the tile in Spanish", async () => {
+      await i18n.changeLanguage("es");
+      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      expect(screen.getByRole("button", { name: "Modelo 3D" })).toBeInTheDocument();
+      await i18n.changeLanguage("en");
     });
   });
 

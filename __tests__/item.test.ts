@@ -4,6 +4,7 @@ import {
   documents,
   fileUrl,
   formatPrice,
+  model,
   imageUrl,
   photos,
   stoneTypes,
@@ -112,6 +113,16 @@ describe("item helpers", () => {
     const photo = umina.metadata.image;
     expect(fileUrl(photo, { [photo]: { thumb: "media/x/thumb.webp", display: "media/x/display.webp" } })).toBe(GATEWAY + cid(photo));
     expect(imageUrl(umina, "thumb", { [photo]: { file: "media/x/document.pdf" } })).toBe(GATEWAY + cid(photo));
+  });
+
+  it("model is the first 3D model file, from the site's copy when the catalog has one (#119)", () => {
+    const m = model(umina)!;
+    expect(m.description).toBe("3D model, estimated from one photo (sample)");
+    expect(m.url.startsWith(GATEWAY)).toBe(true);
+    const cid = m.uri.slice("ipfs://".length);
+    expect(model(umina, { [m.uri]: { file: `media/${cid}/model.glb` } })!.url).toBe(`./data/media/${cid}/model.glb`);
+    expect(model(achala)).toBeUndefined(); // the pendant's own files; its gold has one
+    expect(model(achala.stones[0])?.uri).toMatch(/^ipfs:\/\//);
   });
 
   it("complianceEvent is the item's own COMPLIANCE, not another NFT's", () => {
