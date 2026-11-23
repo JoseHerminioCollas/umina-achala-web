@@ -2,6 +2,7 @@ import {
   attribute,
   complianceEvent,
   documents,
+  fileUrl,
   formatPrice,
   imageUrl,
   photos,
@@ -90,6 +91,27 @@ describe("item helpers", () => {
       "application/pdf",
       "model/gltf-binary",
     ]);
+  });
+
+  it("a model's or document's URL is the site's copy when the catalog has one, the gateway otherwise (umina-achala-chain#46)", () => {
+    const [model, receipt] = documents(achala.stones[0]);
+    const cid = (uri: string) => uri.slice("ipfs://".length);
+    const media = {
+      [model.uri]: { file: `media/${cid(model.uri)}/model.glb` },
+      [receipt.uri]: { file: `media/${cid(receipt.uri)}/document.pdf` },
+    };
+    expect(fileUrl(model.uri, media)).toBe(`./data/media/${cid(model.uri)}/model.glb`);
+    expect(fileUrl(model.uri)).toBe(GATEWAY + cid(model.uri));
+    const local = documents(achala.stones[0], media);
+    expect(local.map((d) => d.url)).toEqual([
+      `./data/media/${cid(model.uri)}/model.glb`,
+      `./data/media/${cid(receipt.uri)}/document.pdf`,
+      expect.stringMatching(/^https:\/\/gateway\.pinata\.cloud\/ipfs\//),
+    ]);
+    // a photo's copies are not a file, and a file entry is not a photo's copies
+    const photo = umina.metadata.image;
+    expect(fileUrl(photo, { [photo]: { thumb: "media/x/thumb.webp", display: "media/x/display.webp" } })).toBe(GATEWAY + cid(photo));
+    expect(imageUrl(umina, "thumb", { [photo]: { file: "media/x/document.pdf" } })).toBe(GATEWAY + cid(photo));
   });
 
   it("complianceEvent is the item's own COMPLIANCE, not another NFT's", () => {

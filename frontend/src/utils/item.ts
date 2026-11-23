@@ -44,7 +44,16 @@ export function imageUrl(
 /** One photo's URL at a size: the site's copy when the catalog has one, the gateway otherwise. */
 function photoUrl(uri: string, size: keyof MediaCopies, media: Media): string {
   const copies = media[uri];
-  return copies ? CATALOG_FOLDER + copies[size] : ipfsToGatewayUrl(uri);
+  return copies && "thumb" in copies ? CATALOG_FOLDER + copies[size] : ipfsToGatewayUrl(uri);
+}
+
+/**
+ * A 3D model's or PDF document's URL: the site's copy when the catalog has
+ * one (umina-achala-chain#46), the IPFS gateway otherwise.
+ */
+export function fileUrl(uri: string, media: Media = {}): string {
+  const copy = media[uri];
+  return copy && "file" in copy ? CATALOG_FOLDER + copy.file : ipfsToGatewayUrl(uri);
 }
 
 const isImage = (f: MetadataFile) => f.type.startsWith("image/");
@@ -78,17 +87,22 @@ export function photos(item: WithMetadata, media: Media = {}): Photo[] {
 }
 
 export interface Document {
-  url: string;
+  uri: string; // ipfs://
+  url: string; // the site's copy, or the gateway
   type: string;
   description: string;
 }
 
-/** The documents: PDFs (receipts, permits, certificates) and 3D models. */
-export function documents(item: WithMetadata): Document[] {
+/**
+ * The documents: PDFs (receipts, permits, certificates) and 3D models, each
+ * from the site's copy when the catalog has one, the gateway otherwise.
+ */
+export function documents(item: WithMetadata, media: Media = {}): Document[] {
   return item.metadata.files
     .filter((f) => !isImage(f))
     .map((f) => ({
-      url: ipfsToGatewayUrl(f.uri),
+      uri: f.uri,
+      url: fileUrl(f.uri, media),
       type: f.type,
       description: f.metadata?.description ?? "",
     }));

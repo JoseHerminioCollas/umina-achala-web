@@ -63,8 +63,16 @@ export interface MediaCopies {
   display: string; // for the detail view, about 1080 px
 }
 
-/** Each photo's ipfs:// URI to its copies. A photo with no entry is loaded through the gateway. */
-export type Media = Record<string, MediaCopies>;
+/** The site's copy of one 3D model or PDF document, unchanged (umina-achala-chain#46). */
+export interface MediaFile {
+  file: string; // media/<cid>/model.glb or media/<cid>/document.pdf
+}
+
+/**
+ * Each file's ipfs:// URI to its copies: a photo's two, a model's or
+ * document's one. A file with no entry is loaded through the gateway.
+ */
+export type Media = Record<string, MediaCopies | MediaFile>;
 
 export interface Catalog {
   schema_version: 1;
