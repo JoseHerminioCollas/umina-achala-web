@@ -172,7 +172,11 @@
     "viewCompliance": "Ver Registro de Cumplimiento en HashScan",
     "price": "Precio:",
     "photoCount": "foto {{n}} de {{total}}",
-    "stonesInPiece": "Piedras de esta pieza"
+    "stonesInPiece": "Piedras de esta pieza",
+    "documents": "Documentos",
+    "documentN": "Documento {{n}}",
+    "chainRecord": "Registro en blockchain",
+    "newTab": "(se abre en una pestaña nueva)"
   },
   "compliance": {
     "title": "Panel de Cumplimiento (Vista de Regulador)",

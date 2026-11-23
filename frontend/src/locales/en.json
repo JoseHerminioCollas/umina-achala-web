@@ -172,7 +172,11 @@
     "viewCompliance": "View Compliance Record on HashScan",
     "price": "Price:",
     "photoCount": "photo {{n}} of {{total}}",
-    "stonesInPiece": "Stones in this piece"
+    "stonesInPiece": "Stones in this piece",
+    "documents": "Documents",
+    "documentN": "Document {{n}}",
+    "chainRecord": "Blockchain record",
+    "newTab": "(opens in a new tab)"
   },
   "compliance": {
     "title": "Compliance Dashboard (Regulator View)",

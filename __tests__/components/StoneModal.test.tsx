@@ -203,6 +203,74 @@ describe("StoneModal", () => {
     await i18n.changeLanguage("en");
   });
 
+  describe("documents (#132)", () => {
+    const RECEIPT = "Store receipt (sample, fake)";
+    const PERMIT = "Mining concession and extraction permit (sample, fake)";
+    const pdfs = umina.metadata.files.filter((f) => f.type === "application/pdf");
+    const section = () => screen.getByRole("heading", { name: "Documents" }).parentElement!;
+
+    it("lists the item's PDFs in metadata order, by description, each opening in a new tab", () => {
+      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      const links = within(section()).getAllByRole("link");
+      expect(links.map((a) => a.textContent)).toEqual([RECEIPT, PERMIT]);
+      expect(links[0]).toHaveAttribute("href", `https://gateway.pinata.cloud/ipfs/${pdfs[0].uri.slice(7)}`);
+      for (const a of links) {
+        expect(a).toHaveAttribute("target", "_blank");
+        expect(a).toHaveAttribute("rel", "noopener noreferrer");
+      }
+      // the 3D model is not a document here (#119)
+      expect(within(section()).queryByText(/3D model/)).not.toBeInTheDocument();
+    });
+
+    it("opens the catalog's copy when it has one (umina-achala-chain#46)", () => {
+      const media = { [pdfs[0].uri]: { file: "media/QmR/document.pdf" } };
+      render(<StoneModal open={umina} setOpen={jest.fn()} media={media} />);
+      expect(screen.getByRole("link", { name: RECEIPT })).toHaveAttribute("href", "./data/media/QmR/document.pdf");
+      expect(screen.getByRole("link", { name: PERMIT }).getAttribute("href")).toMatch(/^https:\/\/gateway/);
+    });
+
+    it("names a PDF with no description by its place", () => {
+      const files = umina.metadata.files.map((f) =>
+        f.type === "application/pdf" ? { ...f, metadata: { ...f.metadata, description: "" } } : f,
+      );
+      render(<StoneModal open={withMetadata({ files })} setOpen={jest.fn()} />);
+      expect(within(section()).getAllByRole("link").map((a) => a.textContent)).toEqual(["Document 1", "Document 2"]);
+    });
+
+    it("has no section for an item without PDFs", () => {
+      render(<StoneModal open={withMetadata({ files: umina.metadata.files.filter((f) => f.type !== "application/pdf") })} setOpen={jest.fn()} />);
+      expect(screen.queryByRole("heading", { name: "Documents" })).not.toBeInTheDocument();
+    });
+
+    it("has no section for an Achala without its own PDFs, though its stone has some", () => {
+      render(<StoneModal open={achala} setOpen={jest.fn()} />);
+      expect(screen.queryByRole("heading", { name: "Documents" })).not.toBeInTheDocument();
+      expect(screen.queryByRole("link", { name: RECEIPT })).not.toBeInTheDocument();
+    });
+
+    it("every link that opens a new tab looks the same and says so to screen readers", () => {
+      render(<StoneModal open={achala} setOpen={jest.fn()} />);
+      const links = screen.getAllByRole("link");
+      expect(links.length).toBeGreaterThan(2);
+      for (const a of links) {
+        expect(a).toHaveAttribute("target", "_blank");
+        expect(a).toHaveAccessibleDescription("(opens in a new tab)");
+      }
+      const record = screen.getByRole("heading", { name: "Blockchain record" }).parentElement!;
+      expect(within(record).getAllByRole("link").map((a) => a.textContent)).toEqual([
+        "View Minted Token on HashScan",
+        "View Compliance Record on HashScan",
+      ]);
+    });
+
+    it("names the section in Spanish", async () => {
+      await i18n.changeLanguage("es");
+      render(<StoneModal open={umina} setOpen={jest.fn()} />);
+      expect(screen.getByRole("heading", { name: "Documentos" })).toBeInTheDocument();
+      await i18n.changeLanguage("en");
+    });
+  });
+
   it("has no list of stones for an Umiña", () => {
     render(<StoneModal open={umina} setOpen={jest.fn()} />);
     expect(screen.queryByText("Stones in this piece")).not.toBeInTheDocument();

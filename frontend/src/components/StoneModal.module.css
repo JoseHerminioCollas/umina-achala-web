@@ -62,8 +62,9 @@
   font-weight: bold;
 }
 
-.stones h3 {
-  margin: 1em 0 0.3em 0;
+/* documents, stones in the piece, blockchain record */
+.section h3 {
+  margin: 1.2em 0 0.4em 0;
   font-size: 1rem;
 }
 
@@ -72,24 +73,53 @@
   padding-left: 1.2em;
 }
 
-.hashscanLinks {
-  margin-top: 1.5em;
-  text-align: center;
+/* links that open in a new tab (#132): one style, outlined; a solid button
+   is kept for the main action */
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
-.hashscanLinks a {
-  display: inline-block;
-  padding: 8px 14px;
-  background-color: #007bff;
-  color: #fff;
+.linkButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid #007bff;
   border-radius: 6px;
+  background: #fff;
+  color: #007bff;
   text-decoration: none;
   font-weight: 500;
   transition: background-color 0.2s ease;
 }
 
-.hashscanLinks a:hover {
-  background-color: #0056b3;
+.linkButton:hover {
+  background-color: #e8f1ff;
+}
+
+.inlineLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #007bff;
+}
+
+.linkButton:focus-visible,
+.inlineLink:focus-visible {
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
 }
 
 /* Mobile & tablet adjustments */
@@ -100,7 +130,7 @@
     gap: 12px;
   }
 
-  .hashscanLinks a {
-    width: 100%;
+  .linkList {
+    align-items: stretch;
   }
 }
