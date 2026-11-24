@@ -25,3 +25,5 @@ logs/
 .vscode/
 # The site catalog, built by umina-achala-chain src/catalog/buildCatalog.js (umina-achala-chain#44, #89); never committed
 frontend/public/data/
+# ...and its copy in the build (npm run build copies public/ into build/); on the server it is written in place
+build/data/
