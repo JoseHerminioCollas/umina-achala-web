@@ -95,6 +95,25 @@ The preview serves the last build and does not rebuild, so run `npm run check` a
 
 `npm run build` writes to the tracked `build/` folder; use it only when preparing a deploy.
 
+### Test the site on a phone
+The phone opens the laptop's dev server (`npm run dev`, port 5173). If your Wi-Fi keeps devices from seeing each other, connect the phone with a USB cable (Android):
+
+1. On the phone, turn on **Developer options** (Settings → About phone → tap **Build number** 7 times), then turn on **USB debugging** in them. If the phone turns debugging off by itself, also set **Default USB configuration** to **File transfer** and turn on **Stay awake**.
+2. Install adb on the laptop (`sudo apt install adb`), plug in the phone and unlock it.
+3. Check the phone is listed. The first time, tap **Allow** on the phone's "Allow USB debugging?" prompt; it should then show `device`, not `unauthorized`:
+   ```
+   adb devices
+   ```
+4. Forward the dev server's port to the phone:
+   ```
+   adb reverse tcp:5173 tcp:5173
+   ```
+5. On the phone, open `http://localhost:5173` in Chrome, or in HashPack's own browser.
+
+Run step 4 again after unplugging the cable. If `adb devices` lists nothing, check that the cable carries data (`lsusb` shows the phone) and that USB debugging is still on.
+
+Without a cable: turn on the phone's hotspot, connect the laptop to it, start the dev server with `npm run dev -- --host`, and open the `Network:` address it prints on the phone.
+
 ### Automated checks
 GitHub Actions runs the tests and the build on every push and pull request (`.github/workflows/ci.yml`). A scheduled weekly run (`.github/workflows/scheduled.yml`) also serves the built site and checks that its pages respond.
 

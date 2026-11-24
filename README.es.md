@@ -113,6 +113,25 @@ La vista previa sirve la última compilación y no vuelve a compilar, así que e
 
 `npm run build` escribe en la carpeta `build/` versionada; úsalo solo al preparar un despliegue.
 
+### Probar el sitio en un teléfono
+El teléfono abre el servidor de desarrollo de la laptop (`npm run dev`, puerto 5173). Si la red Wi-Fi no deja que los dispositivos se vean entre sí, conecta el teléfono con un cable USB (Android):
+
+1. En el teléfono, activa las **Opciones de desarrollador** (Ajustes → Acerca del teléfono → toca **Número de compilación** 7 veces) y, dentro de ellas, la **Depuración por USB**. Si el teléfono la desactiva solo, pon también **Configuración USB predeterminada** en **Transferencia de archivos** y activa **Pantalla activa**.
+2. Instala adb en la laptop (`sudo apt install adb`), conecta el teléfono y desbloquéalo.
+3. Comprueba que el teléfono aparece. La primera vez, toca **Permitir** en el aviso "¿Permitir depuración por USB?" del teléfono; luego debe decir `device`, no `unauthorized`:
+   ```
+   adb devices
+   ```
+4. Redirige el puerto del servidor de desarrollo al teléfono:
+   ```
+   adb reverse tcp:5173 tcp:5173
+   ```
+5. En el teléfono, abre `http://localhost:5173` en Chrome o en el navegador de HashPack.
+
+Repite el paso 4 después de desconectar el cable. Si `adb devices` no muestra nada, comprueba que el cable transmite datos (`lsusb` muestra el teléfono) y que la depuración por USB sigue activa.
+
+Sin cable: activa el punto de acceso del teléfono, conecta la laptop a él, inicia el servidor con `npm run dev -- --host` y abre en el teléfono la dirección `Network:` que muestra.
+
 ### Verificaciones automáticas
 GitHub Actions ejecuta las pruebas y la compilación en cada push y pull request (`.github/workflows/ci.yml`). Una ejecución semanal programada (`.github/workflows/scheduled.yml`) también sirve el sitio compilado y comprueba que sus páginas respondan.
 
