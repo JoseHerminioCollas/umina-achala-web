@@ -12,6 +12,8 @@ interface ImportMetaEnv {
   readonly VITE_TREASURY_ACCOUNT_ID?: string;
   readonly VITE_IPFS_GATEWAY_URL?: string;
   readonly VITE_CATALOG_URL?: string;
+  readonly VITE_SALE_API_URL?: string;
+  readonly VITE_WALLETCONNECT_PROJECT_ID?: string;
 }
 
 interface ImportMeta {

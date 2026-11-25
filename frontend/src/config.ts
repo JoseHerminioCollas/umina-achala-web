@@ -53,3 +53,18 @@ export const CATALOG_URL = env.VITE_CATALOG_URL || "./data/catalog.json";
  */
 export const IPFS_GATEWAY_URL =
   env.VITE_IPFS_GATEWAY_URL || "https://gateway.pinata.cloud/ipfs/";
+
+/**
+ * The sale backend (umina-achala-server, #116), on the site's own domain:
+ * Nginx sends /api/ to it live, and Vite's dev server does the same
+ * (vite.config.ts), so there is no CORS.
+ */
+export const SALE_API_URL = env.VITE_SALE_API_URL || "/api";
+
+/**
+ * The WalletConnect (Reown) project the site connects wallets with (#58).
+ * It is public: it ships in the site's code. Reown allows it only on the
+ * domains on its allowlist (and on localhost).
+ */
+export const WALLETCONNECT_PROJECT_ID =
+  env.VITE_WALLETCONNECT_PROJECT_ID || "9948d667a9b036be67a63e08e42b45dd";
