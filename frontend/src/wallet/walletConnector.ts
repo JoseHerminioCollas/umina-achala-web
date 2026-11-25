@@ -28,6 +28,29 @@ export interface WalletAccount {
   network: string;
 }
 
+// The wallet app link WalletConnect's modal saves when the visitor picks a
+// wallet on a phone. With it, each signing request opens the wallet with a
+// wc?requestId=… link, which HashPack reads as a new pairing ("pairing error:
+// missing or invalid pair() uri#relay-protocol") and the request never shows.
+// It is removed, and the wallet is opened with its plain app link instead
+// (WALLET_APPS), which brings it to the front with the request waiting.
+const WALLET_LINK_KEY = "WALLETCONNECT_DEEPLINK_CHOICE";
+
+function forgetWalletLink(): void {
+  try {
+    localStorage.removeItem(WALLET_LINK_KEY);
+  } catch {
+    // no storage (private window, blocked site data): nothing was saved
+  }
+}
+
+/** Wallet apps opened by their plain app link on a phone, by the name in their WalletConnect session. */
+const WALLET_APPS: { match: RegExp; name: string; link: string }[] = [
+  { match: /hashpack/i, name: "HashPack", link: "hashpack://" },
+];
+
+const isPhone = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
 let connector: DAppConnector | null = null;
 let starting: Promise<DAppConnector> | null = null;
 
@@ -50,6 +73,8 @@ export async function getConnector(): Promise<DAppConnector> {
       [NETWORK === "mainnet" ? HederaChainId.Mainnet : HederaChainId.Testnet],
     );
     await c.init({ logger: "error" });
+    // A session kept from an earlier visit may still have the link saved
+    forgetWalletLink();
     connector = c;
     return c;
   })();
@@ -91,6 +116,7 @@ export async function connect(extensionId?: string): Promise<WalletAccount> {
   const c = await getConnector();
   if (extensionId) await c.connectExtension(extensionId);
   else await c.openModal(undefined, true);
+  forgetWalletLink();
   const signer = c.signers[0];
   if (!signer) throw new Error("the wallet did not share an account");
   return accountOf(signer);
@@ -101,18 +127,62 @@ export async function disconnect(): Promise<void> {
   if (c.signers.length) await c.disconnectAll();
 }
 
+/** The wallet app the visitor approves in on this phone, or null (a computer, an extension, another wallet). */
+function walletAppOf(c: DAppConnector, signer: DAppSigner | undefined): (typeof WALLET_APPS)[number] | null {
+  if (!signer || signer.extensionId || !isPhone()) return null;
+  let peer = "";
+  try {
+    peer = c.walletConnectClient?.session.get(signer.topic).peer.metadata.name ?? "";
+  } catch {
+    return null; // the session is gone
+  }
+  return WALLET_APPS.find((w) => w.match.test(peer)) ?? null;
+}
+
+/**
+ * The name of the wallet app the connected account approves in on this phone
+ * ("HashPack"), for an "Open HashPack" button while a signature is awaited;
+ * null when there is none to open.
+ */
+export async function walletAppName(): Promise<string | null> {
+  const c = await getConnector();
+  return walletAppOf(c, c.signers[0])?.name ?? null;
+}
+
+/** Brings the wallet app to the front, where the waiting request shows. Call it from a tap. */
+export async function openWallet(): Promise<void> {
+  const c = await getConnector();
+  const app = walletAppOf(c, c.signers[0]);
+  if (app) window.location.href = app.link;
+}
+
 /**
  * Asks the wallet to sign a frozen transaction (base64) without sending it
  * (hedera_signTransaction), and returns the transaction with the account's
- * signature added, in base64.
+ * signature added, in base64. On a phone, the wallet app is opened once the
+ * request has reached the relay (not before: Chrome may pause the page once
+ * it is in the background), so call it from the visitor's tap.
  */
 export async function signTransaction(accountId: string, transactionBase64: string): Promise<string> {
   const c = await getConnector();
   const tx = Transaction.fromBytes(Buffer.from(transactionBase64, "base64"));
-  const signed = await c.signTransaction({
-    signerAccountId: `hedera:${NETWORK}:${accountId}`,
-    transactionBody: tx,
-  });
-  if (!(signed instanceof Transaction)) throw new Error("the wallet did not return a transaction");
-  return Buffer.from(signed.toBytes()).toString("base64");
+  const signer = c.signers.find((s) => s.getAccountId().toString() === accountId);
+  const app = walletAppOf(c, signer);
+  const client = c.walletConnectClient;
+  const onSent = ({ topic }: { topic: string }) => {
+    if (topic !== signer?.topic) return;
+    client?.events.off("session_request_sent", onSent);
+    if (app) window.location.href = app.link;
+  };
+  if (app && client) client.events.on("session_request_sent", onSent);
+  try {
+    const signed = await c.signTransaction({
+      signerAccountId: `hedera:${NETWORK}:${accountId}`,
+      transactionBody: tx,
+    });
+    if (!(signed instanceof Transaction)) throw new Error("the wallet did not return a transaction");
+    return Buffer.from(signed.toBytes()).toString("base64");
+  } finally {
+    client?.events.off("session_request_sent", onSent);
+  }
 }

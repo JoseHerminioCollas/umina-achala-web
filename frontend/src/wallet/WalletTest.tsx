@@ -14,7 +14,9 @@ import {
   connect,
   currentAccount,
   disconnect,
+  openWallet,
   signTransaction,
+  walletAppName,
   type WalletAccount,
 } from "./walletConnector";
 
@@ -67,6 +69,9 @@ export default function WalletTest(): JSX.Element {
   const [serial, setSerial] = useState("29");
   const [sale, setSale] = useState<PreparedSale | null>(null);
   const [signed, setSigned] = useState<string | null>(null);
+  const [signing, setSigning] = useState(false);
+  // The wallet app to open on a phone while a signature is awaited ("HashPack"), or null
+  const [appName, setAppName] = useState<string | null>(null);
   const [result, setResult] = useState<SaleResult | null>(null);
   const [now, setNow] = useState(Date.now());
 
@@ -96,6 +101,11 @@ export default function WalletTest(): JSX.Element {
       setTimeout(async () => setExtensions(await availableExtensions()), 1000);
     });
   }, []);
+
+  useEffect(() => {
+    if (!account) return setAppName(null);
+    walletAppName().then(setAppName, () => setAppName(null));
+  }, [account]);
 
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000);
@@ -214,14 +224,24 @@ export default function WalletTest(): JSX.Element {
           disabled={busy || !sale || !account || secondsLeft <= 0}
           onClick={() =>
             step("sign in the wallet (approve it in HashPack)", async () => {
-              const s = await signTransaction(account!.accountId, sale!.transaction);
-              setSigned(s);
-              note(`✓ signed by the wallet (${s.length} base64 characters)`);
+              setSigning(true);
+              try {
+                const s = await signTransaction(account!.accountId, sale!.transaction);
+                setSigned(s);
+                note(`✓ signed by the wallet (${s.length} base64 characters)`);
+              } finally {
+                setSigning(false);
+              }
             })
           }
         >
           Sign
         </button>
+        {signing && appName && (
+          <button style={button} onClick={() => openWallet()}>
+            Open {appName}
+          </button>
+        )}
       </section>
 
       <section style={box}>
