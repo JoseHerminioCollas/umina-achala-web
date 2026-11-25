@@ -211,5 +211,29 @@
       "Export permit verified",
       "Transaction anchored on Hedera"
     ]
+  },
+  "dialog": {
+    "close": "Close"
+  },
+  "wallet": {
+    "connect": "Connect wallet",
+    "restoring": "Wallet…",
+    "connectedAs": "Wallet connected:",
+    "disconnect": "Disconnect",
+    "connectTitle": "Connect your wallet",
+    "connectIntro": "Purchases use HashPack, a Hedera wallet, on {{network}}.",
+    "starting": "Looking for HashPack…",
+    "connecting": "Approve the connection in HashPack.",
+    "connectingPhone": "Approve the connection in the HashPack app, then come back here.",
+    "withExtension": "{{name}} (browser extension)",
+    "withQr": "HashPack on your phone (QR code)",
+    "withApp": "HashPack app",
+    "noExtension": "No HashPack browser extension was found. You can connect HashPack on your phone with the QR code.",
+    "noHashpack": "Don't have HashPack?",
+    "getHashpack": "Get HashPack",
+    "errorStart": "The wallet connection could not start. Check your internet connection and try again.",
+    "errorConnect": "HashPack did not connect. Try again.",
+    "errorCancelled": "The connection was cancelled.",
+    "errorNetwork": "HashPack connected on another network. Purchases here use {{network}}: switch HashPack to {{network}} and connect again."
   }
 }

@@ -1,0 +1,48 @@
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.option,
+.secondary {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.option {
+  background: #222;
+  color: #fff;
+  border: 1px solid #222;
+}
+
+.secondary {
+  background: #fff;
+  color: #222;
+  border: 1px solid #222;
+}
+
+.option:disabled,
+.secondary:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.status {
+  color: var(--muted);
+}
+
+.error {
+  color: #a40000;
+  font-weight: 600;
+}
+
+.hint,
+.get {
+  color: var(--muted);
+  font-size: 0.92rem;
+}

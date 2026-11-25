@@ -110,5 +110,16 @@
   }
   .navContainer {
     gap: 6px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  /* flags and the wallet button on one line, the nav links in a row below */
+  .walletSlot {
+    order: 1;
+    margin-left: auto;
+  }
+  .navContainer > nav {
+    order: 2;
+    flex-basis: 100%;
   }
 }

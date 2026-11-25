@@ -211,5 +211,29 @@
       "Permiso de exportación verificado",
       "Transacción anclada en Hedera"
     ]
+  },
+  "dialog": {
+    "close": "Cerrar"
+  },
+  "wallet": {
+    "connect": "Conectar billetera",
+    "restoring": "Billetera…",
+    "connectedAs": "Billetera conectada:",
+    "disconnect": "Desconectar",
+    "connectTitle": "Conecta tu billetera",
+    "connectIntro": "Las compras usan HashPack, una billetera de Hedera, en {{network}}.",
+    "starting": "Buscando HashPack…",
+    "connecting": "Aprueba la conexión en HashPack.",
+    "connectingPhone": "Aprueba la conexión en la app HashPack y luego vuelve aquí.",
+    "withExtension": "{{name}} (extensión del navegador)",
+    "withQr": "HashPack en tu teléfono (código QR)",
+    "withApp": "App HashPack",
+    "noExtension": "No se encontró la extensión HashPack en el navegador. Puedes conectar HashPack en tu teléfono con el código QR.",
+    "noHashpack": "¿No tienes HashPack?",
+    "getHashpack": "Obtener HashPack",
+    "errorStart": "No se pudo iniciar la conexión con la billetera. Revisa tu conexión a internet e inténtalo de nuevo.",
+    "errorConnect": "HashPack no se conectó. Inténtalo de nuevo.",
+    "errorCancelled": "Se canceló la conexión.",
+    "errorNetwork": "HashPack se conectó en otra red. Aquí las compras usan {{network}}: cambia HashPack a {{network}} y vuelve a conectar."
   }
 }

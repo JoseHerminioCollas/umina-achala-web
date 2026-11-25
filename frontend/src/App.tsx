@@ -10,25 +10,28 @@ import Privacy from "./components/Privacy";
 import Contact from "./components/Contact";
 import AdminNFT from "./components/AdminNFT";
 import ComplianceDashboard from "./components/ComplianceDashboard";
+import { WalletProvider } from "./wallet/WalletContext";
 
 function App(): JSX.Element {
   return (
-    <div>
-      <Header />
-      <main className={styles.container}>
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/marketplace" element={<Marketplace />} />
-          <Route path="/about" element={<AboutPage />} />
-           <Route path="/faqs" element={<FAQ />} />
-          <Route path="/privacy" element={<Privacy />} />
-           <Route path="/contact" element={<Contact />} />
-           <Route path="/admin" element={<AdminNFT />} />
-          <Route path="/compliance" element={<ComplianceDashboard />} />
-        </Routes>
-        <Footer />
-      </main>
-    </div>
+    <WalletProvider>
+      <div>
+        <Header />
+        <main className={styles.container}>
+          <Routes>
+            <Route path="/" element={<Hero />} />
+            <Route path="/marketplace" element={<Marketplace />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/faqs" element={<FAQ />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<AdminNFT />} />
+            <Route path="/compliance" element={<ComplianceDashboard />} />
+          </Routes>
+          <Footer />
+        </main>
+      </div>
+    </WalletProvider>
   );
 }
 

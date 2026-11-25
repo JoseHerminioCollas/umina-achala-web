@@ -20,6 +20,7 @@ import {
   HederaSessionEvent,
 } from "@hashgraph/hedera-wallet-connect/dist/lib/shared/index.js";
 import { NETWORK, SITE_URL, WALLETCONNECT_PROJECT_ID } from "../config";
+import { isPhone } from "./device";
 
 export interface WalletAccount {
   /** 0.0.N */
@@ -48,8 +49,6 @@ function forgetWalletLink(): void {
 const WALLET_APPS: { match: RegExp; name: string; link: string }[] = [
   { match: /hashpack/i, name: "HashPack", link: "hashpack://" },
 ];
-
-const isPhone = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 let connector: DAppConnector | null = null;
 let starting: Promise<DAppConnector> | null = null;

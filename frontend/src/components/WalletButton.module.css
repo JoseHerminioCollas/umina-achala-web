@@ -1,0 +1,59 @@
+.connect,
+.disconnect {
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.connect {
+  background: #222;
+  color: #fff;
+  border: 1px solid #222;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+.wallet {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.92rem;
+  color: #333;
+  white-space: nowrap;
+}
+
+.account {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1f8a3b;
+}
+
+.disconnect {
+  background: transparent;
+  color: #333;
+  border: 1px solid #999;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.disconnect:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
+import WalletButton from "./WalletButton";
 import styles from "./Header.module.css";
 import { useTranslation } from "react-i18next";
 import i18n from "i18next";
@@ -79,6 +80,9 @@ const Header = () => {
           </span>
         </div>
         <NavBar />
+        <div className={styles.walletSlot}>
+          <WalletButton />
+        </div>
       </div>
     </header>
   );
