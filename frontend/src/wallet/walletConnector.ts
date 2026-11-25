@@ -148,6 +148,22 @@ export async function walletAppName(): Promise<string | null> {
   return walletAppOf(c, c.signers[0])?.name ?? null;
 }
 
+/**
+ * Where the visitor approves a request, for what the site tells them while it
+ * waits: "extension" (a window in this browser), "app" (the wallet app on this
+ * phone), or "remote" (a wallet on another device, paired by QR code); null
+ * with no connection.
+ */
+export type WalletKind = "extension" | "app" | "remote";
+
+export async function walletKind(): Promise<WalletKind | null> {
+  const c = await getConnector();
+  const signer = c.signers[0];
+  if (!signer) return null;
+  if (signer.extensionId) return "extension";
+  return isPhone() ? "app" : "remote";
+}
+
 /** Brings the wallet app to the front, where the waiting request shows. Call it from a tap. */
 export async function openWallet(): Promise<void> {
   const c = await getConnector();

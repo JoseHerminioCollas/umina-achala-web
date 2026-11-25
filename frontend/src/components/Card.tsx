@@ -8,11 +8,13 @@ import { useTranslation } from "react-i18next";
 interface CardProps {
   item: CatalogItem;
   onClick: (item: CatalogItem) => void;
+  /** The cart button: buy this item (#58); no button without it. */
+  onBuy?: (item: CatalogItem) => void;
   /** The catalog's photo copies; without them, photos load through the gateway. */
   media?: Media;
 }
 
-const Card: React.FC<CardProps> = ({ item, onClick, media }) => {
+const Card: React.FC<CardProps> = ({ item, onClick, onBuy, media }) => {
   const { t } = useTranslation();
   const cut = item.kind === "umina" ? attribute(item, "Stone Cut") : undefined;
   const metal = item.kind === "achala" ? attribute(item, "Metal") : undefined;
@@ -41,8 +43,16 @@ const Card: React.FC<CardProps> = ({ item, onClick, media }) => {
           <button onClick={() => onClick(item)}>
             {item.kind === "umina" ? t("card.viewUmina") : t("card.viewAchala")}
           </button>
-          <button className={styles.cartIcon} onClick={() => alert(t("card.buySoon"))}>
+          {onBuy && (
+          <button
+            className={styles.cartIcon}
+            onClick={() => onBuy(item)}
+            aria-label={t("card.buy", { name: title(item), price: formatPrice(item.price) })}
+            title={t("card.buyShort")}
+          >
             <svg
+              aria-hidden="true"
+              focusable="false"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -62,6 +72,7 @@ const Card: React.FC<CardProps> = ({ item, onClick, media }) => {
               />
             </svg>
           </button>
+          )}
         </div>
       </div>
     </div>

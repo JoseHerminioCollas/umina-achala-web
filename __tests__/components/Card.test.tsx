@@ -70,11 +70,10 @@ describe("Card", () => {
     expect(screen.getByRole("button", { name: "View Achala" })).toBeInTheDocument();
   });
 
-  it("tells the user that buying is coming soon from the cart button", async () => {
-    const alert = jest.spyOn(window, "alert").mockImplementation(() => {});
-    render(<Card item={umina} onClick={jest.fn()} />);
-    const buttons = screen.getAllByRole("button");
-    await userEvent.click(buttons[buttons.length - 1]);
-    expect(alert).toHaveBeenCalledWith("Buy with UMA coming soon!");
+  it("starts buying the item from the cart button, named with its price (#58)", async () => {
+    const onBuy = jest.fn();
+    render(<Card item={umina} onClick={jest.fn()} onBuy={onBuy} />);
+    await userEvent.click(screen.getByRole("button", { name: "Buy Agate for 45 HBAR" }));
+    expect(onBuy).toHaveBeenCalledWith(umina);
   });
 });

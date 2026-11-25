@@ -26,6 +26,7 @@ function fakeWallet(over: Partial<Record<keyof WalletModule, unknown>> = {}) {
     disconnect: jest.fn().mockResolvedValue(undefined),
     currentAccount: jest.fn().mockResolvedValue(null),
     walletAppName: jest.fn().mockResolvedValue(null),
+    walletKind: jest.fn().mockResolvedValue("extension"),
     openWallet: jest.fn(),
     signTransaction: jest.fn(),
     ...over,

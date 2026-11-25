@@ -10,6 +10,8 @@ import { hashscanNftUrl, hashscanTopicUrl, hashscanMessageUrl } from "../utils/c
 interface StoneModalProps {
   open: CatalogItem | null;
   setOpen: (item: CatalogItem | null) => void;
+  /** The Buy button: buy this item (#58); no button without it. */
+  onBuy?: (item: CatalogItem) => void;
   /** The catalog's copies of photos and documents; without them, they load through the gateway. */
   media?: Media;
 }
@@ -53,7 +55,7 @@ const NewTabLink: React.FC<NewTabLinkProps> = ({ href, describedBy, className, p
   </a>
 );
 
-const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen, media }) => {
+const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen, onBuy, media }) => {
   const { t } = useTranslation();
   const gallery = useMemo(() => (open ? photos(open, media) : []), [open, media]);
   // the 3D model is the last tile, after the photos (#119)
@@ -112,9 +114,16 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen, media }) => {
             name={open.metadata.name}
           />
           <div>
-            <p className={styles.price}>
-              {t("modal.price")} {formatPrice(open.price)}
-            </p>
+            <div className={styles.buyRow}>
+              <p className={styles.price}>
+                {t("modal.price")} {formatPrice(open.price)}
+              </p>
+              {onBuy && (
+                <button className={styles.buy} onClick={() => onBuy(open)}>
+                  {t("modal.buy")}
+                </button>
+              )}
+            </div>
             <div className={styles.attributeList}>
               <dl>
                 {open.metadata.attributes

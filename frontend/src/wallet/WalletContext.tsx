@@ -6,11 +6,11 @@
 // loaded only when the visitor asks for the wallet, or when a connection was
 // kept from an earlier visit (KEPT_KEY), never on a plain page load.
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
-import type { WalletAccount } from "./walletConnector";
+import type { WalletAccount, WalletKind } from "./walletConnector";
 import WalletModal from "../components/WalletModal";
 
 export type WalletModule = typeof import("./walletConnector");
-export type { WalletAccount };
+export type { WalletAccount, WalletKind };
 
 /** Loads the wallet code; tests pass their own. */
 export type LoadWallet = () => Promise<WalletModule>;
@@ -46,6 +46,8 @@ export interface WalletState {
    * ("HashPack"), or null (a computer, the extension).
    */
   appName: string | null;
+  /** Where the visitor approves a request: this browser's extension, this phone's app, another device. */
+  kind: WalletKind | null;
   /** Opens the connect dialog. */
   openConnect: () => void;
   /**
@@ -64,6 +66,7 @@ const WalletContext = createContext<WalletState>({
   account: null,
   restoring: false,
   appName: null,
+  kind: null,
   openConnect: () => undefined,
   requireAccount: notProvided,
   disconnect: notProvided,
@@ -92,6 +95,7 @@ export const WalletProvider: React.FC<{ children: React.ReactNode; load?: LoadWa
   const [account, setAccount] = useState<WalletAccount | null>(null);
   const [restoring, setRestoring] = useState(false);
   const [appName, setAppName] = useState<string | null>(null);
+  const [kind, setKind] = useState<WalletKind | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
   const waiters = useRef<Waiter[]>([]);
   const loading = useRef<Promise<WalletModule> | null>(null);
@@ -108,7 +112,14 @@ export const WalletProvider: React.FC<{ children: React.ReactNode; load?: LoadWa
     async (a: WalletAccount | null) => {
       setAccount(a);
       keep(!!a);
-      setAppName(a ? await (await wallet()).walletAppName().catch(() => null) : null);
+      if (!a) {
+        setAppName(null);
+        setKind(null);
+        return;
+      }
+      const w = await wallet();
+      setAppName(await w.walletAppName().catch(() => null));
+      setKind(await w.walletKind().catch(() => null));
     },
     [wallet],
   );
@@ -160,6 +171,7 @@ export const WalletProvider: React.FC<{ children: React.ReactNode; load?: LoadWa
       account,
       restoring,
       appName,
+      kind,
       openConnect: () => setDialogOpen(true),
       requireAccount: () =>
         account
@@ -174,7 +186,7 @@ export const WalletProvider: React.FC<{ children: React.ReactNode; load?: LoadWa
       },
       wallet,
     }),
-    [account, restoring, appName, wallet, connected],
+    [account, restoring, appName, kind, wallet, connected],
   );
 
   return (

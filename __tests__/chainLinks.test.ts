@@ -2,10 +2,17 @@ import {
   hashscanNftUrl,
   hashscanTopicUrl,
   hashscanMessageUrl,
+  hashscanTransactionUrl,
   ipfsToGatewayUrl,
 } from "../frontend/src/utils/chainLinks";
 
 describe("chainLinks", () => {
+  it("links a transaction by its ID in HashScan's form", () => {
+    expect(hashscanTransactionUrl("0.0.4631334@1795638934.109883093")).toBe(
+      "https://hashscan.io/testnet/transaction/0.0.4631334-1795638934-109883093",
+    );
+  });
+
   it("links an NFT to its HashScan page on the site's network, testnet (#75)", () => {
     expect(hashscanNftUrl("0.0.11400486", 7)).toBe(
       "https://hashscan.io/testnet/token/0.0.11400486/7",

@@ -58,8 +58,27 @@
 }
 
 .price {
-  margin: 0 0 0.5em 0;
+  margin: 0;
   font-weight: bold;
+}
+
+/* the price and the main action: a solid button (#132) */
+.buyRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 0.8em 0;
+}
+
+.buy {
+  background: #222;
+  color: #fff;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 9px 22px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 /* documents, stones in the piece, blockchain record */

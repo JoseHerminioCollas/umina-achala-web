@@ -126,7 +126,8 @@
   "card": {
     "viewUmina": "View Umiña",
     "viewAchala": "View Achala",
-    "buySoon": "Buy with UMA coming soon!",
+    "buy": "Buy {{name}} for {{price}}",
+    "buyShort": "Buy",
     "stones": "Stones:"
   },
   "filters": {
@@ -176,7 +177,8 @@
     "documents": "Documents",
     "documentN": "Document {{n}}",
     "chainRecord": "Blockchain record",
-    "newTab": "(opens in a new tab)"
+    "newTab": "(opens in a new tab)",
+    "buy": "Buy"
   },
   "model": {
     "label": "3D model",
@@ -235,5 +237,44 @@
     "errorConnect": "HashPack did not connect. Try again.",
     "errorCancelled": "The connection was cancelled.",
     "errorNetwork": "HashPack connected on another network. Purchases here use {{network}}: switch HashPack to {{network}} and connect again."
+  },
+  "buy": {
+    "title": "Buy {{name}}",
+    "doneTitle": "Purchase complete",
+    "intro": "You pay {{price}} from your HashPack account on {{network}}. The NFT moves to your wallet in the same transaction.",
+    "achalaStones_one": "This piece includes {{count}} stone: its NFT moves to your wallet with the piece.",
+    "achalaStones_other": "This piece includes {{count}} stones: their NFTs move to your wallet with the piece.",
+    "payingFrom": "Paying from {{account}}.",
+    "confirm": "Confirm and pay {{price}}",
+    "connectAndPay": "Connect wallet and pay {{price}}",
+    "cancel": "Cancel",
+    "preparing": "Preparing the purchase…",
+    "approve": {
+      "extension": "Approve the purchase in the HashPack window.",
+      "app": "Approve the purchase in HashPack, then come back to this page.",
+      "remote": "Open HashPack on your phone and approve the request. If it isn't showing, refresh HashPack."
+    },
+    "secondsLeft_one": "{{count}} second left to approve.",
+    "secondsLeft_other": "{{count}} seconds left to approve.",
+    "openApp": "Open {{name}}",
+    "submitting": "Completing the purchase…",
+    "done": "{{name}} is now in your wallet.",
+    "doneRefresh": "If you don't see it in HashPack yet, refresh HashPack.",
+    "viewTransaction": "View the transaction on HashScan",
+    "close": "Close",
+    "tryAgain": "Try again",
+    "nothingMoved": "Nothing was charged and nothing moved.",
+    "error": {
+      "rejected": "The purchase was declined in HashPack.",
+      "expired": "The time to approve ran out.",
+      "gone": "This item is no longer for sale.",
+      "notAssociated": "Your account has to accept this token before it can receive the NFT. In HashPack, associate the token (or allow automatic token associations), then try again.",
+      "balance": "Your account does not hold enough HBAR for this purchase.",
+      "account": "This account cannot be used for purchases here: it needs a single ED25519 or ECDSA key.",
+      "signature": "HashPack's signature did not match the purchase.",
+      "network": "The sale service could not be reached. Check your connection.",
+      "busy": "Too many attempts. Wait a minute, then try again.",
+      "failed": "The purchase did not go through."
+    }
   }
 }

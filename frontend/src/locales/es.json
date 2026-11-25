@@ -126,7 +126,8 @@
   "card": {
     "viewUmina": "Ver Umiña",
     "viewAchala": "Ver Achala",
-    "buySoon": "¡Compra con UMA próximamente!",
+    "buy": "Comprar {{name}} por {{price}}",
+    "buyShort": "Comprar",
     "stones": "Piedras:"
   },
   "filters": {
@@ -176,7 +177,8 @@
     "documents": "Documentos",
     "documentN": "Documento {{n}}",
     "chainRecord": "Registro en blockchain",
-    "newTab": "(se abre en una pestaña nueva)"
+    "newTab": "(se abre en una pestaña nueva)",
+    "buy": "Comprar"
   },
   "model": {
     "label": "Modelo 3D",
@@ -235,5 +237,44 @@
     "errorConnect": "HashPack no se conectó. Inténtalo de nuevo.",
     "errorCancelled": "Se canceló la conexión.",
     "errorNetwork": "HashPack se conectó en otra red. Aquí las compras usan {{network}}: cambia HashPack a {{network}} y vuelve a conectar."
+  },
+  "buy": {
+    "title": "Comprar {{name}}",
+    "doneTitle": "Compra completada",
+    "intro": "Pagas {{price}} desde tu cuenta de HashPack en {{network}}. El NFT pasa a tu billetera en la misma transacción.",
+    "achalaStones_one": "Esta pieza incluye {{count}} piedra: su NFT pasa a tu billetera con la pieza.",
+    "achalaStones_other": "Esta pieza incluye {{count}} piedras: sus NFT pasan a tu billetera con la pieza.",
+    "payingFrom": "Pagas desde {{account}}.",
+    "confirm": "Confirmar y pagar {{price}}",
+    "connectAndPay": "Conectar billetera y pagar {{price}}",
+    "cancel": "Cancelar",
+    "preparing": "Preparando la compra…",
+    "approve": {
+      "extension": "Aprueba la compra en la ventana de HashPack.",
+      "app": "Aprueba la compra en HashPack y luego vuelve a esta página.",
+      "remote": "Abre HashPack en tu teléfono y aprueba la solicitud. Si no aparece, actualiza HashPack."
+    },
+    "secondsLeft_one": "Queda {{count}} segundo para aprobar.",
+    "secondsLeft_other": "Quedan {{count}} segundos para aprobar.",
+    "openApp": "Abrir {{name}}",
+    "submitting": "Completando la compra…",
+    "done": "{{name}} ya está en tu billetera.",
+    "doneRefresh": "Si aún no lo ves en HashPack, actualiza HashPack.",
+    "viewTransaction": "Ver la transacción en HashScan",
+    "close": "Cerrar",
+    "tryAgain": "Intentar de nuevo",
+    "nothingMoved": "No se cobró nada y nada se movió.",
+    "error": {
+      "rejected": "La compra fue rechazada en HashPack.",
+      "expired": "Se acabó el tiempo para aprobar.",
+      "gone": "Este artículo ya no está a la venta.",
+      "notAssociated": "Tu cuenta debe aceptar este token antes de recibir el NFT. En HashPack, asocia el token (o permite asociaciones automáticas de tokens) e inténtalo de nuevo.",
+      "balance": "Tu cuenta no tiene suficientes HBAR para esta compra.",
+      "account": "Esta cuenta no se puede usar para comprar aquí: necesita una sola clave ED25519 o ECDSA.",
+      "signature": "La firma de HashPack no coincide con la compra.",
+      "network": "No se pudo contactar el servicio de venta. Revisa tu conexión.",
+      "busy": "Demasiados intentos. Espera un minuto e inténtalo de nuevo.",
+      "failed": "La compra no se completó."
+    }
   }
 }

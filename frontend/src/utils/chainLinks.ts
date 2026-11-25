@@ -20,6 +20,15 @@ export const hashscanMessageUrl = (consensusTimestamp: string) =>
   `${HASHSCAN}/transaction/${consensusTimestamp}/message`;
 
 /**
+ * The HashScan page of a transaction, by its ID: "0.0.N@seconds.nanos"
+ * becomes HashScan's "0.0.N-seconds-nanos".
+ */
+export const hashscanTransactionUrl = (transactionId: string) => {
+  const [payer, at = ""] = transactionId.split("@");
+  return `${HASHSCAN}/transaction/${payer}-${at.replace(".", "-")}`;
+};
+
+/**
  * An ipfs:// URL as a gateway URL, e.g. "ipfs://<cid>/photo.png" →
  * "https://gateway.pinata.cloud/ipfs/<cid>/photo.png". Any other URL (https,
  * a local path) is returned as it is.

@@ -9,6 +9,7 @@ import Pager from "./Pager";
 import { useTranslation } from "react-i18next";
 import { usePageMeta } from "../hooks/usePageMeta";
 import { useCatalog } from "../hooks/useCatalog";
+import { useBuying } from "../hooks/useBuying";
 import { Filters as FilterValues, filterItems, filterOptions } from "../utils/filterItems";
 
 const PER_PAGE = 6;
@@ -20,9 +21,14 @@ const Marketplace: React.FC = () => {
   const [open, setOpen] = useState<CatalogItem | null>(null);
   const [filters, setFilters] = useState<FilterValues>({ kind: "", type: "", cut: "" });
   const [page, setPage] = useState(1);
-
-  const items = state.status === "ready" ? state.catalog.getAll() : [];
   const media = state.status === "ready" ? state.catalog.media : undefined;
+  // a sold item is hidden at once and closes its detail view
+  const { startBuy, unsold, dialog } = useBuying(media, (item) =>
+    setOpen((o) => (o?.stone_id === item.stone_id ? null : o)),
+  );
+
+  const all = state.status === "ready" ? state.catalog.getAll() : [];
+  const items = useMemo(() => unsold(all), [all, unsold]);
   const options = useMemo(() => filterOptions(items), [items]);
 
   if (state.status === "loading") {
@@ -62,11 +68,12 @@ const Marketplace: React.FC = () => {
       ) : (
         <div className={styles.cards}>
           {pagedItems.map((it) => (
-            <Card key={it.stone_id} item={it} onClick={setOpen} media={media} />
+            <Card key={it.stone_id} item={it} onClick={setOpen} onBuy={startBuy} media={media} />
           ))}
         </div>
       )}
-      <StoneModal open={open} setOpen={setOpen} media={media} />
+      <StoneModal open={open} setOpen={setOpen} onBuy={startBuy} media={media} />
+      {dialog}
     </section>
   );
 };

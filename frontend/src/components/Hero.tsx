@@ -7,15 +7,20 @@ import styles from "./Hero.module.css";
 import { useTranslation } from "react-i18next";
 import { usePageMeta } from "../hooks/usePageMeta";
 import { useCatalog } from "../hooks/useCatalog";
+import { useBuying } from "../hooks/useBuying";
 
 const Hero = () => {
   const { t } = useTranslation();
   usePageMeta("home");
   const state = useCatalog();
   const [open, setOpen] = useState<CatalogItem | null>(null);
-  // the home page shows no message while loading or on error: the marketplace does
-  const featured = state.status === "ready" ? state.catalog.getFeatured(3) : [];
   const media = state.status === "ready" ? state.catalog.media : undefined;
+  // a sold item closes its detail view
+  const { startBuy, unsold, dialog } = useBuying(media, (item) =>
+    setOpen((o) => (o?.stone_id === item.stone_id ? null : o)),
+  );
+  // the home page shows no message while loading or on error: the marketplace does
+  const featured = state.status === "ready" ? unsold(state.catalog.getFeatured(3)) : [];
 
   return (
     <>
@@ -27,7 +32,7 @@ const Hero = () => {
         {featured.length > 0 && (
           <div className={styles.heroGrid}>
             {featured.map((item) => (
-              <Card key={item.stone_id} item={item} onClick={setOpen} media={media} />
+              <Card key={item.stone_id} item={item} onClick={setOpen} onBuy={startBuy} media={media} />
             ))}
           </div>
         )}
@@ -37,7 +42,8 @@ const Hero = () => {
           </a>
         </section>
       </section>
-      <StoneModal open={open} setOpen={setOpen} media={media} />
+      <StoneModal open={open} setOpen={setOpen} onBuy={startBuy} media={media} />
+      {dialog}
     </>
   );
 };
