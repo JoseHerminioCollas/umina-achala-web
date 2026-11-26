@@ -4,7 +4,8 @@
     "tagline": "Piedras y joyería desde Perú"
   },
   "demo": {
-    "notice": "Página web solo con fines de demostración, próximamente",
+    "notice": "Sitio de prueba en Hedera testnet: las compras usan HBAR de prueba, sin valor real.",
+    "guideLink": "Cómo comprar en testnet",
     "contactLink": "Contáctenos para que le avisemos."
   },
   "seo": {
@@ -31,6 +32,10 @@
     "contact": {
       "title": "Contacto | Umiña Achala",
       "description": "Contacte a Umiña Achala por piedras y joyería del Perú, o pida que le avisemos cuando el sitio se lance."
+    },
+    "testnet": {
+      "title": "Cómo comprar en testnet | Umiña Achala",
+      "description": "Cómo probar Umiña Achala en Hedera testnet: consigue HashPack, una cuenta de testnet y HBAR de prueba gratis, y compra un NFT de piedra de prueba."
     },
     "admin": {
       "title": "Administrador | Umiña Achala",
@@ -233,6 +238,8 @@
     "noExtension": "No se encontró la extensión HashPack en el navegador. Puedes conectar HashPack en tu teléfono con el código QR.",
     "noHashpack": "¿No tienes HashPack?",
     "getHashpack": "Obtener HashPack",
+    "newToTestnet": "¿Nuevo en testnet?",
+    "howToBuy": "Cómo comprar en testnet",
     "errorStart": "No se pudo iniciar la conexión con la billetera. Revisa tu conexión a internet e inténtalo de nuevo.",
     "errorConnect": "HashPack no se conectó. Inténtalo de nuevo.",
     "errorCancelled": "Se canceló la conexión.",
@@ -245,6 +252,8 @@
     "achalaStones_one": "Esta pieza incluye {{count}} piedra: su NFT pasa a tu billetera con la pieza.",
     "achalaStones_other": "Esta pieza incluye {{count}} piedras: sus NFT pasan a tu billetera con la pieza.",
     "payingFrom": "Pagas desde {{account}}.",
+    "testnetNote": "Hedera testnet: HBAR y NFTs de prueba, sin valor real. Las piedras no se envían.",
+    "howToBuy": "Cómo comprar en testnet",
     "confirm": "Confirmar y pagar {{price}}",
     "connectAndPay": "Conectar billetera y pagar {{price}}",
     "cancel": "Cancelar",
@@ -278,6 +287,57 @@
       "network": "No se pudo contactar el servicio de venta. Revisa tu conexión.",
       "busy": "Demasiados intentos. Espera un minuto e inténtalo de nuevo.",
       "failed": "La compra no se completó."
+    }
+  },
+  "testnet": {
+    "title": "Cómo comprar en testnet",
+    "intro": "Este sitio funciona en Hedera testnet, una red de pruebas. Las compras usan HBAR de prueba, que no tiene valor, y las piedras y joyas son NFTs de prueba: no se cobra nada real y no se envía nada.",
+    "newTab": "(se abre en una pestaña nueva)",
+    "hashpackTitle": "Consigue HashPack",
+    "hashpackText": "Las compras aquí usan HashPack, una billetera de Hedera: la extensión del navegador en una computadora, o la app en tu teléfono.",
+    "hashpackLink": "Obtener HashPack",
+    "accountTitle": "Crea una cuenta de testnet",
+    "accountText": "En HashPack, crea o importa una cuenta y elige testnet al hacerlo. Testnet y mainnet son redes separadas: solo una cuenta de testnet puede comprar aquí.",
+    "hbarTitle": "Consigue HBAR de prueba gratis",
+    "hbarText": "Envía HBAR de prueba gratis a tu ID de cuenta de testnet (0.0.…) desde el faucet de Hedera. El precio de cada artículo aparece en su tarjeta; el sitio paga la comisión de la red.",
+    "faucetLink": "Faucet de Hedera",
+    "associateTitle": "Permite que tu cuenta acepte los NFTs",
+    "associateText": "En Hedera una cuenta debe aceptar (asociar) un token antes de recibirlo. En la app de HashPack, abre NFTs, elige Associate NFT e ingresa el ID del token: el token Umiña para piedras, y también el token Achala para joyas, que vienen con sus piedras.",
+    "uminaToken": "Umiña (piedras):",
+    "achalaToken": "Achala (joyas):",
+    "associateAuto": "O permite las asociaciones automáticas de tokens en la configuración de tu cuenta en HashPack.",
+    "connectTitle": "Conecta HashPack",
+    "connectText": "Pulsa Conectar billetera arriba en la página y elige: la extensión de HashPack; el código QR, para conectar HashPack en tu teléfono mientras compras en una computadora; o, en un teléfono, la app de HashPack.",
+    "buyTitle": "Compra",
+    "buyText": "Elige una piedra o una joya, pulsa Comprar y confirma. Aprueba la compra en HashPack antes de dos minutos; en un teléfono, vuelve luego al navegador. El sitio completa la compra en cuanto apruebas. Si el NFT no aparece en HashPack, actualiza HashPack.",
+    "marketplaceLink": "Ir al mercado",
+    "problemsTitle": "Si algo sale mal",
+    "problemsIntro": "Cuando una compra se detiene, el sitio dice por qué. No se cobra nada y nada se mueve.",
+    "problems": {
+      "declined": {
+        "title": "Rechazada en HashPack",
+        "text": "Rechazaste la solicitud. Pulsa Intentar de nuevo para empezar otra vez."
+      },
+      "expired": {
+        "title": "Se acabó el tiempo para aprobar",
+        "text": "Cada compra debe aprobarse antes de dos minutos. Pulsa Intentar de nuevo para una nueva solicitud."
+      },
+      "notAssociated": {
+        "title": "Tu cuenta debe aceptar este token",
+        "text": "Asocia el token en HashPack (paso 4) e inténtalo de nuevo."
+      },
+      "balance": {
+        "title": "No hay suficientes HBAR",
+        "text": "Tu cuenta de testnet tiene menos que el precio. Consigue más HBAR de prueba (paso 3)."
+      },
+      "beingBought": {
+        "title": "Alguien está completando la compra de este artículo",
+        "text": "Otro comprador la está aprobando. Sigue a la venta: inténtalo de nuevo después de los segundos indicados."
+      },
+      "mainnet": {
+        "title": "HashPack muestra una cuenta de mainnet",
+        "text": "El sitio usa la cuenta de testnet que elegiste al conectar, aunque HashPack muestre otra en su pantalla principal."
+      }
     }
   }
 }

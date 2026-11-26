@@ -2,6 +2,7 @@
 import React from "react";
 import { act, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router-dom";
 import "../../frontend/src/i18n";
 import WalletButton, { shortAccount } from "../../frontend/src/components/WalletButton";
 import {
@@ -37,10 +38,12 @@ function fakeWallet(over: Partial<Record<keyof WalletModule, unknown>> = {}) {
 
 function renderButton(load: () => Promise<WalletModule>, extra?: React.ReactNode) {
   return render(
-    <WalletProvider load={load}>
-      <WalletButton />
-      {extra}
-    </WalletProvider>,
+    <MemoryRouter>
+      <WalletProvider load={load}>
+        <WalletButton />
+        {extra}
+      </WalletProvider>
+    </MemoryRouter>,
   );
 }
 
@@ -79,6 +82,8 @@ describe("WalletButton", () => {
     const qr = await screen.findByRole("button", { name: "HashPack on your phone (QR code)" }, SLOW);
     expect(screen.getByText(/No HashPack browser extension was found/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Get HashPack" })).toHaveAttribute("href", "https://www.hashpack.app/download");
+    expect(screen.getByText(/New to testnet\?/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "How to buy on testnet" })).toHaveAttribute("href", "/testnet");
     await userEvent.click(qr);
     expect(w.connect).toHaveBeenCalledWith(undefined);
   });

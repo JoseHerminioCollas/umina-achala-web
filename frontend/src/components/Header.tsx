@@ -31,6 +31,10 @@ const Header = () => {
             </p>
             <p className={styles.demoNotice}>
               {t("demo.notice")}{" "}
+              <Link to="/testnet" className={styles.demoLink} data-umami-event="header-testnet-link">
+                {t("demo.guideLink")}
+              </Link>
+              {" · "}
               <Link
                 to="/contact"
                 className={styles.demoLink}

@@ -6,6 +6,7 @@
 // minutes, so it is prepared only after Confirm, and nothing is left for the
 // buyer to press once they have approved.
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Dialog from "./Dialog";
 import { CatalogItem, Media } from "../types/catalog";
@@ -118,6 +119,14 @@ const BuyDialog: React.FC<BuyDialogProps> = ({ item, media, onClose, onSold }) =
           {item.kind === "achala" && <p>{t("buy.achalaStones", { count: item.stones.length })}</p>}
           <p>{t("buy.intro", { price, network: NETWORK })}</p>
           {account && <p className={styles.muted}>{t("buy.payingFrom", { account: account.accountId })}</p>}
+          {NETWORK === "testnet" && (
+            <p className={styles.muted}>
+              {t("buy.testnetNote")}{" "}
+              <Link to="/testnet" onClick={close}>
+                {t("buy.howToBuy")}
+              </Link>
+            </p>
+          )}
           <div className={styles.actions}>
             <button className={styles.primary} onClick={buy}>
               {account ? t("buy.confirm", { price }) : t("buy.connectAndPay", { price })}

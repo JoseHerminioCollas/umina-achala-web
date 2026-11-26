@@ -2,6 +2,7 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router-dom";
 import "../../frontend/src/i18n";
 import BuyDialog from "../../frontend/src/components/BuyDialog";
 import {
@@ -62,9 +63,11 @@ function renderDialog(load: () => Promise<WalletModule>, item = umina) {
   const onSold = jest.fn();
   const onClose = jest.fn();
   render(
-    <WalletProvider load={load}>
-      <BuyDialog item={item} onClose={onClose} onSold={onSold} />
-    </WalletProvider>,
+    <MemoryRouter>
+      <WalletProvider load={load}>
+        <BuyDialog item={item} onClose={onClose} onSold={onSold} />
+      </WalletProvider>
+    </MemoryRouter>,
   );
   return { onSold, onClose };
 }
@@ -73,6 +76,16 @@ describe("BuyDialog", () => {
   beforeEach(() => {
     localStorage.clear();
     localStorage.setItem("ua.wallet.connected", "1"); // a kept connection: buyer
+  });
+
+  it("says it is testnet, nothing is shipped, and links to the guide", async () => {
+    const { load } = fakeWallet();
+    const { onClose } = renderDialog(load);
+    expect(await screen.findByText(/Stones are not shipped/)).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: "How to buy on testnet" });
+    expect(link).toHaveAttribute("href", "/testnet");
+    await userEvent.click(link);
+    expect(onClose).toHaveBeenCalled();
   });
 
   it("asks to confirm with the price and the paying account", async () => {

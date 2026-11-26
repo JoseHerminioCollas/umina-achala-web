@@ -43,17 +43,15 @@ describe("translations", () => {
   });
 });
 
-describe("demo notice (#84)", () => {
+describe("testnet notice (#137, was the demo notice of #84)", () => {
   it("has the English message", () => {
-    expect(en.demo.notice).toBe(
-      "Web page for demonstration purposes only, launching soon",
-    );
+    expect(en.demo.notice).toBe("Test site on Hedera testnet: purchases use test HBAR, with no real value.");
+    expect(en.demo.guideLink).toBe("How to buy on testnet");
   });
 
   it("has the Spanish message", () => {
-    expect(es.demo.notice).toBe(
-      "Página web solo con fines de demostración, próximamente",
-    );
+    expect(es.demo.notice).toBe("Sitio de prueba en Hedera testnet: las compras usan HBAR de prueba, sin valor real.");
+    expect(es.demo.guideLink).toBe("Cómo comprar en testnet");
   });
 });
 
@@ -65,7 +63,7 @@ describe("demo notice contact link (#68)", () => {
 });
 
 describe("page titles and descriptions (#86)", () => {
-  const pages = ["home", "marketplace", "about", "faqs", "privacy", "contact", "admin", "compliance"];
+  const pages = ["home", "marketplace", "about", "faqs", "privacy", "contact", "testnet", "admin", "compliance"];
 
   it.each(pages)("%s has a title and description in both languages", (page) => {
     for (const lang of [en, es] as const) {

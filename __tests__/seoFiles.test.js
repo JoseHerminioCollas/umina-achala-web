@@ -24,7 +24,7 @@ describe("sitemap.xml", () => {
 
   test("lists the public pages on the live domain", () => {
     expect(urls).toEqual(
-      ["", "marketplace", "about", "faqs", "privacy", "contact"].map(
+      ["", "marketplace", "about", "faqs", "privacy", "contact", "testnet"].map(
         (p) => `https://umina-achala.pe/${p}`,
       ),
     );

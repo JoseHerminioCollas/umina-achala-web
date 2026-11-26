@@ -10,6 +10,7 @@ import Privacy from "./components/Privacy";
 import Contact from "./components/Contact";
 import AdminNFT from "./components/AdminNFT";
 import ComplianceDashboard from "./components/ComplianceDashboard";
+import TestnetGuide from "./components/TestnetGuide";
 import { WalletProvider } from "./wallet/WalletContext";
 
 function App(): JSX.Element {
@@ -25,6 +26,7 @@ function App(): JSX.Element {
             <Route path="/faqs" element={<FAQ />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/testnet" element={<TestnetGuide />} />
             <Route path="/admin" element={<AdminNFT />} />
             <Route path="/compliance" element={<ComplianceDashboard />} />
           </Routes>

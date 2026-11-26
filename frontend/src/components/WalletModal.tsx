@@ -3,14 +3,15 @@
 // WalletConnect (a QR code on a computer, the HashPack app on a phone), and a
 // link to get HashPack.
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Dialog from "./Dialog";
-import { NETWORK } from "../config";
+import { HASHPACK_DOWNLOAD_URL, NETWORK } from "../config";
 import { isPhone } from "../wallet/device";
 import type { WalletAccount, WalletModule } from "../wallet/WalletContext";
 import styles from "./WalletModal.module.css";
 
-export const HASHPACK_DOWNLOAD_URL = "https://www.hashpack.app/download";
+export { HASHPACK_DOWNLOAD_URL };
 
 // Extensions answer the connector's message shortly after it starts
 const EXTENSION_WAIT_MS = 1000;
@@ -104,6 +105,12 @@ const WalletModal: React.FC<WalletModalProps> = ({ wallet, onConnected, onClose 
       {phase === "choose" && !phone && extensions.length === 0 && (
         <p className={styles.hint}>{t("wallet.noExtension")}</p>
       )}
+      <p className={styles.get}>
+        {t("wallet.newToTestnet")}{" "}
+        <Link to="/testnet" onClick={onClose}>
+          {t("wallet.howToBuy")}
+        </Link>
+      </p>
       <p className={styles.get}>
         {t("wallet.noHashpack")}{" "}
         <a href={HASHPACK_DOWNLOAD_URL} target="_blank" rel="noopener noreferrer">

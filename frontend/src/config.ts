@@ -68,3 +68,9 @@ export const SALE_API_URL = env.VITE_SALE_API_URL || "/api";
  */
 export const WALLETCONNECT_PROJECT_ID =
   env.VITE_WALLETCONNECT_PROJECT_ID || "9948d667a9b036be67a63e08e42b45dd";
+
+/** Where a visitor gets HashPack, the wallet the site buys with (#58). */
+export const HASHPACK_DOWNLOAD_URL = "https://www.hashpack.app/download";
+
+/** Hedera's faucet: free test HBAR for a testnet account (#137). */
+export const HEDERA_FAUCET_URL = "https://portal.hedera.com/faucet";
