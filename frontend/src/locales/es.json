@@ -267,7 +267,10 @@
     "error": {
       "rejected": "La compra fue rechazada en HashPack.",
       "expired": "Se acabó el tiempo para aprobar.",
+      "replaced": "Iniciaste esta compra de nuevo en otra ventana o pestaña. Aprueba la solicitud más reciente en HashPack y rechaza esta.",
       "gone": "Este artículo ya no está a la venta.",
+      "beingBought_one": "Alguien está completando la compra de este artículo. Sigue a la venta: inténtalo de nuevo en unos {{count}} segundo.",
+      "beingBought_other": "Alguien está completando la compra de este artículo. Sigue a la venta: inténtalo de nuevo en unos {{count}} segundos.",
       "notAssociated": "Tu cuenta debe aceptar este token antes de recibir el NFT. En HashPack, asocia el token (o permite asociaciones automáticas de tokens) e inténtalo de nuevo.",
       "balance": "Tu cuenta no tiene suficientes HBAR para esta compra.",
       "account": "Esta cuenta no se puede usar para comprar aquí: necesita una sola clave ED25519 o ECDSA.",

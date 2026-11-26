@@ -40,7 +40,7 @@ const BuyDialog: React.FC<BuyDialogProps> = ({ item, media, onClose, onSold }) =
 
   const name = title(item);
   const price = formatPrice(item.price);
-  const secondsLeft = sale ? Math.max(0, Math.round((Date.parse(sale.expiresAt) - now) / 1000)) : 0;
+  const secondsLeft = sale ? Math.max(0, Math.ceil((Date.parse(sale.expiresAt) - now) / 1000)) : 0;
 
   const fail = (err: unknown) => {
     console.error("buy", err);
@@ -79,7 +79,8 @@ const BuyDialog: React.FC<BuyDialogProps> = ({ item, media, onClose, onSold }) =
     }
   };
 
-  // The countdown while the buyer approves; past it, the prepared sale is gone
+  // The countdown while the buyer approves, rounded up so it reaches 0 when the
+  // sale backend lets the item go; past it, the prepared sale is gone
   useEffect(() => {
     if (phase !== "signing") return;
     const timer = setInterval(() => setNow(Date.now()), 1000);
@@ -177,7 +178,7 @@ const BuyDialog: React.FC<BuyDialogProps> = ({ item, media, onClose, onSold }) =
       {phase === "error" && problem && (
         <>
           <p role="alert" className={styles.error}>
-            {t(`buy.error.${problem.key}`)}
+            {t(`buy.error.${problem.key}`, { count: problem.seconds })}
           </p>
           {!problem.gone && <p className={styles.muted}>{t("buy.nothingMoved")}</p>}
           <div className={styles.actions}>

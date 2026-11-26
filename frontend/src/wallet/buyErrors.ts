@@ -8,7 +8,9 @@ export interface BuyProblem {
   key:
     | "rejected"
     | "expired"
+    | "replaced"
     | "gone"
+    | "beingBought"
     | "notAssociated"
     | "balance"
     | "account"
@@ -20,6 +22,8 @@ export interface BuyProblem {
   gone?: boolean;
   /** Starting again can work. */
   retry: boolean;
+  /** beingBought: about how many seconds until the other buyer's sale ends. */
+  seconds?: number;
 }
 
 /** The message of an Error, or of the plain objects wallets reject with. */
@@ -34,9 +38,19 @@ export function buyProblem(err: unknown): BuyProblem {
     switch (err.code) {
       case "expired":
         return { key: "expired", retry: true };
+      case "replaced":
+        // the buyer started again elsewhere: that newer request is the one to approve
+        return { key: "replaced", retry: false };
       case "not_listed":
       case "not_available":
         return { key: "gone", gone: true, retry: false };
+      case "being_bought": {
+        // another buyer's sale holds the item for a while: it stays for sale
+        const seconds = Number(err.details.retryAfter);
+        return { key: "beingBought", retry: true, seconds: Number.isFinite(seconds) && seconds > 0 ? Math.ceil(seconds) : 120 };
+      }
+      case "insufficient_balance":
+        return { key: "balance", retry: false };
       case "not_associated":
         return { key: "notAssociated", retry: true };
       case "unsupported_account":

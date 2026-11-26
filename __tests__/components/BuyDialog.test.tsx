@@ -151,6 +151,42 @@ describe("BuyDialog", () => {
     expect(onSold).toHaveBeenCalledWith(umina);
   });
 
+  it("keeps an item another buyer is buying, says for how long, and offers to try again", async () => {
+    const { load, w } = fakeWallet();
+    mockSaleApi(fail(409, "being_bought", { retryAfter: 42 }));
+    const { onSold } = renderDialog(load);
+    await userEvent.click(await screen.findByRole("button", { name: "Confirm and pay 45 HBAR" }));
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "Someone is completing a purchase of this item. It is still for sale: try again in about 42 seconds.",
+    );
+    expect(screen.getByRole("button", { name: "Try again" })).toBeInTheDocument();
+    expect(onSold).not.toHaveBeenCalled();
+    expect(w.signTransaction).not.toHaveBeenCalled();
+  });
+
+  it("says when this purchase was started again elsewhere, without Try again", async () => {
+    const { load } = fakeWallet();
+    mockSaleApi(ok({ ...prepared, expiresAt: inTwoMinutes() }), fail(410, "replaced"));
+    const { onSold } = renderDialog(load);
+    await userEvent.click(await screen.findByRole("button", { name: "Confirm and pay 45 HBAR" }));
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "You started this purchase again in another window or tab. Approve the newest request in HashPack, and decline this one.",
+    );
+    expect(screen.queryByRole("button", { name: "Try again" })).not.toBeInTheDocument();
+    expect(onSold).not.toHaveBeenCalled();
+  });
+
+  it("refuses a buyer without enough HBAR before HashPack is asked to sign", async () => {
+    const { load, w } = fakeWallet();
+    mockSaleApi(fail(409, "insufficient_balance"));
+    const { onSold } = renderDialog(load);
+    await userEvent.click(await screen.findByRole("button", { name: "Confirm and pay 45 HBAR" }));
+    expect(await screen.findByRole("alert")).toHaveTextContent("does not hold enough HBAR");
+    expect(screen.queryByRole("button", { name: "Try again" })).not.toBeInTheDocument();
+    expect(w.signTransaction).not.toHaveBeenCalled();
+    expect(onSold).not.toHaveBeenCalled();
+  });
+
   it("says when the account does not hold enough HBAR", async () => {
     const { load } = fakeWallet();
     mockSaleApi(ok({ ...prepared, expiresAt: inTwoMinutes() }), fail(502, "failed", { status: "INSUFFICIENT_PAYER_BALANCE" }));
