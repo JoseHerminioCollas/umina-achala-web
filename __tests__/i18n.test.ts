@@ -111,3 +111,22 @@ describe("privacy page analytics wording (#87)", () => {
     expect(es.privacy.policyItems.some((i: string) => /registros de acceso/i.test(i))).toBe(true);
   });
 });
+
+describe("privacy page retention periods (#104)", () => {
+  const item = (lang: typeof en, re: RegExp) => lang.privacy.policyItems.find((i: string) => re.test(i)) ?? "";
+
+  it("states a real period for server logs, not 'a limited time'", () => {
+    expect(item(en, /access logs/i)).toMatch(/after 14 days/);
+    expect(item(es, /registros de acceso/i)).toMatch(/a los 14 días/);
+    for (const lang of [en, es] as const) {
+      expect(lang.privacy.policyItems.join(" ")).not.toMatch(/limited time|tiempo limitado/);
+    }
+  });
+
+  it("states how long contact form replies and analytics data are kept", () => {
+    expect(item(en, /Google Forms/)).toMatch(/at most 12 months/);
+    expect(item(es, /Google Forms/)).toMatch(/como máximo a los 12 meses/);
+    expect(en.privacy.analytics).toMatch(/6 months/);
+    expect(es.privacy.analytics).toMatch(/6 meses/);
+  });
+});
