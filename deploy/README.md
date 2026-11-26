@@ -171,3 +171,125 @@ nothing under `build/data/` is staged; this should print nothing:
 ```
 git diff --cached --name-only -- build/data
 ```
+
+## Restocking the demo
+
+Every sale on the site moves one item out of the Treasury, so the demo stock runs down.
+Buyers are not asked to send items back: stock is restocked by minting. A buyer may still
+send an item back with a plain **Send** in HashPack; it costs them only the network fee
+(the Treasury is the token's fee collector, so no royalty and no fallback fee apply).
+
+The commands run from `umina-achala-chain`, with `testnet/` linked to
+`umina-achala-testnet` (see that repo's README).
+
+1. See what the Treasury holds and what is listed. It only reads:
+
+   ```
+   NETWORK=testnet node src/display/displayEvent.js status
+   ```
+
+2. An item that came back shows as `not listed`. List it again (step 4), even at the same
+   price: a listing from before it left the Treasury no longer counts. A piece of jewelry
+   comes back whole, the Achala and each stone in it, before it is listed.
+
+3. New stock: mint a form post from `umina-achala-testnet` that has not been minted yet.
+   `displayEvent.js status` and the provenance topic show what has been; a post whose
+   `stone_id` already has a MINT is refused. First as a dry run:
+
+   ```
+   NETWORK=testnet node src/mint/mintNFT.js --form testnet/<post>.json --dry-run
+   ```
+
+   Then for real:
+
+   ```
+   NETWORK=testnet node src/mint/mintNFT.js --form testnet/<post>.json
+   ```
+
+   - **Jewelry:** mint its stones first, write their new serials into the Achala post
+     (`stones[].serial`), commit the post in `umina-achala-testnet`, then mint it with
+     `--token achala`. Its stones leave the catalog as single items once mounted.
+   - **Not stock:** `ammonite_a.json` (a fossil) and `achala_f.json` (a stone already
+     mounted) are refusal tests; the mint must refuse them.
+   - **Do not use `--force`** to mint a `stone_id` again: it makes a second live NFT for the
+     same stone.
+   - Record each mint in the testnet mint results table (umina-achala-chain#22).
+
+4. List each new item. Keep testnet prices under 10 HBAR: the faucet sends 10 test HBAR a
+   day without signing in, and the buyer also pays a small fee to associate the tokens.
+
+   ```
+   NETWORK=testnet node src/display/displayEvent.js listed <serial> --price <hbar> --dry-run
+   ```
+
+   ```
+   NETWORK=testnet node src/display/displayEvent.js listed <serial> --price <hbar>
+   ```
+
+   For a piece of jewelry, add `--token achala`.
+
+5. The site catches up by itself: the sale backend reads the display topic about once a
+   minute and rebuilds the catalog. Check `/marketplace` after a minute. If the backend is
+   not running, build and publish the catalog by hand (Way 2 above).
+
+## If testnet is reset
+
+Hedera resets testnet now and then, announced in advance. A reset deletes every account,
+token, topic and NFT on testnet; the files pinned on IPFS (Pinata) stay, so a remint pins
+nothing new. Signs of a reset: the mirror node answers 404 for the token or Treasury IDs,
+the catalog build stops, and `/api/health` reports an error.
+
+Each step needs the IDs from the one before, so keep the order. The chain commands run from
+`umina-achala-chain`, with `.env.testnet`.
+
+1. **Accounts.** Create new testnet accounts in the Hedera portal: the operator and
+   Treasury, and the test buyer. Fund them from the faucet (signed in: up to 100 HBAR a
+   day; a token costs about 50 HBAR to create). Put the IDs and keys in `.env.testnet`.
+
+2. **Tokens.** Check `FALLBACK_FEE_HBAR` (about USD 3 in HBAR on the day), then create
+   both classes and save each printed ID (`UMINA_TOKEN_ID`, `ACHALA_TOKEN_ID`):
+
+   ```
+   NETWORK=testnet node src/token/createToken.js
+   ```
+
+   ```
+   NETWORK=testnet node src/token/createToken.js --token achala
+   ```
+
+3. **Topics.** Create both and save each printed ID (`HCS_TOPIC_ID`,
+   `HCS_DISPLAY_TOPIC_ID`):
+
+   ```
+   NETWORK=testnet node src/topic/createTopic.js provenance
+   ```
+
+   ```
+   NETWORK=testnet node src/topic/createTopic.js display
+   ```
+
+4. **Stock.** Mint and list as in "Restocking the demo" (steps 3 and 4): the stones first,
+   then the Achala posts with the stones' new serials. Commit the posts in
+   `umina-achala-testnet`.
+
+5. **The site.** Set the new IDs as the defaults in `frontend/src/config.ts`: the two
+   token IDs, the two topic IDs and the Treasury account (`/testnet` shows the token IDs
+   from there). Then `npm run check`, build, commit, push, tag, and `git pull` on the
+   server, as for any launch.
+
+6. **The sale backend.** Put the new IDs and keys in its testnet env file on the server,
+   then restart it with the new values:
+
+   ```
+   pm2 restart umina-achala-sale --update-env
+   ```
+
+   Check that it answers and that `pm2 logs umina-achala-sale` shows a catalog build with
+   the new items:
+
+   ```
+   curl -s https://umina-achala.pe/api/health
+   ```
+
+7. **Not affected:** the Reown project and its domain allowlist, Nginx, and the photos
+   already on IPFS.
