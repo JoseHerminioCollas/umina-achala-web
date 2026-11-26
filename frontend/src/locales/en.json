@@ -299,7 +299,7 @@
     "accountTitle": "Create a testnet account",
     "accountText": "In HashPack, create or import an account and choose testnet when you do. Testnet and mainnet accounts are separate networks: only a testnet account can buy here.",
     "hbarTitle": "Get free test HBAR",
-    "hbarText": "Send free test HBAR to your testnet account ID (0.0.…) from Hedera's faucet. The price of an item is shown on its card; the site pays the network fee.",
+    "hbarText": "Get free test HBAR from Hedera's faucet. Enter your testnet account ID without the checksum: in HashPack, copy the address under \"No checksum\" (0.0.12345, not 0.0.12345-abcde). Without signing in, the faucet sends 10 test HBAR a day. That's enough for one item and the small fee to accept the tokens (step 4). With a free Hedera portal account you get up to 100 a day. Each item's price is shown on its card, and the site pays the network fee for the purchase.",
     "faucetLink": "Hedera faucet",
     "associateTitle": "Let your account accept the NFTs",
     "associateText": "On Hedera an account must accept (associate) a token before it can receive it. In the HashPack app, open NFTs, choose Associate NFT and enter the token ID: the Umiña token for stones, and the Achala token too for jewelry, which comes with its stones.",
@@ -328,7 +328,7 @@
       },
       "balance": {
         "title": "Not enough HBAR",
-        "text": "Your testnet account holds less than the price. Get more test HBAR (step 3)."
+        "text": "Your testnet account holds less than the price. Get more test HBAR (step 3): the faucet sends 10 a day without signing in, or up to 100 with a free Hedera portal account."
       },
       "beingBought": {
         "title": "Someone is completing a purchase of this item",
