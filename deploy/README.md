@@ -175,9 +175,16 @@ git diff --cached --name-only -- build/data
 ## Restocking the demo
 
 Every sale on the site moves one item out of the Treasury, so the demo stock runs down.
-Buyers are not asked to send items back: stock is restocked by minting. A buyer may still
-send an item back with a plain **Send** in HashPack; it costs them only the network fee
-(the Treasury is the token's fee collector, so no royalty and no fallback fee apply).
+It is restocked, as often as needed, in two ways:
+
+- **Return items** from our own test buyer accounts to the Treasury, then list them again
+  (step 2). This is the usual way: nothing is pinned or minted, and the catalog already
+  has the photos.
+- **Mint new items** from form posts not minted yet (step 3), when returns are not enough.
+
+Visitors who bought are not asked to send items back. One may still do it with a plain
+**Send** in HashPack; it costs only the network fee (the Treasury is the token's fee
+collector, so no royalty and no fallback fee apply).
 
 The commands run from `umina-achala-chain`, with `testnet/` linked to
 `umina-achala-testnet` (see that repo's README).
@@ -188,9 +195,14 @@ The commands run from `umina-achala-chain`, with `testnet/` linked to
    NETWORK=testnet node src/display/displayEvent.js status
    ```
 
-2. An item that came back shows as `not listed`. List it again (step 4), even at the same
-   price: a listing from before it left the Treasury no longer counts. A piece of jewelry
-   comes back whole, the Achala and each stone in it, before it is listed.
+2. Return items from a test buyer. In HashPack, on the test buyer's account, open each
+   NFT, choose **Send** and send it to the Treasury (`TREASURY_ACCOUNT_ID` in
+   `frontend/src/config.ts`, now `0.0.4631334`). Only the sender signs. A piece of jewelry
+   goes back whole: the Achala and each stone in it, one NFT at a time. Then run `status`
+   (step 1): each returned item shows as `not listed`. List it again (step 4), even at the
+   same price: a listing from before it left the Treasury no longer counts. Details in
+   umina-achala-documents, `nft-transfers-and-sales.md`, "Returning an NFT to the Treasury
+   From a Wallet, Then Selling It Again".
 
 3. New stock: mint a form post from `umina-achala-testnet` that has not been minted yet.
    `displayEvent.js status` and the provenance topic show what has been; a post whose
