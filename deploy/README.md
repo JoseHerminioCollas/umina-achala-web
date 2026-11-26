@@ -6,19 +6,63 @@ updating that clone (`git pull`), so `build/` is committed.
 
 ## Nginx config
 
-`nginx/umina-achala.conf` is the site file, installed on the server as
-`/etc/nginx/sites-enabled/umina-achala` (usually a link to `sites-available/`). The lines
-marked `# managed by Certbot` are written by Certbot; keep them. No certificate keys are
-stored here, only their file paths.
+`nginx/umina-achala.conf` is the master copy of the site file. The server's
+`/etc/nginx/sites-available/umina-achala` (linked from `sites-enabled/`) is always copied
+from it and never edited on the server: change the file here, commit it, and install it on
+the next deploy. The lines marked `# managed by Certbot` are written by Certbot; keep them.
+No certificate keys are stored here, only their file paths.
 
-To apply a change:
+The `/api/` block proxies the site's sale calls to the sale backend (umina-achala-server,
+pm2, `127.0.0.1:8787`). Until the backend runs, `/api/` answers 502; the rest of the site
+works.
 
-1. Copy the file to the server and back up the current one outside `sites-enabled`
-   (Nginx loads every file in that folder), for example `~/umina-achala.nginx.bak`.
-2. `sudo nginx -t`. Only if it says OK, run `sudo systemctl reload nginx`.
-3. Check it from outside (see issue #98 for the `curl` checks).
+To install it, after `git pull` on the server (check `df -h /` first: a full disk can leave
+the file empty):
 
-Do not save the file while the server disk is full: a full disk can leave it empty.
+1. See what will change. A line that is only on the server is lost when the file is
+   copied, so add it here first if it is needed:
+
+   ```
+   diff /etc/nginx/sites-available/umina-achala /home/ubuntu/umina-achala-web/deploy/nginx/umina-achala.conf
+   ```
+
+2. Back up the current file outside `sites-enabled` (Nginx loads every file in that
+   folder):
+
+   ```
+   cp /etc/nginx/sites-available/umina-achala ~/umina-achala.nginx.bak
+   ```
+
+3. Copy the repo file in:
+
+   ```
+   sudo cp /home/ubuntu/umina-achala-web/deploy/nginx/umina-achala.conf /etc/nginx/sites-available/umina-achala
+   ```
+
+4. Test it. Only if it says OK, reload:
+
+   ```
+   sudo nginx -t
+   ```
+
+   ```
+   sudo systemctl reload nginx
+   ```
+
+   If the test fails, copy the backup back and run the test again.
+
+5. Check it from outside (more `curl` checks in issue #98). The catalog is revalidated:
+
+   ```
+   curl -sI https://umina-achala.pe/data/catalog.json
+   ```
+
+   Its `Cache-Control` is `no-cache`. The sale backend answers through the proxy, naming
+   testnet and the last catalog build:
+
+   ```
+   curl -s https://umina-achala.pe/api/health
+   ```
 
 ## Site catalog (`build/data/`)
 
